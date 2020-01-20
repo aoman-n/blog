@@ -1,6 +1,6 @@
-import path from "path"
-import { Actions, CreatePagesArgs } from "gatsby"
-import { Site, SiteSiteMetadataAuthors } from "../types/graphql-types"
+import path from 'path'
+import { Actions, CreatePagesArgs } from 'gatsby'
+import { Site, SiteSiteMetadataAuthors } from '../types/graphql-types'
 // ______________________________________________________
 //
 type Result = {
@@ -26,8 +26,11 @@ const query = `
 `
 // ______________________________________________________
 //
-export const createAutorPages = async ({ graphql, createPage }: {
-  graphql: CreatePagesArgs['graphql'],
+export const createAutorPages = async ({
+  graphql,
+  createPage
+}: {
+  graphql: CreatePagesArgs['graphql']
   createPage: Actions['createPage']
 }) => {
   const result = await graphql<Result>(query)
@@ -36,14 +39,14 @@ export const createAutorPages = async ({ graphql, createPage }: {
   }
   const { siteMetadata } = result.data.site
   if (!siteMetadata || !siteMetadata.authors) {
-    throw new Error("undefined authors")
+    throw new Error('undefined authors')
   }
 
-  for (let author of siteMetadata.authors) {
+  for (const author of siteMetadata.authors) {
     if (author) {
       createPage<AuthorPageContext>({
         path: `/authors/${author.slug}/`,
-        component: path.resolve("src/templates/author.tsx"),
+        component: path.resolve('src/templates/author.tsx'),
         context: { author }
       })
     }

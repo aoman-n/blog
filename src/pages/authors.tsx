@@ -1,6 +1,6 @@
-import * as React from "react"
-import { Link, graphql } from "gatsby"
-import { AuthorsQuery } from "../../types/graphql-types"
+import * as React from 'react'
+import { Link, graphql } from 'gatsby'
+import { AuthorsQuery } from '../../types/graphql-types'
 import Layout from '../layouts'
 // ______________________________________________________
 //

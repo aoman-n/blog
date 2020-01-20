@@ -10,7 +10,8 @@
   "scripts": {
     "build": "gatsby build",
     "dev": "gatsby develop",
-    "format": "prettier --write \"src/**/*.ts*\" \"types/**/*.ts*\" \"gatsby-node/**/*.ts*\""
+    "format": "prettier --write \"src/**/*.ts*\" \"types/**/*.ts*\" \"gatsby-node/**/*.ts*\"",
+    "lint": "eslint '*/**/*.{js,ts,tsx}' --fix"
   },
   "dependencies": {
     "@babel/plugin-proposal-optional-chaining": "^7.6.0",

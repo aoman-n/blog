@@ -1,6 +1,6 @@
-import React from "react"
+import React from 'react'
 import styled from 'styled-components'
-import { Link, graphql } from "gatsby"
+import { graphql } from 'gatsby'
 import { BlogPostTemplateContext } from '../../gatsby-node/createPostPages'
 import { BlogPostQuery } from '../../types/graphql-types'
 import Layout from '../layouts'
@@ -12,7 +12,7 @@ type Props = {
 
 export const templateQuery = graphql`
   query BlogPost($slug: String!) {
-    markdownRemark(frontmatter: {slug: {eq: $slug}}) {
+    markdownRemark(frontmatter: { slug: { eq: $slug } }) {
       id
       frontmatter {
         date
@@ -26,8 +26,7 @@ export const templateQuery = graphql`
   }
 `
 
-const Component: React.FC<Props> = ({ data, pageContext }) => {
-
+const Component: React.FC<Props> = ({ data }) => {
   if (!data.markdownRemark || !data.markdownRemark.frontmatter) {
     return null
   }
@@ -39,7 +38,7 @@ const Component: React.FC<Props> = ({ data, pageContext }) => {
     <Layout>
       <Title>{title}</Title>
       <div>
-        <div dangerouslySetInnerHTML={{ __html: html ? html : '' }} />
+        <div dangerouslySetInnerHTML={{ __html: html || '' }} />
       </div>
     </Layout>
   )

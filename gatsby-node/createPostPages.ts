@@ -32,8 +32,11 @@ const query = `
   }
 `
 
-export const createPostsPages = async ({ graphql, createPage }: {
-  graphql: CreatePagesArgs['graphql'],
+export const createPostsPages = async ({
+  graphql,
+  createPage
+}: {
+  graphql: CreatePagesArgs['graphql']
   createPage: Actions['createPage']
 }) => {
   const result = await graphql<PostsForCreatePagesQuery>(query)
@@ -57,7 +60,7 @@ export const createPostsPages = async ({ graphql, createPage }: {
       context: {
         slug: post.node.frontmatter.slug,
         previous,
-        next,
+        next
       }
     })
   })

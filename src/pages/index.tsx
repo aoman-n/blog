@@ -1,7 +1,7 @@
-import * as React from "react"
-import { Link, graphql } from "gatsby"
-import { Button } from 'semantic-ui-react';
-import { IndexHogeQuery } from "../../types/graphql-types"
+import * as React from 'react'
+import { Link, graphql } from 'gatsby'
+import { Button } from 'semantic-ui-react'
+import { IndexHogeQuery } from '../../types/graphql-types'
 import Layout from '../layouts'
 // ______________________________________________________
 //
@@ -33,7 +33,9 @@ const Component: React.FC<Props> = ({ data }) => {
         <ul>
           {posts.map((post, id) => (
             <li key={id}>
-              <Link to={`/posts/${post.node.frontmatter?.slug}`}>{post.node.frontmatter?.title}</Link>
+              <Link to={`/posts/${post.node.frontmatter?.slug}`}>
+                {post.node.frontmatter?.title}
+              </Link>
             </li>
           ))}
         </ul>
