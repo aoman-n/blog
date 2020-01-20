@@ -1,0 +1,41 @@
+{
+  "name": "gatsby-gatsby",
+  "description": "Gatsby Gatsby",
+  "version": "1.0.0",
+  "private": true,
+  "keywords": [
+    "gatsby, typescript"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "build": "gatsby build",
+    "dev": "gatsby develop",
+    "format": "prettier --write \"src/**/*.ts*\" \"types/**/*.ts*\" \"gatsby-node/**/*.ts*\""
+  },
+  "dependencies": {
+    "@babel/plugin-proposal-optional-chaining": "^7.6.0",
+    "@types/node": "^12.12.7",
+    "@types/react-helmet": "^5.0.14",
+    "babel-plugin-styled-components": "^1.10.6",
+    "gatsby": "^2.17.11",
+    "gatsby-plugin-graphql-codegen": "^2.0.1",
+    "gatsby-plugin-react-helmet": "^3.1.14",
+    "gatsby-plugin-styled-components": "^3.1.17",
+    "gatsby-plugin-typescript": "^2.1.16",
+    "gatsby-source-filesystem": "^2.1.46",
+    "gatsby-transformer-remark": "^2.6.48",
+    "react": "^16.11.0",
+    "react-dom": "^16.11.0",
+    "react-helmet": "^5.2.1",
+    "semantic-ui-css": "^2.4.1",
+    "semantic-ui-react": "^0.88.2",
+    "styled-components": "^5.0.0",
+    "ts-node": "^8.5.0",
+    "typescript": "^3.7.2"
+  },
+  "devDependencies": {
+    "@types/semantic-ui": "^2.2.7",
+    "@types/styled-components": "^4.4.2",
+    "prettier": "^1.19.1"
+  }
+}
