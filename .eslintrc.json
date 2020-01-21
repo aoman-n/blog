@@ -23,7 +23,8 @@
       "error",
       {
         "singleQuote": true,
-        "semi": false
+        "semi": false,
+        "trailingComma": "all"
       }
     ],
     "yoda": "off",

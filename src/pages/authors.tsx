@@ -19,7 +19,7 @@ const Component: React.FC<Props> = ({ data }) => (
             <li key={author.slug}>
               <Link to={`/authors/${author.slug}`}>{author.name}</Link>
             </li>
-          )
+          ),
       )}
     </ul>
     <ul>

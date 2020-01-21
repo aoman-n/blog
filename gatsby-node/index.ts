@@ -5,9 +5,9 @@ import { createPostsPages } from './createPostPages'
 //
 export const createPages: GatsbyNode['createPages'] = async ({
   graphql,
-  actions: { createPage }
+  actions: { createPage },
 }) =>
   Promise.all([
     await createAutorPages({ graphql, createPage }),
-    await createPostsPages({ graphql, createPage })
+    await createPostsPages({ graphql, createPage }),
   ])

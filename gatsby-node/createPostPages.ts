@@ -34,7 +34,7 @@ const query = `
 
 export const createPostsPages = async ({
   graphql,
-  createPage
+  createPage,
 }: {
   graphql: CreatePagesArgs['graphql']
   createPage: Actions['createPage']
@@ -60,8 +60,8 @@ export const createPostsPages = async ({
       context: {
         slug: post.node.frontmatter.slug,
         previous,
-        next
-      }
+        next,
+      },
     })
   })
 }

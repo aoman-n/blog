@@ -28,7 +28,7 @@ const query = `
 //
 export const createAutorPages = async ({
   graphql,
-  createPage
+  createPage,
 }: {
   graphql: CreatePagesArgs['graphql']
   createPage: Actions['createPage']
@@ -47,7 +47,7 @@ export const createAutorPages = async ({
       createPage<AuthorPageContext>({
         path: `/authors/${author.slug}/`,
         component: path.resolve('src/templates/author.tsx'),
-        context: { author }
+        context: { author },
       })
     }
   }

@@ -4,8 +4,8 @@ module.exports = {
     authors: [
       { name: 'hoge', slug: 'miso' },
       { name: 'sakana', slug: 'kun' },
-      { name: 'nanachi', slug: 'nnhaa' }
-    ]
+      { name: 'nanachi', slug: 'nnhaa' },
+    ],
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -13,17 +13,17 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-graphql-codegen',
       options: {
-        fileName: `types/graphql-types.d.ts`
-      }
+        fileName: `types/graphql-types.d.ts`,
+      },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `posts`,
         path: `${__dirname}/contents`,
-      }
+      },
     },
     `gatsby-transformer-remark`,
     `gatsby-plugin-styled-components`,
-  ]
+  ],
 }
