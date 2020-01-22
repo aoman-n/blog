@@ -1,7 +1,5 @@
-const header = {
-  height: 60,
-}
-
 export default {
-  header,
+  header: {
+    height: 70,
+  },
 }

@@ -1,33 +1,17 @@
-import * as React from 'react'
+import React from 'react'
 import { Link, graphql } from 'gatsby'
-import { Button } from 'semantic-ui-react'
 import { IndexHogeQuery } from '../../types/graphql-types'
 import Layout from '../layouts'
-// ______________________________________________________
-//
+
 type Props = {
   data: IndexHogeQuery
 }
-// ______________________________________________________
-//
+
 const Component: React.FC<Props> = ({ data }) => {
   const posts = data.allMarkdownRemark.edges
 
   return (
     <Layout>
-      {/* <h1>Hi people</h1>
-      <strong>{data.site?.siteMetadata?.title}</strong> site.
-      <p>Welcome to your new </p>
-      <p>Now go build something great.</p>
-      <ul>
-        <li>
-          <Link to="/page-2/">Go to page 2</Link>
-        </li>
-        <li>
-          <Link to="/authors/">Go to authors</Link>
-        </li>
-      </ul>
-      <Button>ボタン</Button> */}
       <div>
         <div>記事一覧</div>
         <ul>
@@ -43,8 +27,7 @@ const Component: React.FC<Props> = ({ data }) => {
     </Layout>
   )
 }
-// ______________________________________________________
-//
+
 export const pageQuery = graphql`
   query IndexHoge {
     site {
@@ -64,6 +47,5 @@ export const pageQuery = graphql`
     }
   }
 `
-// ______________________________________________________
-//
+
 export default Component
