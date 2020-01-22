@@ -1,13 +1,12 @@
-import * as React from 'react'
+import React from 'react'
+import styled from 'styled-components'
 import { Link } from 'gatsby'
+import { Size } from '../constants'
 
-// ______________________________________________________
-//
-const Component: React.FC = () => (
-  <div
+const Header: React.FC = () => (
+  <Container
     style={{
       background: 'rebeccapurple',
-      marginBottom: '1.45rem',
     }}
   >
     <div
@@ -29,8 +28,11 @@ const Component: React.FC = () => (
         </Link>
       </h1>
     </div>
-  </div>
+  </Container>
 )
-// ______________________________________________________
-//
-export default Component
+
+const Container = styled.div`
+  height: ${Size.header.height}px;
+`
+
+export default Header

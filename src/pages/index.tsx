@@ -15,7 +15,7 @@ const Component: React.FC<Props> = ({ data }) => {
 
   return (
     <Layout>
-      <h1>Hi people</h1>
+      {/* <h1>Hi people</h1>
       <strong>{data.site?.siteMetadata?.title}</strong> site.
       <p>Welcome to your new </p>
       <p>Now go build something great.</p>
@@ -27,7 +27,7 @@ const Component: React.FC<Props> = ({ data }) => {
           <Link to="/authors/">Go to authors</Link>
         </li>
       </ul>
-      <Button>ボタン</Button>
+      <Button>ボタン</Button> */}
       <div>
         <div>記事一覧</div>
         <ul>

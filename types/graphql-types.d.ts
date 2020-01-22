@@ -611,6 +611,14 @@ export type FileFieldsEnum =
   'childMarkdownRemark___wordCount___paragraphs' |
   'childMarkdownRemark___wordCount___sentences' |
   'childMarkdownRemark___wordCount___words' |
+  'childMarkdownRemark___headingsDetail' |
+  'childMarkdownRemark___headingsDetail___value' |
+  'childMarkdownRemark___headingsDetail___id' |
+  'childMarkdownRemark___headingsDetail___depth' |
+  'childMarkdownRemark___headingsDetail___parents' |
+  'childMarkdownRemark___headingsDetail___parents___value' |
+  'childMarkdownRemark___headingsDetail___parents___id' |
+  'childMarkdownRemark___headingsDetail___parents___depth' |
   'childMarkdownRemark___parent___id' |
   'childMarkdownRemark___parent___parent___id' |
   'childMarkdownRemark___parent___parent___children' |
@@ -769,6 +777,24 @@ export type MarkdownHeading = {
   depth?: Maybe<Scalars['Int']>,
 };
 
+export type MarkdownHeadingDetail = {
+  value?: Maybe<Scalars['String']>,
+  id?: Maybe<Scalars['String']>,
+  depth?: Maybe<Scalars['Int']>,
+  parents?: Maybe<Array<Maybe<MarkdownParentHeadingDetail>>>,
+};
+
+export type MarkdownHeadingDetailFilterInput = {
+  value?: Maybe<StringQueryOperatorInput>,
+  id?: Maybe<StringQueryOperatorInput>,
+  depth?: Maybe<IntQueryOperatorInput>,
+  parents?: Maybe<MarkdownParentHeadingDetailFilterListInput>,
+};
+
+export type MarkdownHeadingDetailFilterListInput = {
+  elemMatch?: Maybe<MarkdownHeadingDetailFilterInput>,
+};
+
 export type MarkdownHeadingFilterInput = {
   value?: Maybe<StringQueryOperatorInput>,
   depth?: Maybe<IntQueryOperatorInput>,
@@ -786,6 +812,22 @@ export type MarkdownHeadingLevels =
   'h5' |
   'h6';
 
+export type MarkdownParentHeadingDetail = {
+  value?: Maybe<Scalars['String']>,
+  id?: Maybe<Scalars['String']>,
+  depth?: Maybe<Scalars['Int']>,
+};
+
+export type MarkdownParentHeadingDetailFilterInput = {
+  value?: Maybe<StringQueryOperatorInput>,
+  id?: Maybe<StringQueryOperatorInput>,
+  depth?: Maybe<IntQueryOperatorInput>,
+};
+
+export type MarkdownParentHeadingDetailFilterListInput = {
+  elemMatch?: Maybe<MarkdownParentHeadingDetailFilterInput>,
+};
+
 export type MarkdownRemark = Node & {
   id: Scalars['ID'],
   frontmatter?: Maybe<MarkdownRemarkFrontmatter>,
@@ -799,6 +841,7 @@ export type MarkdownRemark = Node & {
   timeToRead?: Maybe<Scalars['Int']>,
   tableOfContents?: Maybe<Scalars['String']>,
   wordCount?: Maybe<MarkdownWordCount>,
+  headingsDetail?: Maybe<Array<Maybe<MarkdownHeadingDetail>>>,
   parent?: Maybe<Node>,
   children: Array<Node>,
   internal: Internal,
@@ -880,6 +923,14 @@ export type MarkdownRemarkFieldsEnum =
   'wordCount___paragraphs' |
   'wordCount___sentences' |
   'wordCount___words' |
+  'headingsDetail' |
+  'headingsDetail___value' |
+  'headingsDetail___id' |
+  'headingsDetail___depth' |
+  'headingsDetail___parents' |
+  'headingsDetail___parents___value' |
+  'headingsDetail___parents___id' |
+  'headingsDetail___parents___depth' |
   'parent___id' |
   'parent___parent___id' |
   'parent___parent___parent___id' |
@@ -979,6 +1030,7 @@ export type MarkdownRemarkFilterInput = {
   timeToRead?: Maybe<IntQueryOperatorInput>,
   tableOfContents?: Maybe<StringQueryOperatorInput>,
   wordCount?: Maybe<MarkdownWordCountFilterInput>,
+  headingsDetail?: Maybe<MarkdownHeadingDetailFilterListInput>,
   parent?: Maybe<NodeFilterInput>,
   children?: Maybe<NodeFilterListInput>,
   internal?: Maybe<InternalFilterInput>,
@@ -1195,6 +1247,7 @@ export type QueryMarkdownRemarkArgs = {
   timeToRead?: Maybe<IntQueryOperatorInput>,
   tableOfContents?: Maybe<StringQueryOperatorInput>,
   wordCount?: Maybe<MarkdownWordCountFilterInput>,
+  headingsDetail?: Maybe<MarkdownHeadingDetailFilterListInput>,
   parent?: Maybe<NodeFilterInput>,
   children?: Maybe<NodeFilterListInput>,
   internal?: Maybe<InternalFilterInput>
@@ -1217,6 +1270,8 @@ export type QuerySiteArgs = {
   siteMetadata?: Maybe<SiteSiteMetadataFilterInput>,
   port?: Maybe<IntQueryOperatorInput>,
   host?: Maybe<StringQueryOperatorInput>,
+  polyfill?: Maybe<BooleanQueryOperatorInput>,
+  pathPrefix?: Maybe<StringQueryOperatorInput>,
   buildTime?: Maybe<DateQueryOperatorInput>
 };
 
@@ -1259,8 +1314,8 @@ export type QuerySitePageArgs = {
   parent?: Maybe<NodeFilterInput>,
   children?: Maybe<NodeFilterListInput>,
   internal?: Maybe<InternalFilterInput>,
-  internalComponentName?: Maybe<StringQueryOperatorInput>,
   path?: Maybe<StringQueryOperatorInput>,
+  internalComponentName?: Maybe<StringQueryOperatorInput>,
   component?: Maybe<StringQueryOperatorInput>,
   componentChunkName?: Maybe<StringQueryOperatorInput>,
   isCreatedByStatefulCreatePages?: Maybe<BooleanQueryOperatorInput>,
@@ -1286,6 +1341,8 @@ export type Site = Node & {
   siteMetadata?: Maybe<SiteSiteMetadata>,
   port?: Maybe<Scalars['Int']>,
   host?: Maybe<Scalars['String']>,
+  polyfill?: Maybe<Scalars['Boolean']>,
+  pathPrefix?: Maybe<Scalars['String']>,
   buildTime?: Maybe<Scalars['Date']>,
 };
 
@@ -1417,6 +1474,8 @@ export type SiteFieldsEnum =
   'siteMetadata___authors___slug' |
   'port' |
   'host' |
+  'polyfill' |
+  'pathPrefix' |
   'buildTime';
 
 export type SiteFilterInput = {
@@ -1427,6 +1486,8 @@ export type SiteFilterInput = {
   siteMetadata?: Maybe<SiteSiteMetadataFilterInput>,
   port?: Maybe<IntQueryOperatorInput>,
   host?: Maybe<StringQueryOperatorInput>,
+  polyfill?: Maybe<BooleanQueryOperatorInput>,
+  pathPrefix?: Maybe<StringQueryOperatorInput>,
   buildTime?: Maybe<DateQueryOperatorInput>,
 };
 
@@ -1444,8 +1505,8 @@ export type SitePage = Node & {
   parent?: Maybe<Node>,
   children: Array<Node>,
   internal: Internal,
-  internalComponentName?: Maybe<Scalars['String']>,
   path?: Maybe<Scalars['String']>,
+  internalComponentName?: Maybe<Scalars['String']>,
   component?: Maybe<Scalars['String']>,
   componentChunkName?: Maybe<Scalars['String']>,
   isCreatedByStatefulCreatePages?: Maybe<Scalars['Boolean']>,
@@ -1517,14 +1578,6 @@ export type SitePageContextNextFrontmatter = {
   title?: Maybe<Scalars['String']>,
 };
 
-
-export type SitePageContextNextFrontmatterDateArgs = {
-  formatString?: Maybe<Scalars['String']>,
-  fromNow?: Maybe<Scalars['Boolean']>,
-  difference?: Maybe<Scalars['String']>,
-  locale?: Maybe<Scalars['String']>
-};
-
 export type SitePageContextNextFrontmatterFilterInput = {
   date?: Maybe<DateQueryOperatorInput>,
   description?: Maybe<StringQueryOperatorInput>,
@@ -1549,14 +1602,6 @@ export type SitePageContextPreviousFrontmatter = {
   slug?: Maybe<Scalars['String']>,
   tags?: Maybe<Array<Maybe<Scalars['String']>>>,
   title?: Maybe<Scalars['String']>,
-};
-
-
-export type SitePageContextPreviousFrontmatterDateArgs = {
-  formatString?: Maybe<Scalars['String']>,
-  fromNow?: Maybe<Scalars['Boolean']>,
-  difference?: Maybe<Scalars['String']>,
-  locale?: Maybe<Scalars['String']>
 };
 
 export type SitePageContextPreviousFrontmatterFilterInput = {
@@ -1661,8 +1706,8 @@ export type SitePageFieldsEnum =
   'internal___mediaType' |
   'internal___owner' |
   'internal___type' |
-  'internalComponentName' |
   'path' |
+  'internalComponentName' |
   'component' |
   'componentChunkName' |
   'isCreatedByStatefulCreatePages' |
@@ -1768,8 +1813,8 @@ export type SitePageFilterInput = {
   parent?: Maybe<NodeFilterInput>,
   children?: Maybe<NodeFilterListInput>,
   internal?: Maybe<InternalFilterInput>,
-  internalComponentName?: Maybe<StringQueryOperatorInput>,
   path?: Maybe<StringQueryOperatorInput>,
+  internalComponentName?: Maybe<StringQueryOperatorInput>,
   component?: Maybe<StringQueryOperatorInput>,
   componentChunkName?: Maybe<StringQueryOperatorInput>,
   isCreatedByStatefulCreatePages?: Maybe<BooleanQueryOperatorInput>,
@@ -2205,5 +2250,8 @@ export type BlogPostQueryVariables = {
 
 export type BlogPostQuery = { markdownRemark: Maybe<(
     Pick<MarkdownRemark, 'id' | 'html'>
-    & { frontmatter: Maybe<Pick<MarkdownRemarkFrontmatter, 'date' | 'description' | 'slug' | 'tags' | 'title'>> }
+    & { frontmatter: Maybe<Pick<MarkdownRemarkFrontmatter, 'date' | 'description' | 'slug' | 'tags' | 'title'>>, headingsDetail: Maybe<Array<Maybe<(
+      Pick<MarkdownHeadingDetail, 'id' | 'value' | 'depth'>
+      & { parents: Maybe<Array<Maybe<Pick<MarkdownParentHeadingDetail, 'id' | 'value' | 'depth'>>>> }
+    )>>> }
   )> };

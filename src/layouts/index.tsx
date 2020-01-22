@@ -1,7 +1,8 @@
 import React from 'react'
-import { createGlobalStyle } from 'styled-components'
+import styled, { createGlobalStyle } from 'styled-components'
 import Helmet from 'react-helmet'
 import Header from '../components/header'
+import { Size } from '../constants'
 import 'semantic-ui-css/semantic.min.css'
 import 'prismjs/plugins/line-numbers/prism-line-numbers.css'
 // ______________________________________________________
@@ -17,22 +18,31 @@ const Component: React.FC = props => (
     />
     <Header />
     <MarkdownHighLight />
-    <div
-      style={{
-        margin: '0 auto',
-        maxWidth: 960,
-        padding: '0px 1.0875rem 1.45rem',
-        paddingTop: 0,
-      }}
-    >
-      {props.children}
-    </div>
+    <Body>
+      <div
+        style={{
+          margin: '0 auto',
+          maxWidth: 1120,
+          paddingTop: 0,
+        }}
+      >
+        {props.children}
+      </div>
+    </Body>
   </div>
 )
 // ______________________________________________________
 //
 
+const Body = styled.div`
+  /* height: calc(100vh - ${Size.header.height}px); */
+  /* background-color: #f6f8fa; */
+`
 const MarkdownHighLight = createGlobalStyle`
+  html {
+    background-color: #f6f8fa;
+  }
+
   .gatsby-highlight-code-line {
     background-color: #feb;
     display: block;

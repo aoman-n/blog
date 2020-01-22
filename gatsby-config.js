@@ -64,6 +64,7 @@ module.exports = {
         ],
       },
     },
+    `gatsby-remark-headings-detail`,
     `gatsby-plugin-styled-components`,
   ],
 }
