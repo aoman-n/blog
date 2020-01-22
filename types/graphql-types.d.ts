@@ -2241,7 +2241,7 @@ export type StringQueryOperatorInput = {
 export type IndexHogeQueryVariables = {};
 
 
-export type IndexHogeQuery = { site: Maybe<{ siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title'>> }>, allMarkdownRemark: { edges: Array<{ node: { frontmatter: Maybe<Pick<MarkdownRemarkFrontmatter, 'title' | 'slug'>> } }> } };
+export type IndexHogeQuery = { site: Maybe<{ siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title'>> }>, allMarkdownRemark: { edges: Array<{ node: { frontmatter: Maybe<Pick<MarkdownRemarkFrontmatter, 'date' | 'description' | 'title' | 'tags' | 'slug'>> } }> } };
 
 export type PostsForCreatePagesQueryVariables = {};
 

@@ -1,16 +1,7 @@
-import React, { useRef } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import { graphql } from 'gatsby'
-import {
-  Container,
-  Header,
-  Grid,
-  Sticky,
-  Tab,
-  Rail,
-  Segment,
-  Image,
-} from 'semantic-ui-react'
+import { Header, Grid, Segment } from 'semantic-ui-react'
 import Content from '../components/Content'
 import ScrollSyncToc from '../components/ScrollSyncToc'
 import { BlogPostTemplateContext } from '../../gatsby-node/createPostPages'
@@ -71,9 +62,9 @@ const Component: React.FC<Props> = ({ data }) => {
         </Grid.Column>
         <Grid.Column width={5}>
           <ScrollNav>
-            <Segment>
-              {headingsDetail && <ScrollSyncToc heading={headingsDetail} />}
-            </Segment>
+            {/* <Segment> */}
+            {headingsDetail && <ScrollSyncToc heading={headingsDetail} />}
+            {/* </Segment> */}
           </ScrollNav>
         </Grid.Column>
       </Grid>
@@ -94,21 +85,5 @@ const ScrollNav = styled.div`
   max-height: 100vh;
   top: 12px;
 `
-const StyledColumn = styled(Grid.Column)`
-  position: sticky;
-  top: 0;
-  will-change: transform;
-  max-height: 100vh;
-  /* position: sticky;
-  position: -webkit-sticky;
-  max-height: 100vh;
-  overflow-y: auto;
-  will-change: transform;
-  top: 12px;
-  padding: 12px 24px;
-  margin-top: 34px; */
-`
-// ______________________________________________________
-//
 
 export default Component

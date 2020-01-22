@@ -5,7 +5,7 @@ import { Size, Color } from '../constants'
 
 const HeaderComponent: React.FC = () => (
   <Container>
-    <LogoArea to="/">Nextremer enginner blog</LogoArea>
+    <LogoArea to="/">Enginner Blog</LogoArea>
   </Container>
 )
 

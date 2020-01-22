@@ -17,7 +17,7 @@ export default styled.div`
     line-height: 1.6;
     word-break: break-all;
     word-wrap: break-word;
-    color: #333333;
+    color: #ffffff;
     background-color: #3e4149;
     border: 1px solid #ccc;
     border-radius: 4px;
@@ -34,7 +34,7 @@ export default styled.div`
 
   h1 {
     font-size: 200%;
-    border-bottom: 3px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 2px solid rgba(0, 0, 0, 0.1);
     padding-bottom: 10px;
     margin: 30px 0;
     margin-bottom: 10px;
@@ -57,15 +57,15 @@ export default styled.div`
     font-size: 160%;
     margin: 30px 0 16px;
     font-weight: 900;
-    border-bottom: 3px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 2px solid rgba(0, 0, 0, 0.1);
     padding-bottom: 4px;
     position: relative;
     &:before {
       position: absolute;
       content: ' ';
       width: 100px;
-      bottom: -3px;
-      height: 3px;
+      bottom: -2px;
+      height: 2px;
       background-color: #4d9abf;
     }
   }
@@ -560,5 +560,52 @@ export default styled.div`
   h5,
   h6 {
     font-weight: 700;
+  }
+
+  .gatsby-highlight-code-line {
+    background-color: #708090;
+    display: block;
+    margin-right: -1em;
+    margin-left: -1em;
+    padding-right: 1em;
+    padding-left: 0.75em;
+    border-left: 0.25em solid #f99;
+  }
+
+  .gatsby-highlight {
+    color: #ffffff;
+    background-color: #3e4149;
+    margin: 0.5em 0;
+    padding: 1em;
+    overflow: auto;
+  }
+
+  .gatsby-highlight pre[class*='language-'] {
+    background-color: transparent;
+    margin: 0;
+    padding: 0;
+    overflow: initial;
+    float: left; /* 1 */
+    min-width: 100%; /* 2 */
+  }
+
+  .gatsby-highlight pre[class*='language-'].line-numbers {
+    padding-left: 2.8em; /* 3 */
+  }
+
+  .gatsby-code-title {
+    /* background: #f3e3b9; */
+    /* color: #b38383; */
+    color: #ffffff;
+    background-color: #3e4149;
+    margin-bottom: -0.65em;
+    padding: 0.7rem 1.05rem;
+    font-size: 0.8em;
+    line-height: 0.2;
+    font-family: SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono,
+      Courier New, monospace;
+    font-weight: 600;
+    border-radius: 8px 8px 0 0;
+    display: table;
   }
 `
