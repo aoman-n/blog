@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link, graphql } from 'gatsby'
+import styled from 'styled-components'
 import { Grid, Image, Card, Icon, Header } from 'semantic-ui-react'
 import { IndexHogeQuery } from '../../types/graphql-types'
 import Layout from '../layouts'
@@ -20,8 +21,8 @@ const Post: React.FC<PostProps> = ({
   slug,
 }) => {
   return (
-    <Link to={`/posts/${slug}`}>
-      <Card>
+    <StyledLink to={`/posts/${slug}`}>
+      <Card fluid>
         <Image
           src="https://www.minarai.io/img/minarai-for-signage-min.png"
           wrapped
@@ -33,9 +34,14 @@ const Post: React.FC<PostProps> = ({
         </Card.Content>
         <Card.Content extra>{date}</Card.Content>
       </Card>
-    </Link>
+    </StyledLink>
   )
 }
+
+const StyledLink = styled(Link)`
+  margin: 16px 0;
+  display: block;
+`
 
 type Props = {
   data: IndexHogeQuery
@@ -50,14 +56,14 @@ const Component: React.FC<Props> = ({ data }) => {
         <Header as="h1" dividing>
           Tech Blog
         </Header>
-        <Grid>
-          <Grid.Row columns={3}>
-            {posts.map((post, id) => (
-              <Grid.Column key={id}>
-                <Post {...post.node.frontmatter} />
-              </Grid.Column>
-            ))}
-          </Grid.Row>
+        <Grid container columns={3} doubling stackable>
+          {/* <Grid.Row columns={3}> */}
+          {posts.map((post, id) => (
+            <Grid.Column key={id}>
+              <Post {...post.node.frontmatter} />
+            </Grid.Column>
+          ))}
+          {/* </Grid.Row> */}
         </Grid>
       </div>
     </Layout>
