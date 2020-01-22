@@ -1599,7 +1599,7 @@ export type SitePageContextPreviousFilterInput = {
 
 export type SitePageContextPreviousFrontmatter = {
   date?: Maybe<Scalars['Date']>,
-  description?: Maybe<Scalars['String']>,
+  keyword?: Maybe<Array<Maybe<Scalars['String']>>>,
   keywords?: Maybe<Array<Maybe<Scalars['String']>>>,
   slug?: Maybe<Scalars['String']>,
   tags?: Maybe<Array<Maybe<Scalars['String']>>>,
@@ -1608,7 +1608,7 @@ export type SitePageContextPreviousFrontmatter = {
 
 export type SitePageContextPreviousFrontmatterFilterInput = {
   date?: Maybe<DateQueryOperatorInput>,
-  description?: Maybe<StringQueryOperatorInput>,
+  keyword?: Maybe<StringQueryOperatorInput>,
   keywords?: Maybe<StringQueryOperatorInput>,
   slug?: Maybe<StringQueryOperatorInput>,
   tags?: Maybe<StringQueryOperatorInput>,
@@ -1717,7 +1717,7 @@ export type SitePageFieldsEnum =
   'context___author___slug' |
   'context___slug' |
   'context___previous___frontmatter___date' |
-  'context___previous___frontmatter___description' |
+  'context___previous___frontmatter___keyword' |
   'context___previous___frontmatter___keywords' |
   'context___previous___frontmatter___slug' |
   'context___previous___frontmatter___tags' |
@@ -1787,6 +1787,7 @@ export type SitePageFieldsEnum =
   'pluginCreator___pluginOptions___offsetY' |
   'pluginCreator___pluginOptions___icon' |
   'pluginCreator___pluginOptions___className' |
+  'pluginCreator___pluginOptions___ignoreFileExtensions' |
   'pluginCreator___pluginOptions___pathCheck' |
   'pluginCreator___nodeAPIs' |
   'pluginCreator___browserAPIs' |
@@ -1985,6 +1986,7 @@ export type SitePluginFieldsEnum =
   'pluginOptions___plugins___pluginOptions___offsetY' |
   'pluginOptions___plugins___pluginOptions___icon' |
   'pluginOptions___plugins___pluginOptions___className' |
+  'pluginOptions___plugins___pluginOptions___ignoreFileExtensions' |
   'pluginOptions___plugins___browserAPIs' |
   'pluginOptions___plugins___ssrAPIs' |
   'pluginOptions___plugins___pluginFilepath' |
@@ -1997,6 +1999,7 @@ export type SitePluginFieldsEnum =
   'pluginOptions___offsetY' |
   'pluginOptions___icon' |
   'pluginOptions___className' |
+  'pluginOptions___ignoreFileExtensions' |
   'pluginOptions___pathCheck' |
   'nodeAPIs' |
   'browserAPIs' |
@@ -2123,6 +2126,7 @@ export type SitePluginPluginOptions = {
   offsetY?: Maybe<Scalars['String']>,
   icon?: Maybe<Scalars['String']>,
   className?: Maybe<Scalars['String']>,
+  ignoreFileExtensions?: Maybe<Array<Maybe<Scalars['String']>>>,
   pathCheck?: Maybe<Scalars['Boolean']>,
 };
 
@@ -2137,6 +2141,7 @@ export type SitePluginPluginOptionsFilterInput = {
   offsetY?: Maybe<StringQueryOperatorInput>,
   icon?: Maybe<StringQueryOperatorInput>,
   className?: Maybe<StringQueryOperatorInput>,
+  ignoreFileExtensions?: Maybe<StringQueryOperatorInput>,
   pathCheck?: Maybe<BooleanQueryOperatorInput>,
 };
 
@@ -2173,6 +2178,7 @@ export type SitePluginPluginOptionsPluginsPluginOptions = {
   offsetY?: Maybe<Scalars['String']>,
   icon?: Maybe<Scalars['String']>,
   className?: Maybe<Scalars['String']>,
+  ignoreFileExtensions?: Maybe<Array<Maybe<Scalars['String']>>>,
 };
 
 export type SitePluginPluginOptionsPluginsPluginOptionsFilterInput = {
@@ -2182,6 +2188,7 @@ export type SitePluginPluginOptionsPluginsPluginOptionsFilterInput = {
   offsetY?: Maybe<StringQueryOperatorInput>,
   icon?: Maybe<StringQueryOperatorInput>,
   className?: Maybe<StringQueryOperatorInput>,
+  ignoreFileExtensions?: Maybe<StringQueryOperatorInput>,
 };
 
 export type SitePluginSortInput = {
@@ -2230,11 +2237,6 @@ export type StringQueryOperatorInput = {
   regex?: Maybe<Scalars['String']>,
   glob?: Maybe<Scalars['String']>,
 };
-
-export type AuthorsQueryVariables = {};
-
-
-export type AuthorsQuery = { site: Maybe<{ siteMetadata: Maybe<{ authors: Maybe<Array<Maybe<Pick<SiteSiteMetadataAuthors, 'name' | 'slug'>>>> }> }> };
 
 export type IndexHogeQueryVariables = {};
 
