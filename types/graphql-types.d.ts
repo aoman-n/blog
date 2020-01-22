@@ -1572,6 +1572,7 @@ export type SitePageContextNextFilterInput = {
 export type SitePageContextNextFrontmatter = {
   date?: Maybe<Scalars['Date']>,
   description?: Maybe<Scalars['String']>,
+  keyword?: Maybe<Array<Maybe<Scalars['String']>>>,
   keywords?: Maybe<Array<Maybe<Scalars['String']>>>,
   slug?: Maybe<Scalars['String']>,
   tags?: Maybe<Array<Maybe<Scalars['String']>>>,
@@ -1581,6 +1582,7 @@ export type SitePageContextNextFrontmatter = {
 export type SitePageContextNextFrontmatterFilterInput = {
   date?: Maybe<DateQueryOperatorInput>,
   description?: Maybe<StringQueryOperatorInput>,
+  keyword?: Maybe<StringQueryOperatorInput>,
   keywords?: Maybe<StringQueryOperatorInput>,
   slug?: Maybe<StringQueryOperatorInput>,
   tags?: Maybe<StringQueryOperatorInput>,
@@ -1722,6 +1724,7 @@ export type SitePageFieldsEnum =
   'context___previous___frontmatter___title' |
   'context___next___frontmatter___date' |
   'context___next___frontmatter___description' |
+  'context___next___frontmatter___keyword' |
   'context___next___frontmatter___keywords' |
   'context___next___frontmatter___slug' |
   'context___next___frontmatter___tags' |
