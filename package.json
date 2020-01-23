@@ -10,6 +10,7 @@
   "scripts": {
     "build": "gatsby build",
     "dev": "gatsby develop",
+    "type-gen": "graphql-codegen --config codegen.yml",
     "format": "prettier --write \"src/**/*.ts*\" \"types/**/*.ts*\" \"gatsby-node/**/*.ts*\"",
     "lint": "eslint '*/**/*.{js,jsx,ts,tsx}' --fix"
   },
@@ -20,7 +21,6 @@
     "@types/react-helmet": "^5.0.15",
     "babel-plugin-styled-components": "^1.10.6",
     "gatsby": "^2.19.0",
-    "gatsby-plugin-graphql-codegen": "^2.1.1",
     "gatsby-plugin-react-helmet": "^3.1.21",
     "gatsby-plugin-sharp": "^2.4.0",
     "gatsby-plugin-styled-components": "^3.1.18",
@@ -44,6 +44,9 @@
     "typescript": "^3.7.5"
   },
   "devDependencies": {
+    "@graphql-codegen/cli": "^1.11.2",
+    "@graphql-codegen/typescript": "^1.11.2",
+    "@graphql-codegen/typescript-operations": "^1.11.2",
     "@types/semantic-ui": "^2.2.7",
     "@types/styled-components": "^4.4.2",
     "@typescript-eslint/eslint-plugin": "^2.17.0",
