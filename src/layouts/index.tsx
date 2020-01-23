@@ -29,9 +29,15 @@ const Body = styled.div`
 `
 const BodyInner = styled.div`
   margin: 0 auto;
-  max-width: 1120px;
+  max-width: 1000px;
   padding: 40px 10px;
   box-sizing: border-box;
+
+  @media screen and (max-width: ${Size.breakPoint.tablet}px) {
+    max-width: 640px;
+  }
+  @media screen and (max-width: ${Size.breakPoint.mobile}px) {
+  }
 `
 const MarkdownHighLight = createGlobalStyle`
   body {

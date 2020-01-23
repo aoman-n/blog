@@ -2,7 +2,9 @@ import React from 'react'
 import { Link, graphql } from 'gatsby'
 import styled from 'styled-components'
 import { Grid, Image, Card, Icon, Header } from 'semantic-ui-react'
-import { IndexHogeQuery } from '../../types/graphql-types'
+import ArticleCard from '../components/ArticleCard'
+// import { IndexHogeQuery } from '../../types/graphql-types'
+import { IndexPageQuery } from '../graphqlTypes'
 import Layout from '../layouts'
 
 type PostProps = {
@@ -44,34 +46,78 @@ const StyledLink = styled(Link)`
 `
 
 type Props = {
-  data: IndexHogeQuery
+  data: IndexPageQuery
 }
 
 const Component: React.FC<Props> = ({ data }) => {
-  const posts = data.allMarkdownRemark.edges
-
   return (
     <Layout>
-      <div>
-        <Header as="h1" dividing>
-          Tech Blog
-        </Header>
-        <Grid container columns={3} doubling stackable>
-          {/* <Grid.Row columns={3}> */}
-          {posts.map((post, id) => (
-            <Grid.Column key={id}>
-              <Post {...post.node.frontmatter} />
-            </Grid.Column>
-          ))}
-          {/* </Grid.Row> */}
-        </Grid>
-      </div>
+      <Container>
+        <AuthorProfile>
+          <Avatar>
+            <AvatarImage src="https://s3-ap-northeast-1.amazonaws.com/aohiro-blog/User/avatar/dot.jpg" />
+          </Avatar>
+        </AuthorProfile>
+        {/* <Header as="h3" dividing>
+          記事一覧
+        </Header> */}
+        <Articles>
+          <Grid container columns={3} doubling stackable>
+            {/* {posts.map((post, id) => {
+            return ( */}
+
+            {data.allMarkdownRemark.edges.map(({ node }, id) => {
+              const frontmatter = node.frontmatter
+              return (
+                <Grid.Column key={id}>
+                  <ArticleCard
+                    key={node.id}
+                    title={frontmatter?.title || ''}
+                    date={frontmatter?.date || ''}
+                    slug={frontmatter?.slug || ''}
+                    description={frontmatter?.description || ''}
+                    // tags={frontmatter?.tags || ([] as string[])}
+                  />
+                </Grid.Column>
+              )
+            })}
+            {/* )
+          })} */}
+          </Grid>
+        </Articles>
+      </Container>
     </Layout>
   )
 }
 
+const Container = styled.div`
+  max-width: 900px;
+  margin: 0 auto;
+`
+const AuthorProfile = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`
+const Avatar = styled.div`
+  height: 80px;
+  width: 80px;
+`
+const AvatarImage = styled.img`
+  height: 100%;
+  border-radius: 50%;
+  border: 1px solid gray;
+`
+const Articles = styled.div`
+  /* padding: 0 20px; */
+
+  @media screen and (max-width: 480px) {
+    /* padding: 0px 8px; */
+  }
+`
+
 export const pageQuery = graphql`
-  query IndexHoge {
+  query IndexPage {
     site {
       siteMetadata {
         title
@@ -80,6 +126,7 @@ export const pageQuery = graphql`
     allMarkdownRemark {
       edges {
         node {
+          id
           frontmatter {
             date
             description

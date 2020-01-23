@@ -1,12 +1,13 @@
 import React from 'react'
 import styled from 'styled-components'
 import { graphql } from 'gatsby'
-import { Header, Grid, Segment } from 'semantic-ui-react'
+import { Header } from 'semantic-ui-react'
 import Content from '../components/Content'
 import ScrollSyncToc from '../components/ScrollSyncToc'
 import { BlogPostTemplateContext } from '../../gatsby-node/createPostPages'
-import { BlogPostQuery } from '../../types/graphql-types'
+import { BlogPostQuery } from '../graphqlTypes'
 import Layout from '../layouts'
+import { Size } from '../constants'
 
 type Props = {
   data: BlogPostQuery
@@ -49,31 +50,37 @@ const Component: React.FC<Props> = ({ data }) => {
 
   return (
     <Layout>
-      <Grid columns={2} stackable>
-        <Grid.Column width={11}>
-          <Segment>
-            <Inner>
-              <Header as="h2">{title}</Header>
-              <div>
-                <Content dangerouslySetInnerHTML={{ __html: html || '' }} />
-              </div>
-            </Inner>
-          </Segment>
-        </Grid.Column>
-        <Grid.Column width={5}>
-          <ScrollNav>
-            {/* <Segment> */}
-            {headingsDetail && <ScrollSyncToc heading={headingsDetail} />}
-            {/* </Segment> */}
-          </ScrollNav>
-        </Grid.Column>
-      </Grid>
+      <Container>
+        <Article>
+          <Inner>
+            <Header as="h2">{title}</Header>
+            <div>
+              <Content dangerouslySetInnerHTML={{ __html: html || '' }} />
+            </div>
+          </Inner>
+        </Article>
+        <ScrollNav>
+          {headingsDetail && <ScrollSyncToc heading={headingsDetail} />}
+        </ScrollNav>
+      </Container>
     </Layout>
   )
 }
 
+const Container = styled.div`
+  display: flex;
+  justify-content: center;
+`
+const Article = styled.article`
+  background-color: #ffffff;
+  width: calc(100% - 240px);
+
+  @media screen and (max-width: ${Size.breakPoint.tablet}px) {
+    width: 100%;
+  }
+`
 const Inner = styled.div`
-  padding: 18px;
+  padding: 32px;
   .gatsby-highlight:not {
     padding: 0;
   }
@@ -84,6 +91,11 @@ const ScrollNav = styled.div`
   will-change: transform;
   max-height: 100vh;
   top: 12px;
+  width: 240px;
+
+  @media screen and (max-width: ${Size.breakPoint.tablet}px) {
+    display: none;
+  }
 `
 
 export default Component
