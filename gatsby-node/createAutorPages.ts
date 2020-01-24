@@ -1,6 +1,6 @@
 import path from 'path'
 import { Actions, CreatePagesArgs } from 'gatsby'
-import { Site, SiteSiteMetadataAuthors } from '../types/graphql-types'
+import { Site, SiteSiteMetadataAuthors } from '../types/graphqlTypes'
 // ______________________________________________________
 //
 type Result = {

@@ -1,6 +1,6 @@
 import path from 'path'
 import { Actions, CreatePagesArgs } from 'gatsby'
-import { PostsForCreatePagesQuery } from '../types/graphql-types'
+import { PostsForCreatePagesQuery } from '../types/graphqlTypes'
 
 // type Result = {
 //   data: PostsForCreatePagesQuery

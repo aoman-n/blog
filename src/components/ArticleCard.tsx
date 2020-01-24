@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'gatsby'
 import styled from 'styled-components'
 import Card from './atoms/Card'
+import { Size } from '../constants'
 
 interface ArticleCardProps {
   date: string
@@ -51,13 +52,13 @@ const Container = styled.div`
   flex-wrap: wrap;
   cursor: pointer;
   background: rgb(255, 255, 255);
-  border-radius: 10px;
   transition: all 0.3s ease-in-out 0s;
 `
 const ImageFrame = styled.div`
   height: 200px;
   display: flex;
   width: 100%;
+  border-radius: 2px 2px 0 0;
   background: linear-gradient(
     rgb(255, 255, 255) 0%,
     rgb(248, 248, 248) 25%,
@@ -65,7 +66,6 @@ const ImageFrame = styled.div`
     rgb(177, 177, 177) 75%,
     rgb(73, 73, 73) 100%
   );
-  border-radius: 10px 10px 0px 0px;
 
   @media screen and (max-width: 480px) {
     height: 150px;
@@ -76,15 +76,15 @@ const Image = styled.img`
   width: 100%;
   object-position: 50% 50%;
   opacity: 0.8;
-  border-radius: 10px 10px 0px 0px;
+  border-radius: 2px 2px 0 0;
 `
 const Info = styled.div`
-  position: relative;
   height: 90px;
-  border-radius: 0px 0px 10px 10px;
+  width: 100%;
+  border-radius: 0px 0px 2px 2px;
   margin: 10px 15px;
 
-  @media screen and (max-width: 480px) {
+  @media screen and (max-width: ${Size.breakPoint.mobile}px) {
     height: 100px;
   }
 `
@@ -94,7 +94,7 @@ const Title = styled.p`
   letter-spacing: 0.15rem;
   font-weight: 600;
 
-  @media screen and (max-width: 480px) {
+  @media screen and (max-width: ${Size.breakPoint.mobile}px) {
     font-size: 1.1rem;
   }
 `

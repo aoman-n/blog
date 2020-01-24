@@ -41,6 +41,14 @@ module.exports = {
             },
           },
           `gatsby-remark-copy-linked-files`,
+          {
+            resolve: 'gatsby-plugin-react-svg',
+            options: {
+              rule: {
+                include: `${__dirname}/src/components/Icon/svg`,
+              },
+            },
+          },
           // `gatsby-plugin-sharp`,
           // {
           //   resolve: `gatsby-transformer-remark`,

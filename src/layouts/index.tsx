@@ -2,6 +2,7 @@ import React from 'react'
 import styled, { createGlobalStyle } from 'styled-components'
 import Helmet from 'react-helmet'
 import Header from '../components/Header'
+import Footer from '../components/Footer'
 import { Size, Color } from '../constants'
 import 'semantic-ui-css/semantic.min.css'
 import 'prismjs/plugins/line-numbers/prism-line-numbers.css'
@@ -20,12 +21,12 @@ const Component: React.FC = props => (
     <Body>
       <BodyInner>{props.children}</BodyInner>
     </Body>
+    <Footer />
   </div>
 )
 
 const Body = styled.div`
-  /* height: calc(100vh - ${Size.header.height}px); */
-  /* background-color: #f6f8fa; */
+  min-height: calc(100vh - ${Size.footer.height}px - ${Size.header.height}px);
 `
 const BodyInner = styled.div`
   margin: 0 auto;
@@ -34,9 +35,11 @@ const BodyInner = styled.div`
   box-sizing: border-box;
 
   @media screen and (max-width: ${Size.breakPoint.tablet}px) {
-    max-width: 640px;
+    max-width: 680px;
   }
   @media screen and (max-width: ${Size.breakPoint.mobile}px) {
+    padding-right: 0;
+    padding-left: 0;
   }
 `
 const MarkdownHighLight = createGlobalStyle`

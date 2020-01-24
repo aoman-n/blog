@@ -1,10 +1,13 @@
 import styled from 'styled-components'
+import { Size, Color } from '../constants'
 
 export default styled.div`
   margin-top: 24px;
   line-height: 1.8;
   font-size: 1em;
   word-break: break-all;
+  color: ${Color.darkGray};
+
   .hidden {
     display: none;
   }
@@ -21,6 +24,10 @@ export default styled.div`
     background-color: #3e4149;
     border: 1px solid #ccc;
     border-radius: 4px;
+
+    @media screen and (max-width: ${Size.breakPoint.mobile}px) {
+      font-size: 0.8em;
+    }
   }
 
   pre code {
@@ -130,6 +137,8 @@ export default styled.div`
 
   p {
     margin: 16px 0;
+    line-height: 1.7;
+    letter-spacing: 0.13em;
   }
 
   p img {
@@ -325,7 +334,6 @@ export default styled.div`
 
   .code-filename i {
     color: rgba(60, 74, 96, 0.3);
-    /* margin-right: 4px; */
   }
 
   @media (max-width: 900px) {
@@ -578,6 +586,13 @@ export default styled.div`
     margin: 0.5em 0;
     padding: 1em;
     overflow: auto;
+
+    /* @media screen and (max-width: ${Size.breakPoint.mobile}px) {
+      margin-left: calc((100vw - 100%) / -2);
+      margin-right: calc((100vw - 100%) / -2);
+      padding-left: calc((100vw - 100%) / -2);
+      padding-right: calc((100vw - 100%) / -2);
+    } */
   }
 
   .gatsby-highlight pre[class*='language-'] {
@@ -585,17 +600,15 @@ export default styled.div`
     margin: 0;
     padding: 0;
     overflow: initial;
-    float: left; /* 1 */
-    min-width: 100%; /* 2 */
+    float: left;
+    min-width: 100%;
   }
 
   .gatsby-highlight pre[class*='language-'].line-numbers {
-    padding-left: 2.8em; /* 3 */
+    padding-left: 2.8em;
   }
 
   .gatsby-code-title {
-    /* background: #f3e3b9; */
-    /* color: #b38383; */
     color: #ffffff;
     background-color: #3e4149;
     margin-bottom: -0.65em;

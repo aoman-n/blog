@@ -5,9 +5,9 @@ import { Header } from 'semantic-ui-react'
 import Content from '../components/Content'
 import ScrollSyncToc from '../components/ScrollSyncToc'
 import { BlogPostTemplateContext } from '../../gatsby-node/createPostPages'
-import { BlogPostQuery } from '../graphqlTypes'
+import { BlogPostQuery } from '../../types/graphqlTypes'
 import Layout from '../layouts'
-import { Size } from '../constants'
+import { Size, Color } from '../constants'
 
 type Props = {
   data: BlogPostQuery
@@ -19,7 +19,7 @@ export const templateQuery = graphql`
     markdownRemark(frontmatter: { slug: { eq: $slug } }) {
       id
       frontmatter {
-        date
+        date(formatString: "YYYY.MM.DD")
         description
         slug
         tags
@@ -45,7 +45,7 @@ const Component: React.FC<Props> = ({ data }) => {
     return null
   }
 
-  const { title } = data.markdownRemark.frontmatter
+  const { title, date } = data.markdownRemark.frontmatter
   const { html, headingsDetail } = data.markdownRemark
 
   return (
@@ -53,7 +53,8 @@ const Component: React.FC<Props> = ({ data }) => {
       <Container>
         <Article>
           <Inner>
-            <Header as="h2">{title}</Header>
+            <Date>{date}</Date>
+            <StyledHeader as="h1">{title}</StyledHeader>
             <div>
               <Content dangerouslySetInnerHTML={{ __html: html || '' }} />
             </div>
@@ -71,6 +72,13 @@ const Container = styled.div`
   display: flex;
   justify-content: center;
 `
+const StyledHeader = styled(Header)`
+  margin-top: 0;
+`
+const Date = styled.p`
+  margin-bottom: 4px;
+  color: ${Color.gray};
+`
 const Article = styled.article`
   background-color: #ffffff;
   width: calc(100% - 240px);
@@ -80,7 +88,12 @@ const Article = styled.article`
   }
 `
 const Inner = styled.div`
-  padding: 32px;
+  padding: 40px;
+
+  @media screen and (max-width: ${Size.breakPoint.mobile}px) {
+    padding: 24px;
+  }
+
   .gatsby-highlight:not {
     padding: 0;
   }
