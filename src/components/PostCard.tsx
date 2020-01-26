@@ -2,7 +2,9 @@ import React from 'react'
 import { Link } from 'gatsby'
 import styled from 'styled-components'
 import Card from './atoms/Card'
-import { Size } from '../constants'
+import TagList from './TagList'
+import Date from './atoms/Date'
+import { Size, Color } from '../constants'
 
 interface ArticleCardProps {
   date: string
@@ -13,14 +15,14 @@ interface ArticleCardProps {
   image?: string
 }
 
-const imageUrl = 'https://gyazo.com/b58814c38163a3baf8d88d830e5166da/thumb/1000'
+const imageUrl = 'https://cdn.stocksnap.io/img-thumbs/960w/YVC8CSWY29.jpg'
 
-const ArticleCard: React.FC<ArticleCardProps> = ({
+const PostCard: React.FC<ArticleCardProps> = ({
   date,
   description,
   slug,
   title,
-  tags,
+  tags = [],
   image = imageUrl,
 }) => {
   return (
@@ -31,8 +33,12 @@ const ArticleCard: React.FC<ArticleCardProps> = ({
             <Image src={image} />
           </ImageFrame>
           <Info>
+            <TagList tags={tags} />
             <Title>{title}</Title>
-            <p>{description}</p>
+            <Desc>{description}</Desc>
+            <Day>
+              <Date date={date} />
+            </Day>
           </Info>
         </Container>
       </Card>
@@ -41,23 +47,11 @@ const ArticleCard: React.FC<ArticleCardProps> = ({
 }
 
 const StyledLink = styled(Link)`
-  margin: 10px 0px 20px;
-
-  @media screen and (max-width: 480px) {
-    width: 100%;
-  }
-`
-const Container = styled.div`
-  display: flex;
-  flex-wrap: wrap;
   cursor: pointer;
-  background: rgb(255, 255, 255);
-  transition: all 0.3s ease-in-out 0s;
 `
+const Container = styled.div``
 const ImageFrame = styled.div`
-  height: 200px;
   display: flex;
-  width: 100%;
   border-radius: 2px 2px 0 0;
   background: linear-gradient(
     rgb(255, 255, 255) 0%,
@@ -66,37 +60,31 @@ const ImageFrame = styled.div`
     rgb(177, 177, 177) 75%,
     rgb(73, 73, 73) 100%
   );
-
-  @media screen and (max-width: 480px) {
-    height: 150px;
-  }
 `
 const Image = styled.img`
-  object-fit: cover;
-  width: 100%;
+  max-width: 100%;
+  height: auto;
   object-position: 50% 50%;
   opacity: 0.8;
   border-radius: 2px 2px 0 0;
 `
 const Info = styled.div`
-  height: 90px;
-  width: 100%;
-  border-radius: 0px 0px 2px 2px;
-  margin: 10px 15px;
-
-  @media screen and (max-width: ${Size.breakPoint.mobile}px) {
-    height: 100px;
-  }
+  padding: 1rem;
 `
 const Title = styled.p`
-  line-height: 1.5;
-  font-size: 1em;
-  letter-spacing: 0.15rem;
-  font-weight: 600;
-
-  @media screen and (max-width: ${Size.breakPoint.mobile}px) {
-    font-size: 1.1rem;
-  }
+  font-size: ${Size.font.l}rem;
+  font-weight: bold;
+  color: ${Color.font.base};
+  margin-top: 0.8rem;
+`
+const Desc = styled.p`
+  font-size: ${Size.font.s}rem;
+  color: ${Color.font.light};
+  line-height: 1.3;
+  margin-bottom: 1.6rem;
+`
+const Day = styled.p`
+  text-align: right;
 `
 
-export default ArticleCard
+export default PostCard

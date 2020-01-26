@@ -22,7 +22,6 @@ const Wrapper = styled.div`
 const commonStyle = css`
   padding: 0;
   margin: 0.25rem;
-  display: -webkit-box;
   display: flex;
   align-content: center;
   -webkit-box-align: center;
