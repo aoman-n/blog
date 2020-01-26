@@ -10,9 +10,10 @@ interface ArticleCardProps {
   date: string
   description: string
   slug: string
-  tags?: string[]
+  tags?: (string | null | undefined)[]
   title: string
   image?: string
+  expert: string
 }
 
 const imageUrl = 'https://cdn.stocksnap.io/img-thumbs/960w/YVC8CSWY29.jpg'
@@ -24,23 +25,23 @@ const PostCard: React.FC<ArticleCardProps> = ({
   title,
   tags = [],
   image = imageUrl,
+  expert,
 }) => {
+  console.log('description: ', description)
   return (
     <StyledLink to={`/posts/${slug}`}>
       <Card shadow>
-        <Container>
-          <ImageFrame>
-            <Image src={image} />
-          </ImageFrame>
-          <Info>
-            <TagList tags={tags} />
-            <Title>{title}</Title>
-            <Desc>{description}</Desc>
-            <Day>
-              <Date date={date} />
-            </Day>
-          </Info>
-        </Container>
+        <ImageFrame>
+          <Image src={image} />
+        </ImageFrame>
+        <Info>
+          <TagList tags={tags} />
+          <Title>{title}</Title>
+          <Desc>{expert}</Desc>
+          <Day>
+            <Date date={date} />
+          </Day>
+        </Info>
       </Card>
     </StyledLink>
   )
@@ -48,8 +49,8 @@ const PostCard: React.FC<ArticleCardProps> = ({
 
 const StyledLink = styled(Link)`
   cursor: pointer;
+  position: relative;
 `
-const Container = styled.div``
 const ImageFrame = styled.div`
   display: flex;
   border-radius: 2px 2px 0 0;
@@ -72,19 +73,22 @@ const Info = styled.div`
   padding: 1rem;
 `
 const Title = styled.p`
-  font-size: ${Size.font.l}rem;
+  font-size: ${Size.font.m}rem;
   font-weight: bold;
   color: ${Color.font.base};
   margin-top: 0.8rem;
 `
 const Desc = styled.p`
+  max-height: 70px;
   font-size: ${Size.font.s}rem;
   color: ${Color.font.light};
   line-height: 1.3;
   margin-bottom: 1.6rem;
 `
 const Day = styled.p`
-  text-align: right;
+  position: absolute;
+  bottom: 0.4rem;
+  right: 0.8rem;
 `
 
 export default PostCard

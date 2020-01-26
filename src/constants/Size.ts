@@ -3,11 +3,11 @@ const header = {
 }
 
 const footer = {
-  height: 120,
+  height: 100,
 }
 
 const width = {
-  index: 870,
+  index: 940,
 }
 
 const breakPoint = {

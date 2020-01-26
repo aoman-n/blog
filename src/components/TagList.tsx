@@ -2,10 +2,12 @@ import React from 'react'
 import styled from 'styled-components'
 import Tag from './atoms/Tag'
 
-const TagList: React.FC<{ tags: string[] }> = ({ tags }) => (
+const TagList: React.FC<{ tags: (string | null | undefined)[] }> = ({
+  tags,
+}) => (
   <Component>
     {tags.map((tag, i) => (
-      <Tag key={i} tag={tag} />
+      <>{tag && <Tag key={i} tag={tag} />}</>
     ))}
   </Component>
 )

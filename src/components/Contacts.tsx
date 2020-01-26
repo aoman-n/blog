@@ -24,12 +24,10 @@ const commonStyle = css`
   margin: 0.25rem;
   display: flex;
   align-content: center;
-  -webkit-box-align: center;
   align-items: center;
-  -webkit-box-pack: center;
   justify-content: center;
-  height: 2.7rem;
-  width: 2.7rem;
+  height: 4rem;
+  width: 4rem;
   line-height: 2.7rem;
   border-radius: 50%;
   text-align: center;
@@ -37,9 +35,10 @@ const commonStyle = css`
 `
 const TwitterLink = styled.a`
   ${commonStyle}
+  margin-right: 12px;
 
-  > svg {
-    :hover {
+  &:hover {
+    svg {
       transition: 0.1s;
       fill: ${Color.twitter};
     }
@@ -48,8 +47,8 @@ const TwitterLink = styled.a`
 const GithubLink = styled.a`
   ${commonStyle}
 
-  > svg {
-    :hover {
+  &:hover {
+    > svg {
       transition: 0.1s;
       fill: ${Color.black};
     }

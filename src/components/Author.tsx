@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import Contacts from '../components/Contacts'
-import { Color } from '../constants'
+import { Color, Size } from '../constants'
 
 const Author: React.FC = () => {
   return (
@@ -14,7 +14,7 @@ const Author: React.FC = () => {
         <Contacts />
       </div>
       <Description>
-        20代後半で一念発起してWebエンジニアになったひと🍣
+        20代後半で一念発起してWebエンジニアになったひと
         <br />
         Ruby/Rails, Node/Express/Koa, Typescript/React/Redux
       </Description>
@@ -34,20 +34,19 @@ const Avatar = styled.div`
   width: 80px;
 `
 const Name = styled.div`
-  font-size: 1.2em;
+  font-size: ${Size.font.m}rem;
   margin: 16px 0 12px;
   font-weight: 700;
 `
 const Description = styled.div`
+  font-size: ${Size.font.s}rem;
   text-align: center;
-  line-height: 1.7;
   margin: 1em 0 4em;
-  color: ${Color.darkGray};
 `
 const AvatarImage = styled.img`
   height: 100%;
   border-radius: 50%;
-  border: 1px solid gray;
+  border: 1px solid ${Color.font.light};
 `
 
 export default Author

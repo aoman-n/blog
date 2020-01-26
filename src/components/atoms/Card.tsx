@@ -15,6 +15,7 @@ const Card: React.FC<Props> = ({ shadow = false, children, ...props }) => {
 }
 
 const Container = styled.div<{ shadow: boolean }>`
+  height: 100%;
   border-radius: 2px;
   display: inline-block;
   background-color: white;

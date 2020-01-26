@@ -19,13 +19,19 @@ const Component: React.FC = props => (
     />
     <Header />
     <MarkdownHighLight />
-    <Body>{props.children}</Body>
+    <Body>
+      <Inner>{props.children}</Inner>
+    </Body>
     <Footer />
   </div>
 )
 
 const Body = styled.div`
   min-height: calc(100vh - ${Size.footer.height}px - ${Size.header.height}px);
+`
+const Inner = styled.div`
+  max-width: ${Size.width.index}px;
+  margin: 0 auto;
 `
 const MarkdownHighLight = createGlobalStyle`
   html {
@@ -35,6 +41,12 @@ const MarkdownHighLight = createGlobalStyle`
   @media screen and (max-width: ${Size.breakPoint.mobile}px) {
     html {
       font-size: 50%;
+    }
+  }
+
+  @media screen and (max-width: ${Size.breakPoint.tablet}px) {
+    html {
+      font-size: 56.25%;
     }
   }
 
