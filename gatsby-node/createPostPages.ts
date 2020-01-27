@@ -2,9 +2,10 @@ import path from 'path'
 import { Actions, CreatePagesArgs } from 'gatsby'
 import { PostsForCreatePagesQuery } from '../types/graphqlTypes'
 
-// type Result = {
-//   data: PostsForCreatePagesQuery
-// }
+interface Tag {
+  name: string
+  count: number
+}
 
 export type BlogPostTemplateContext = {
   slug: string

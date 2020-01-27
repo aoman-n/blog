@@ -4,6 +4,8 @@ import styled from 'styled-components'
 import PostList from '../components/PostList'
 import Author from '../components/Author'
 import SubTitle from '../components/SubTitle'
+import TagCount from '../components/TagCount'
+import TagCountList from '../components/TagCountList'
 import { IndexPageQuery } from '../../types/graphqlTypes'
 import Layout from '../layouts'
 
@@ -23,6 +25,7 @@ const Component: React.FC<Props> = ({ data }) => {
         </section>
         <section>
           <SubTitle title="Tags" />
+          <TagCountList data={data.allMarkdownRemark.edges} />
         </section>
         <section>
           <SubTitle title="Author" />
@@ -38,7 +41,7 @@ const Container = styled.div`
 `
 const Article = styled.article`
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, minmax(240px, 1fr));
   gap: 25px;
 `
 

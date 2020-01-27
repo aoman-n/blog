@@ -2336,6 +2336,26 @@ export type PostsForCreatePagesQuery = (
   ) }
 );
 
+export type TagsForCreatePagesQueryVariables = {};
+
+
+export type TagsForCreatePagesQuery = (
+  { __typename?: 'Query' }
+  & { allMarkdownRemark: (
+    { __typename?: 'MarkdownRemarkConnection' }
+    & { edges: Array<(
+      { __typename?: 'MarkdownRemarkEdge' }
+      & { node: (
+        { __typename?: 'MarkdownRemark' }
+        & { frontmatter: Maybe<(
+          { __typename?: 'MarkdownRemarkFrontmatter' }
+          & Pick<MarkdownRemarkFrontmatter, 'tags'>
+        )> }
+      ) }
+    )> }
+  ) }
+);
+
 export type BlogPostQueryVariables = {
   slug: Scalars['String']
 };

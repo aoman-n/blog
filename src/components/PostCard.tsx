@@ -76,11 +76,11 @@ const Title = styled.p`
   font-size: ${Size.font.m}rem;
   font-weight: bold;
   color: ${Color.font.base};
-  margin-top: 0.8rem;
+  margin: 0.8rem 0;
 `
 const Desc = styled.p`
   max-height: 70px;
-  font-size: ${Size.font.s}rem;
+  font-size: ${Size.font.ss}rem;
   color: ${Color.font.light};
   line-height: 1.3;
   margin-bottom: 1.6rem;
