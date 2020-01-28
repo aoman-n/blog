@@ -27,7 +27,7 @@ const BlogPost: React.FC<Props> = ({ data }) => {
         <Article>
           <Inner>
             <Date>{date}</Date>
-            <StyledHeader as="h1">{title}</StyledHeader>
+            <h2>{title}</h2>
             <div>
               <Content dangerouslySetInnerHTML={{ __html: html || '' }} />
             </div>
@@ -44,9 +44,7 @@ const BlogPost: React.FC<Props> = ({ data }) => {
 const Container = styled.div`
   display: flex;
   justify-content: center;
-`
-const StyledHeader = styled.div`
-  margin-top: 0;
+  margin: 5rem 0;
 `
 const Date = styled.p`
   margin-bottom: 4px;
@@ -56,14 +54,14 @@ const Article = styled.article`
   background-color: #ffffff;
   width: calc(100% - 240px);
 
-  @media screen and (max-width: ${Size.breakPoint.tablet}px) {
+  @media (max-width: ${Size.breakPoint.tablet}px) {
     width: 100%;
   }
 `
 const Inner = styled.div`
   padding: 40px;
 
-  @media screen and (max-width: ${Size.breakPoint.mobile}px) {
+  @media (max-width: ${Size.breakPoint.mobile}px) {
     padding: 24px;
   }
 
@@ -71,13 +69,14 @@ const Inner = styled.div`
     padding: 0;
   }
 `
-const ScrollNav = styled.div`
+const ScrollNav = styled.aside`
   position: sticky;
   top: 0;
   will-change: transform;
   max-height: 100vh;
   top: 12px;
   width: 240px;
+  overflow: scroll;
 
   @media screen and (max-width: ${Size.breakPoint.tablet}px) {
     display: none;

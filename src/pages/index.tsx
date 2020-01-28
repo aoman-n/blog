@@ -7,6 +7,7 @@ import SubTitle from '../components/SubTitle'
 import TagCountList from '../components/TagCountList'
 import { IndexPageQuery } from '../../types/graphqlTypes'
 import Layout from '../layouts'
+import { Size } from '../constants'
 
 type Props = {
   data: IndexPageQuery
@@ -16,25 +17,48 @@ const Component: React.FC<Props> = ({ data }) => {
   return (
     <Layout>
       <Container>
-        <section>
+        <PostsSection>
           <SubTitle>Latest stories</SubTitle>
           <PostList posts={data.allMarkdownRemark.edges} />
-        </section>
-        <section>
+        </PostsSection>
+        <TagsSection>
           <SubTitle>Tags</SubTitle>
           <TagCountList data={data.allMarkdownRemark.edges} />
-        </section>
-        <section>
+        </TagsSection>
+        <AuthorSection>
           <SubTitle>Author</SubTitle>
           <Author />
-        </section>
+        </AuthorSection>
       </Container>
     </Layout>
   )
 }
 
+const PostsSection = styled.section`
+  order: 1;
+
+  @media (max-width: ${Size.breakPoint.mobile}px) {
+    order: 2;
+  }
+`
+const TagsSection = styled.section`
+  order: 2;
+
+  @media (max-width: ${Size.breakPoint.mobile}px) {
+    order: 3;
+  }
+`
+const AuthorSection = styled.section`
+  order: 3;
+
+  @media (max-width: ${Size.breakPoint.mobile}px) {
+    order: 1;
+  }
+`
 const Container = styled.div`
   letter-spacing: 0.09em;
+  display: flex;
+  flex-direction: column;
 `
 
 export const pageQuery = graphql`

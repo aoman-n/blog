@@ -55,6 +55,7 @@ const MarkdownHighLight = createGlobalStyle`
     font-size: 1.6rem;
     line-height: 1.7;
     color: ${Color.font.base};
+    background-color: ${Color.background};
   }
 `
 

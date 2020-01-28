@@ -4,7 +4,7 @@ import { Size, Color } from '../constants'
 export default styled.div`
   margin-top: 24px;
   line-height: 1.8;
-  font-size: 1em;
+  font-size: ${Size.font.s}rem;
   word-break: break-all;
   color: ${Color.darkGray};
 
@@ -16,7 +16,7 @@ export default styled.div`
     display: block;
     padding: 10.5px;
     margin: 0 0 11px;
-    font-size: 0.9em;
+    font-size: ${Size.font.ss}rem;
     line-height: 1.6;
     word-break: break-all;
     word-wrap: break-word;
@@ -24,10 +24,6 @@ export default styled.div`
     background-color: #3e4149;
     border: 1px solid #ccc;
     border-radius: 4px;
-
-    @media screen and (max-width: ${Size.breakPoint.mobile}px) {
-      font-size: 0.8em;
-    }
   }
 
   pre code {
@@ -61,7 +57,7 @@ export default styled.div`
   }
 
   h2 {
-    font-size: 160%;
+    font-size: 2.0rem;
     margin: 30px 0 16px;
     font-weight: 900;
     border-bottom: 2px solid rgba(0, 0, 0, 0.1);
@@ -93,7 +89,7 @@ export default styled.div`
   h3 {
     margin: 24px 0;
     margin-bottom: 10px;
-    font-size: 130%;
+    font-size: 1.8rem;
     font-weight: 900;
   }
 
@@ -103,7 +99,7 @@ export default styled.div`
   }
 
   h4 {
-    font-size: 120%;
+    font-size: 1.6rem;
     font-weight: 900;
   }
 
@@ -146,7 +142,7 @@ export default styled.div`
   }
 
   blockquote {
-    font-size: 100%;
+    font-size: ${Size.font.s}rem;
     color: rgba(60, 74, 96, 0.7);
     border-left: 5px solid rgba(0, 0, 0, 0.1);
     margin-bottom: 30px;
@@ -184,7 +180,7 @@ export default styled.div`
     background-color: white;
     border: 1px solid rgba(0, 0, 0, 0.1);
     padding: 2px 7px;
-    font-size: 0.6em;
+    font-size: ${Size.font.s};
     font-family: 'Lato', Emoji, Arial, 'ヒラギノ角ゴPro W3',
       'Hiragino Kaku Gothic Pro', 'メイリオ', Meiryo, 'ＭＳ Ｐゴシック',
       sans-serif;
@@ -252,7 +248,6 @@ export default styled.div`
     margin-left: -20px;
     width: 20px;
     height: 20px;
-    /* font-size: 20px; */
     font-size: 1.2em;
     text-align: right;
     padding-top: 8px;
@@ -612,7 +607,7 @@ export default styled.div`
     color: #ffffff;
     background-color: #3e4149;
     margin-bottom: -0.65em;
-    padding: 0.7rem 1.05rem;
+    padding: 1.2rem 1.05rem;
     font-size: 0.8em;
     line-height: 0.2;
     font-family: SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono,

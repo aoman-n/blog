@@ -7,13 +7,19 @@ import { Size } from '.'
 */
 export const layoutWidthStyle = css`
   max-width: ${Size.width.index}px;
+  width: 70%;
+  min-width: calc(${Size.breakPoint.tablet} - 30) px;
 
   @media (max-width: ${Size.breakPoint.tablet}px) {
-    padding: 0 34px;
+    /* padding: 0 40px; */
+    width: 80%;
+    min-width: calc(${Size.breakPoint.mobile} - 30) px;
   }
 
   @media (max-width: ${Size.breakPoint.mobile}px) {
-    padding: 0 14px;
+    padding: 0;
+    width: initial;
+    max-width: initial;
   }
 `
 
