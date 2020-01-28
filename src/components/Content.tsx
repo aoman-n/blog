@@ -69,7 +69,7 @@ export default styled.div`
       width: 100px;
       bottom: -2px;
       height: 2px;
-      background-color: #4d9abf;
+      background-color: ${Color.primary};
     }
   }
 
@@ -143,7 +143,7 @@ export default styled.div`
 
   blockquote {
     font-size: ${Size.font.s}rem;
-    color: rgba(60, 74, 96, 0.7);
+    /* color: rgba(60, 74, 96, 0.7); */
     border-left: 5px solid rgba(0, 0, 0, 0.1);
     margin-bottom: 30px;
     padding: 0 20px;
@@ -154,7 +154,6 @@ export default styled.div`
   }
 
   code {
-    color: #3c4a60;
     white-space: pre-wrap;
     border-radius: 4px;
     background-color: rgba(0, 0, 0, 0.05);
@@ -166,6 +165,9 @@ export default styled.div`
 
   pre code {
     /* background: #f6f6f6; */
+    /* &::selection {
+      background: blue;
+    } */
   }
 
   .code-block .highlight {
@@ -337,224 +339,38 @@ export default styled.div`
     }
   }
 
-  .highlight code table td {
-    padding: 5px;
+  .token.function, .token.class-name {
+    color: #DBDDA4;
   }
-  .highlight code table pre {
-    margin: 0;
+
+  .token.keyword {
+    color: #ebd247;
   }
-  .highlight code .c,
-  .highlight code .cd {
-    color: #75715e;
-    font-style: italic;
+
+  .token.operator {
+    color: #ff8095;
   }
-  .highlight code .cm {
-    color: #75715e;
-    font-style: italic;
+
+  .token.string {
+    color: #D48E74;
   }
-  .highlight code .c1 {
-    color: #75715e;
-    font-style: italic;
+
+  .token.tag {
+    color: #4A9CDB;
   }
-  .highlight code .cp {
-    color: #75715e;
-    font-weight: bold;
+
+  .token.attr-name {
+    color: #92DDFF;
   }
-  .highlight code .cs {
-    color: #75715e;
-    font-weight: bold;
-    font-style: italic;
+
+  .token.atrule, .token.attr-value {
+    color: #D48E74;
   }
-  .highlight code .err {
-    color: #960050;
-    background-color: #1e0010;
+
+  .token.punctuation {
+    color: #808080;
   }
-  .highlight code .gi {
-    color: #ffffff;
-    background-color: #324932;
-  }
-  .highlight code .gd {
-    color: #ffffff;
-    background-color: #493131;
-  }
-  .highlight code .ge {
-    color: #000000;
-    font-style: italic;
-  }
-  .highlight code .gr {
-    color: #aa0000;
-  }
-  .highlight code .gt {
-    color: #aa0000;
-  }
-  .highlight code .gh {
-    color: #999999;
-  }
-  .highlight code .go {
-    color: #888888;
-  }
-  .highlight code .gp {
-    color: #555555;
-  }
-  .highlight code .gs {
-    font-weight: bold;
-  }
-  .highlight code .gu {
-    color: #aaaaaa;
-  }
-  .highlight code .k,
-  .highlight code .kv {
-    color: #66d9ef;
-    font-weight: bold;
-  }
-  .highlight code .kc {
-    color: #66d9ef;
-    font-weight: bold;
-  }
-  .highlight code .kd {
-    color: #66d9ef;
-    font-weight: bold;
-  }
-  .highlight code .kp {
-    color: #66d9ef;
-    font-weight: bold;
-  }
-  .highlight code .kr {
-    color: #66d9ef;
-    font-weight: bold;
-  }
-  .highlight code .kt {
-    color: #66d9ef;
-    font-weight: bold;
-  }
-  .highlight code .kn {
-    color: #f92672;
-    font-weight: bold;
-  }
-  .highlight code .ow {
-    color: #f92672;
-    font-weight: bold;
-  }
-  .highlight code .o {
-    color: #f92672;
-    font-weight: bold;
-  }
-  .highlight code .mf {
-    color: #ae81ff;
-  }
-  .highlight code .mh {
-    color: #ae81ff;
-  }
-  .highlight code .il {
-    color: #ae81ff;
-  }
-  .highlight code .mi {
-    color: #ae81ff;
-  }
-  .highlight code .mo {
-    color: #ae81ff;
-  }
-  .highlight code .m,
-  .highlight code .mb,
-  .highlight code .mx {
-    color: #ae81ff;
-  }
-  .highlight code .se {
-    color: #ae81ff;
-  }
-  .highlight code .sb {
-    color: #e6db74;
-  }
-  .highlight code .sc {
-    color: #e6db74;
-  }
-  .highlight code .sd {
-    color: #e6db74;
-  }
-  .highlight code .s2 {
-    color: #e6db74;
-  }
-  .highlight code .sh {
-    color: #e6db74;
-  }
-  .highlight code .si {
-    color: #e6db74;
-  }
-  .highlight code .sx {
-    color: #e6db74;
-  }
-  .highlight code .sr {
-    color: #e6db74;
-  }
-  .highlight code .s1 {
-    color: #e6db74;
-  }
-  .highlight code .ss {
-    color: #e6db74;
-  }
-  .highlight code .s {
-    color: #e6db74;
-  }
-  .highlight code .na {
-    color: #a6e22e;
-  }
-  .highlight code .nc {
-    color: #a6e22e;
-    font-weight: bold;
-  }
-  .highlight code .nd {
-    color: #a6e22e;
-    font-weight: bold;
-  }
-  .highlight code .ne {
-    color: #a6e22e;
-    font-weight: bold;
-  }
-  .highlight code .nf {
-    color: #a6e22e;
-    font-weight: bold;
-  }
-  .highlight code .no {
-    color: #66d9ef;
-  }
-  .highlight code .bp {
-    color: #f8f8f2;
-  }
-  .highlight code .nb {
-    color: #f8f8f2;
-  }
-  .highlight code .ni {
-    color: #f8f8f2;
-  }
-  .highlight code .nn {
-    color: #f8f8f2;
-  }
-  .highlight code .vc {
-    color: #f8f8f2;
-  }
-  .highlight code .vg {
-    color: #f8f8f2;
-  }
-  .highlight code .vi {
-    color: #f8f8f2;
-  }
-  .highlight code .nv {
-    color: #f8f8f2;
-  }
-  .highlight code .w {
-    color: #f8f8f2;
-  }
-  .highlight code .nl {
-    color: #f8f8f2;
-    font-weight: bold;
-  }
-  .highlight code .nt {
-    color: #f92672;
-  }
-  .highlight code {
-    color: #f8f8f2;
-    background-color: #3e4149;
-  }
+
 
   h1,
   h2,
@@ -566,7 +382,7 @@ export default styled.div`
   }
 
   .gatsby-highlight-code-line {
-    background-color: #708090;
+    background-color: #3e416e;
     display: block;
     margin-right: -1em;
     margin-left: -1em;
@@ -615,5 +431,12 @@ export default styled.div`
     font-weight: 600;
     border-radius: 8px 8px 0 0;
     display: table;
+  }
+
+  pre[class*="language-"]::selection,
+  pre[class*="language-"] ::selection,
+  code[class*="language-"]::selection,
+  code[class*="language-"] ::selection {
+    color: #fff;
   }
 `

@@ -70,16 +70,16 @@ const Image = styled.img`
   border-radius: 2px 2px 0 0;
 `
 const Info = styled.div`
-  padding: 1rem;
+  padding: 1.3rem;
 `
 const Title = styled.p`
-  font-size: ${Size.font.m}rem;
+  font-size: ${Size.font.s}rem;
   font-weight: bold;
   color: ${Color.font.base};
   margin: 0.8rem 0;
 `
 const Desc = styled.p`
-  max-height: 70px;
+  height: 4rem;
   font-size: ${Size.font.ss}rem;
   color: ${Color.font.light};
   line-height: 1.3;

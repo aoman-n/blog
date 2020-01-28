@@ -59,6 +59,10 @@ const Container = styled.div`
   letter-spacing: 0.09em;
   display: flex;
   flex-direction: column;
+
+  @media (max-width: ${Size.breakPoint.mobile}px) {
+    padding: 0 24px;
+  }
 `
 
 export const pageQuery = graphql`

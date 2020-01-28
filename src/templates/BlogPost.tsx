@@ -43,7 +43,7 @@ const BlogPost: React.FC<Props> = ({ data }) => {
 
 const Container = styled.div`
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   margin: 5rem 0;
 `
 const Date = styled.p`
@@ -52,7 +52,7 @@ const Date = styled.p`
 `
 const Article = styled.article`
   background-color: #ffffff;
-  width: calc(100% - 240px);
+  width: 72%;
 
   @media (max-width: ${Size.breakPoint.tablet}px) {
     width: 100%;
@@ -75,8 +75,8 @@ const ScrollNav = styled.aside`
   will-change: transform;
   max-height: 100vh;
   top: 12px;
-  width: 240px;
-  overflow: scroll;
+  width: 28%;
+  overflow: auto;
 
   @media screen and (max-width: ${Size.breakPoint.tablet}px) {
     display: none;
