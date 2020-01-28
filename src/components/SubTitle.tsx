@@ -2,10 +2,10 @@ import React from 'react'
 import styled from 'styled-components'
 import { Size, Color } from '../constants'
 
-const SubTitle: React.FC<{ title: string }> = ({ title }) => {
+const SubTitle: React.FC = ({ children }) => {
   return (
     <Component>
-      <Title>{title}</Title>
+      <Title>{children}</Title>
     </Component>
   )
 }

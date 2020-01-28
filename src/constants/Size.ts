@@ -7,7 +7,7 @@ const footer = {
 }
 
 const width = {
-  index: 940,
+  index: 980,
 }
 
 const breakPoint = {

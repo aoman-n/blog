@@ -4,7 +4,6 @@ import styled from 'styled-components'
 import PostList from '../components/PostList'
 import Author from '../components/Author'
 import SubTitle from '../components/SubTitle'
-import TagCount from '../components/TagCount'
 import TagCountList from '../components/TagCountList'
 import { IndexPageQuery } from '../../types/graphqlTypes'
 import Layout from '../layouts'
@@ -18,17 +17,15 @@ const Component: React.FC<Props> = ({ data }) => {
     <Layout>
       <Container>
         <section>
-          <SubTitle title="Latest stories" />
-          <Article>
-            <PostList posts={data.allMarkdownRemark.edges} />
-          </Article>
+          <SubTitle>Latest stories</SubTitle>
+          <PostList posts={data.allMarkdownRemark.edges} />
         </section>
         <section>
-          <SubTitle title="Tags" />
+          <SubTitle>Tags</SubTitle>
           <TagCountList data={data.allMarkdownRemark.edges} />
         </section>
         <section>
-          <SubTitle title="Author" />
+          <SubTitle>Author</SubTitle>
           <Author />
         </section>
       </Container>
@@ -38,11 +35,6 @@ const Component: React.FC<Props> = ({ data }) => {
 
 const Container = styled.div`
   letter-spacing: 0.09em;
-`
-const Article = styled.article`
-  display: grid;
-  grid-template-columns: repeat(3, minmax(240px, 1fr));
-  gap: 25px;
 `
 
 export const pageQuery = graphql`

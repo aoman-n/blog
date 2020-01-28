@@ -38,8 +38,6 @@
     "react-dom": "^16.12.0",
     "react-helmet": "^5.2.1",
     "ress": "^2.0.4",
-    "semantic-ui-css": "^2.4.1",
-    "semantic-ui-react": "^0.88.2",
     "styled-components": "^5.0.0",
     "ts-node": "^8.6.2",
     "typescript": "^3.7.5"
@@ -48,7 +46,6 @@
     "@graphql-codegen/cli": "^1.11.2",
     "@graphql-codegen/typescript": "^1.11.2",
     "@graphql-codegen/typescript-operations": "^1.11.2",
-    "@types/semantic-ui": "^2.2.7",
     "@types/styled-components": "^4.4.2",
     "@typescript-eslint/eslint-plugin": "^2.17.0",
     "@typescript-eslint/parser": "^2.17.0",

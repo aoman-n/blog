@@ -45,7 +45,7 @@ export const createPostsPages = async ({
     throw result.errors
   }
   const posts = result.data.allMarkdownRemark.edges
-  const blogPost = path.resolve('src/templates/blog-post.tsx')
+  const blogPost = path.resolve('src/templates/BlogPost.tsx')
 
   posts.forEach((post, i) => {
     if (!post.node.frontmatter || !post.node.frontmatter.slug) {

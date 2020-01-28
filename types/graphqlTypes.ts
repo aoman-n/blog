@@ -1567,12 +1567,16 @@ export type SitePageContext = {
   slug?: Maybe<Scalars['String']>,
   previous?: Maybe<SitePageContextPrevious>,
   next?: Maybe<SitePageContextNext>,
+  tagname?: Maybe<Scalars['String']>,
+  count?: Maybe<Scalars['Int']>,
 };
 
 export type SitePageContextFilterInput = {
   slug?: Maybe<StringQueryOperatorInput>,
   previous?: Maybe<SitePageContextPreviousFilterInput>,
   next?: Maybe<SitePageContextNextFilterInput>,
+  tagname?: Maybe<StringQueryOperatorInput>,
+  count?: Maybe<IntQueryOperatorInput>,
 };
 
 export type SitePageContextNext = {
@@ -1746,6 +1750,8 @@ export enum SitePageFieldsEnum {
   ContextNextFrontmatterSlug = 'context___next___frontmatter___slug',
   ContextNextFrontmatterTags = 'context___next___frontmatter___tags',
   ContextNextFrontmatterTitle = 'context___next___frontmatter___title',
+  ContextTagname = 'context___tagname',
+  ContextCount = 'context___count',
   PluginCreatorId = 'pluginCreator___id',
   PluginCreatorParentId = 'pluginCreator___parent___id',
   PluginCreatorParentParentId = 'pluginCreator___parent___parent___id',
@@ -1804,6 +1810,7 @@ export enum SitePageFieldsEnum {
   PluginCreatorPluginOptionsOffsetY = 'pluginCreator___pluginOptions___offsetY',
   PluginCreatorPluginOptionsIcon = 'pluginCreator___pluginOptions___icon',
   PluginCreatorPluginOptionsClassName = 'pluginCreator___pluginOptions___className',
+  PluginCreatorPluginOptionsIgnoreFileExtensions = 'pluginCreator___pluginOptions___ignoreFileExtensions',
   PluginCreatorPluginOptionsRuleInclude = 'pluginCreator___pluginOptions___rule___include',
   PluginCreatorPluginOptionsPathCheck = 'pluginCreator___pluginOptions___pathCheck',
   PluginCreatorNodeApIs = 'pluginCreator___nodeAPIs',
@@ -2008,6 +2015,7 @@ export enum SitePluginFieldsEnum {
   PluginOptionsPluginsPluginOptionsOffsetY = 'pluginOptions___plugins___pluginOptions___offsetY',
   PluginOptionsPluginsPluginOptionsIcon = 'pluginOptions___plugins___pluginOptions___icon',
   PluginOptionsPluginsPluginOptionsClassName = 'pluginOptions___plugins___pluginOptions___className',
+  PluginOptionsPluginsPluginOptionsIgnoreFileExtensions = 'pluginOptions___plugins___pluginOptions___ignoreFileExtensions',
   PluginOptionsPluginsNodeApIs = 'pluginOptions___plugins___nodeAPIs',
   PluginOptionsPluginsBrowserApIs = 'pluginOptions___plugins___browserAPIs',
   PluginOptionsPluginsSsrApIs = 'pluginOptions___plugins___ssrAPIs',
@@ -2020,6 +2028,7 @@ export enum SitePluginFieldsEnum {
   PluginOptionsOffsetY = 'pluginOptions___offsetY',
   PluginOptionsIcon = 'pluginOptions___icon',
   PluginOptionsClassName = 'pluginOptions___className',
+  PluginOptionsIgnoreFileExtensions = 'pluginOptions___ignoreFileExtensions',
   PluginOptionsRuleInclude = 'pluginOptions___rule___include',
   PluginOptionsPathCheck = 'pluginOptions___pathCheck',
   NodeApIs = 'nodeAPIs',
@@ -2153,6 +2162,7 @@ export type SitePluginPluginOptions = {
   offsetY?: Maybe<Scalars['String']>,
   icon?: Maybe<Scalars['String']>,
   className?: Maybe<Scalars['String']>,
+  ignoreFileExtensions?: Maybe<Array<Maybe<Scalars['String']>>>,
   rule?: Maybe<SitePluginPluginOptionsRule>,
   pathCheck?: Maybe<Scalars['Boolean']>,
 };
@@ -2167,6 +2177,7 @@ export type SitePluginPluginOptionsFilterInput = {
   offsetY?: Maybe<StringQueryOperatorInput>,
   icon?: Maybe<StringQueryOperatorInput>,
   className?: Maybe<StringQueryOperatorInput>,
+  ignoreFileExtensions?: Maybe<StringQueryOperatorInput>,
   rule?: Maybe<SitePluginPluginOptionsRuleFilterInput>,
   pathCheck?: Maybe<BooleanQueryOperatorInput>,
 };
@@ -2208,6 +2219,7 @@ export type SitePluginPluginOptionsPluginsPluginOptions = {
   offsetY?: Maybe<Scalars['String']>,
   icon?: Maybe<Scalars['String']>,
   className?: Maybe<Scalars['String']>,
+  ignoreFileExtensions?: Maybe<Array<Maybe<Scalars['String']>>>,
   rule?: Maybe<SitePluginPluginOptionsPluginsPluginOptionsRule>,
 };
 
@@ -2218,6 +2230,7 @@ export type SitePluginPluginOptionsPluginsPluginOptionsFilterInput = {
   offsetY?: Maybe<StringQueryOperatorInput>,
   icon?: Maybe<StringQueryOperatorInput>,
   className?: Maybe<StringQueryOperatorInput>,
+  ignoreFileExtensions?: Maybe<StringQueryOperatorInput>,
   rule?: Maybe<SitePluginPluginOptionsPluginsPluginOptionsRuleFilterInput>,
 };
 
@@ -2378,4 +2391,27 @@ export type BlogPostQuery = (
       )>>> }
     )>>> }
   )> }
+);
+
+export type TagsQueryVariables = {
+  tagname: Scalars['String']
+};
+
+
+export type TagsQuery = (
+  { __typename?: 'Query' }
+  & { allMarkdownRemark: (
+    { __typename?: 'MarkdownRemarkConnection' }
+    & { edges: Array<(
+      { __typename?: 'MarkdownRemarkEdge' }
+      & { node: (
+        { __typename?: 'MarkdownRemark' }
+        & Pick<MarkdownRemark, 'id' | 'excerpt'>
+        & { frontmatter: Maybe<(
+          { __typename?: 'MarkdownRemarkFrontmatter' }
+          & Pick<MarkdownRemarkFrontmatter, 'date' | 'description' | 'title' | 'tags' | 'slug'>
+        )> }
+      ) }
+    )> }
+  ) }
 );

@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
 import { graphql } from 'gatsby'
-import { Header } from 'semantic-ui-react'
 import Content from '../components/Content'
 import ScrollSyncToc from '../components/ScrollSyncToc'
 import { BlogPostTemplateContext } from '../../gatsby-node/createPostPages'
@@ -14,33 +13,7 @@ type Props = {
   pageContext: BlogPostTemplateContext
 }
 
-export const templateQuery = graphql`
-  query BlogPost($slug: String!) {
-    markdownRemark(frontmatter: { slug: { eq: $slug } }) {
-      id
-      frontmatter {
-        date(formatString: "YYYY.MM.DD")
-        description
-        slug
-        tags
-        title
-      }
-      html
-      headingsDetail {
-        id
-        value
-        depth
-        parents {
-          id
-          value
-          depth
-        }
-      }
-    }
-  }
-`
-
-const Component: React.FC<Props> = ({ data }) => {
+const BlogPost: React.FC<Props> = ({ data }) => {
   if (!data.markdownRemark || !data.markdownRemark.frontmatter) {
     return null
   }
@@ -72,7 +45,7 @@ const Container = styled.div`
   display: flex;
   justify-content: center;
 `
-const StyledHeader = styled(Header)`
+const StyledHeader = styled.div`
   margin-top: 0;
 `
 const Date = styled.p`
@@ -111,4 +84,30 @@ const ScrollNav = styled.div`
   }
 `
 
-export default Component
+export const templateQuery = graphql`
+  query BlogPost($slug: String!) {
+    markdownRemark(frontmatter: { slug: { eq: $slug } }) {
+      id
+      frontmatter {
+        date(formatString: "YYYY.MM.DD")
+        description
+        slug
+        tags
+        title
+      }
+      html
+      headingsDetail {
+        id
+        value
+        depth
+        parents {
+          id
+          value
+          depth
+        }
+      }
+    }
+  }
+`
+
+export default BlogPost

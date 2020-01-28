@@ -10,7 +10,7 @@ interface ArticleCardProps {
   date: string
   description: string
   slug: string
-  tags?: (string | null | undefined)[]
+  tags: (string | null | undefined)[]
   title: string
   image?: string
   expert: string
