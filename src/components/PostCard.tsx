@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import styled from 'styled-components'
+import Image from '../components/Image'
 import Card from './atoms/Card'
 import TagList from './TagList'
 import Date from './atoms/Date'
@@ -12,8 +13,8 @@ interface ArticleCardProps {
   slug: string
   tags: (string | null | undefined)[]
   title: string
-  image?: string
   expert: string
+  thumbnail: string
 }
 
 const imageUrl = 'https://cdn.stocksnap.io/img-thumbs/960w/YVC8CSWY29.jpg'
@@ -24,15 +25,19 @@ const PostCard: React.FC<ArticleCardProps> = ({
   slug,
   title,
   tags = [],
-  image = imageUrl,
+  thumbnail,
   expert,
 }) => {
-  console.log('description: ', description)
+  console.log('thumbnail: ', thumbnail)
   return (
-    <StyledLink to={`/posts/${slug}`}>
-      <Card shadow>
+    <Card shadow>
+      <StyledLink to={`/posts/${slug}`}>
         <ImageFrame>
-          <Image src={image} />
+          {thumbnail ? (
+            <Image filename={thumbnail} />
+          ) : (
+            <StyledImage src={imageUrl} alt="thumbnailUrl" />
+          )}
         </ImageFrame>
         <Info>
           <TagList tags={tags} />
@@ -42,17 +47,17 @@ const PostCard: React.FC<ArticleCardProps> = ({
             <Date date={date} />
           </Day>
         </Info>
-      </Card>
-    </StyledLink>
+      </StyledLink>
+    </Card>
   )
 }
 
 const StyledLink = styled(Link)`
   cursor: pointer;
-  position: relative;
+  text-decoration: none;
 `
 const ImageFrame = styled.div`
-  display: flex;
+  /* display: flex;
   border-radius: 2px 2px 0 0;
   background: linear-gradient(
     rgb(255, 255, 255) 0%,
@@ -60,9 +65,9 @@ const ImageFrame = styled.div`
     rgb(212, 212, 212) 50%,
     rgb(177, 177, 177) 75%,
     rgb(73, 73, 73) 100%
-  );
+  ); */
 `
-const Image = styled.img`
+const StyledImage = styled.img`
   max-width: 100%;
   height: auto;
   object-position: 50% 50%;
@@ -76,14 +81,13 @@ const Title = styled.p`
   font-size: ${Size.font.s}rem;
   font-weight: bold;
   color: ${Color.font.base};
-  margin: 0.8rem 0;
+  margin: 0.8rem 0 1rem 0;
 `
 const Desc = styled.p`
-  height: 4rem;
   font-size: ${Size.font.ss}rem;
   color: ${Color.font.light};
   line-height: 1.3;
-  margin-bottom: 1.6rem;
+  margin-bottom: 3rem;
 `
 const Day = styled.p`
   position: absolute;

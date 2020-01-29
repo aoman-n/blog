@@ -8,9 +8,13 @@ keywords:
   - webpack
   - React
 slug: webpack
+thumbnail: 2020/01/webpack/thumbnail.jpg
+featuredImage: sakana.png
 ---
 
 ## はじめに
+
+![](./sakana.png)
 
 🍣🍣🍣
 :100:

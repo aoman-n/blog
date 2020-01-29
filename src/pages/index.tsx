@@ -1,6 +1,7 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import styled from 'styled-components'
+import Image from '../components/Image'
 import PostList from '../components/PostList'
 import Author from '../components/Author'
 import SubTitle from '../components/SubTitle'
@@ -14,9 +15,12 @@ type Props = {
 }
 
 const Component: React.FC<Props> = ({ data }) => {
+  console.log(data.allMarkdownRemark.edges)
+
   return (
     <Layout>
       <Container>
+        {/* <Image filename="2020/01/webpack/thumbnail.jpg" /> */}
         <PostsSection>
           <SubTitle>Latest stories</SubTitle>
           <PostList posts={data.allMarkdownRemark.edges} />
@@ -83,6 +87,7 @@ export const pageQuery = graphql`
             title
             tags
             slug
+            thumbnail
           }
         }
       }

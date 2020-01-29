@@ -18,15 +18,17 @@ const Footer = styled.footer`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background-color: ${Color.background};
+  background-color: ${Color.primary};
 `
 const SiteTitle = styled(Link)`
+  font-weight: bold;
   cursor: pointer;
-  color: ${Color.darkGray};
+  color: #fff;
   font-size: 1.1em;
   letter-spacing: 0.1em;
   text-decoration: underline;
   font-size: ${Size.font.s}rem;
+  text-shadow: 0 1px 3px rgba(120, 180, 180, 0.5);
 
   &:hover {
     opacity: 0.8;

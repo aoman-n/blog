@@ -5,7 +5,7 @@ import Icon from '../Icon'
 import { Color } from '../../constants'
 
 const Tag: React.FC<{ tag: string }> = ({ tag }) => (
-  <Component to="/">
+  <Component to={`/tags/${tag}`}>
     <Icon icon="tag" width={8} fill="#fff" />
     <span>{tag}</span>
   </Component>

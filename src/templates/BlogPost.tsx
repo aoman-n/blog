@@ -93,6 +93,17 @@ export const templateQuery = graphql`
         slug
         tags
         title
+        featuredImage {
+          childImageSharp {
+            fluid(maxWidth: 800) {
+              aspectRatio
+              base64
+              sizes
+              src
+              srcSet
+            }
+          }
+        }
       }
       html
       headingsDetail {

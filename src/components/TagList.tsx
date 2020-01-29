@@ -5,11 +5,7 @@ import Tag from './atoms/Tag'
 const TagList: React.FC<{ tags: (string | null | undefined)[] }> = ({
   tags,
 }) => (
-  <Component>
-    {tags.map((tag, i) => (
-      <>{tag && <Tag key={i} tag={tag} />}</>
-    ))}
-  </Component>
+  <Component>{tags.map(tag => tag && <Tag key={tag} tag={tag} />)}</Component>
 )
 
 const Component = styled.div`
