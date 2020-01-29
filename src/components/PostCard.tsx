@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'gatsby'
+import { navigate } from 'gatsby'
 import styled from 'styled-components'
 import Image from '../components/Image'
 import Card from './atoms/Card'
@@ -28,10 +28,19 @@ const PostCard: React.FC<ArticleCardProps> = ({
   thumbnail,
   expert,
 }) => {
-  console.log('thumbnail: ', thumbnail)
+  /*
+    ポストカード全体を記事詳細へリンク、ポストカード内のタグをタグページへリンクするために
+    両方のページ遷移をハンドラーを作成してイベントの伝播をストップさせている。
+    SEO的にaでなんとかしたい
+  */
+  const handleNavgate = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+    e.stopPropagation()
+    navigate(`/posts/${slug}`)
+  }
+
   return (
     <Card shadow>
-      <StyledLink to={`/posts/${slug}`}>
+      <StyledLink onClick={handleNavgate}>
         <ImageFrame>
           {thumbnail ? (
             <Image filename={thumbnail} />
@@ -52,7 +61,7 @@ const PostCard: React.FC<ArticleCardProps> = ({
   )
 }
 
-const StyledLink = styled(Link)`
+const StyledLink = styled.div`
   cursor: pointer;
   text-decoration: none;
 `
@@ -89,7 +98,7 @@ const Desc = styled.p`
   line-height: 1.3;
   margin-bottom: 3rem;
 `
-const Day = styled.p`
+const Day = styled.div`
   position: absolute;
   bottom: 0.4rem;
   right: 0.8rem;

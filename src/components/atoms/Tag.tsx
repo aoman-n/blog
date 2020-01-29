@@ -1,17 +1,24 @@
 import React from 'react'
-import { Link } from 'gatsby'
+import { navigate } from 'gatsby'
 import styled from 'styled-components'
 import Icon from '../Icon'
 import { Color } from '../../constants'
 
-const Tag: React.FC<{ tag: string }> = ({ tag }) => (
-  <Component to={`/tags/${tag}`}>
-    <Icon icon="tag" width={8} fill="#fff" />
-    <span>{tag}</span>
-  </Component>
-)
+const Tag: React.FC<{ tag: string }> = ({ tag }) => {
+  const handleNavgate = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+    e.stopPropagation()
+    navigate(`/tags/${tag}`)
+  }
 
-const Component = styled(Link)`
+  return (
+    <Component onClick={handleNavgate}>
+      <Icon icon="tag" width={8} fill="#fff" />
+      <span>{tag}</span>
+    </Component>
+  )
+}
+
+const Component = styled.div`
   padding: 2px 6px;
   background-color: ${Color.secondary};
   font-size: 1rem;

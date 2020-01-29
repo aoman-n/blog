@@ -22,11 +22,10 @@ const Toc: FC<any> = ({ activeItemIds, heading }) => {
               key={item.id}
               style={{ marginLeft: `${(item.depth - 2) * 12}px` }}
             >
-              <StyledLink
-                isActive={activeItemIds.includes(item.id)}
-                to={`${location.pathname}#${item.id}`}
-              >
-                <LinkItem>{item.value}</LinkItem>
+              <StyledLink to={`${location.pathname}#${item.id}`}>
+                <LinkItem isactive={activeItemIds.includes(item.id) as boolean}>
+                  {item.value}
+                </LinkItem>
               </StyledLink>
             </ListItem>
           ))}
@@ -37,7 +36,7 @@ const Toc: FC<any> = ({ activeItemIds, heading }) => {
 }
 
 interface LinkProps {
-  isActive: boolean
+  isactive: boolean
 }
 
 const ActiveStyle = css`
@@ -50,27 +49,27 @@ const List = styled.ul`
   padding-inline-start: 12px;
 `
 const ListItem = styled.li``
-const StyledLink = styled(Link)<LinkProps>`
+const StyledLink = styled(Link)`
   display: inherit;
   padding-left: 2px;
   box-shadow: none;
   color: #aaa;
   margin-bottom: 1px;
-  padding: 4px 10px !important;
   line-height: 1.4;
   :hover {
     ${ActiveStyle}
   }
+`
+const LinkItem = styled.span<LinkProps>`
+  display: inline-block;
+  width: 100%;
+  padding: 4px 10px !important;
 
   ${props =>
-    props.isActive &&
+    props.isactive &&
     css`
       ${ActiveStyle}
     `}
-`
-const LinkItem = styled.span`
-  display: inline-block;
-  width: 100%;
 `
 
 export default Toc

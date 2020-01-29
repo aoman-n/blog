@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { graphql } from 'gatsby'
+import TagList from '../components/TagList'
 import Content from '../components/Content'
 import ScrollSyncToc from '../components/ScrollSyncToc'
 import { BlogPostTemplateContext } from '../../gatsby-node/createPostPages'
@@ -18,7 +19,7 @@ const BlogPost: React.FC<Props> = ({ data }) => {
     return null
   }
 
-  const { title, date } = data.markdownRemark.frontmatter
+  const { title, date, tags } = data.markdownRemark.frontmatter
   const { html, headingsDetail } = data.markdownRemark
 
   return (
@@ -27,7 +28,8 @@ const BlogPost: React.FC<Props> = ({ data }) => {
         <Article>
           <Inner>
             <Date>{date}</Date>
-            <h2>{title}</h2>
+            <Title>{title}</Title>
+            <TagList tags={tags || []} />
             <div>
               <Content dangerouslySetInnerHTML={{ __html: html || '' }} />
             </div>
@@ -46,8 +48,11 @@ const Container = styled.div`
   justify-content: space-between;
   margin: 5rem 0;
 `
+const Title = styled.h2`
+  margin-bottom: 1rem;
+`
 const Date = styled.p`
-  margin-bottom: 4px;
+  margin-bottom: 0.1rem;
   color: ${Color.gray};
 `
 const Article = styled.article`
