@@ -2,14 +2,15 @@ import React from 'react'
 import styled from 'styled-components'
 import { Link } from 'gatsby'
 import { Size, Color, Style } from '../constants'
+import config from '../config'
 
 const HeaderComponent: React.FC = () => (
   <Container>
     <LogoArea>
       <StyledLink to="/">
-        <Title>Aonohi dot..</Title>
+        <Title>{config.blogTitle}</Title>
       </StyledLink>
-      <Info>Webエンジニアの技術ブログ</Info>
+      <Info>{config.blogDescription}</Info>
     </LogoArea>
   </Container>
 )

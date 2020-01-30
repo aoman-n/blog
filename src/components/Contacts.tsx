@@ -2,14 +2,23 @@ import React from 'react'
 import styled, { css } from 'styled-components'
 import Icon from './Icon'
 import { Color } from '../constants'
+import config from '../config'
 
 const Contacts: React.FC = () => {
   return (
     <Wrapper>
-      <TwitterLink href="#" target="_blank" rel="noopener noreferrer">
+      <TwitterLink
+        href={config.twitterUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
         <Icon icon="twitter" fill="gray" width={20} />
       </TwitterLink>
-      <GithubLink href="#" target="_blank" rel="noopener noreferrer">
+      <GithubLink
+        href={config.gitHubUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
         <Icon icon="github" fill="gray" width={20} />
       </GithubLink>
     </Wrapper>

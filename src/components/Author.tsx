@@ -2,14 +2,15 @@ import React from 'react'
 import styled from 'styled-components'
 import Contacts from '../components/Contacts'
 import { Color, Size } from '../constants'
+import config from '../config'
 
 const Author: React.FC = () => {
   return (
     <Component>
       <Avatar>
-        <AvatarImage src="https://s3-ap-northeast-1.amazonaws.com/aohiro-blog/User/avatar/dot.jpg" />
+        <AvatarImage src={config.authorAvatarUrl} />
       </Avatar>
-      <Name>おおひろ</Name>
+      <Name>{config.authorName}</Name>
       <div>
         <Contacts />
       </div>
