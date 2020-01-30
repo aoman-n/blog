@@ -9,6 +9,7 @@ keywords:
   - Git
 slug: hoge01
 description: "misooooooooooo"
+thumbnail: 2019/12/finish/thumbnail.jpg
 ---
 
 ## なにこれ

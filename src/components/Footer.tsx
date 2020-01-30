@@ -35,8 +35,9 @@ const SiteTitle = styled(Link)`
   }
 `
 const Copyrigth = styled.div`
-  color: ${Color.gray};
+  color: #fff;
   font-size: ${Size.font.ss}rem;
+  text-shadow: 0 1px 3px rgba(120, 180, 180, 0.5);
 `
 
 export default FooterComponent

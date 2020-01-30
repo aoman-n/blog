@@ -20,7 +20,6 @@ const Component: React.FC<Props> = ({ data }) => {
   return (
     <Layout>
       <Container>
-        {/* <Image filename="2020/01/webpack/thumbnail.jpg" /> */}
         <PostsSection>
           <SubTitle>Latest stories</SubTitle>
           <PostList posts={data.allMarkdownRemark.edges} />

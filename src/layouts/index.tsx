@@ -27,6 +27,7 @@ const Component: React.FC = props => (
 
 const Body = styled.div`
   min-height: calc(100vh - ${Size.footer.height}px - ${Size.header.height}px);
+  margin-bottom: 5rem;
 `
 const Inner = styled.div`
   margin: 0 auto;

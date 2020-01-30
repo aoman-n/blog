@@ -9,6 +9,7 @@ keywords:
   - Git
 slug: hoge01
 description: "misooooooooooo"
+thumbnail: 2020/01/hello-world/thumbnail.jpg
 ---
 
 ## なにこれ

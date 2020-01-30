@@ -64,10 +64,10 @@ const Article = styled.article`
   }
 `
 const Inner = styled.div`
-  padding: 40px;
+  padding: 2rem;
 
   @media (max-width: ${Size.breakPoint.mobile}px) {
-    padding: 24px;
+    padding: 1.3rem;
   }
 
   .gatsby-highlight:not {

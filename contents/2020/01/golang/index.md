@@ -6,8 +6,8 @@ tags:
 keyword:
   - AWS
 slug: "Ruby"
-
----description: "misooooooooooo"
+thumbnail: 2020/01/golang/thumbnail.jpg
+---
 
 ## なにこれ
 

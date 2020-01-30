@@ -22,22 +22,23 @@ const Component = styled(Link)`
   display: inline-block;
 
   &:hover {
-    text-decoration: underline solid ${Color.secondary};
+    opacity: 0.7;
   }
 `
 const Name = styled.span`
-  background-color: #eee;
+  color: #fff;
   padding: 0.8rem 1.2rem;
   border-radius: 4px 0 0 4px;
-  background-color: whitesmoke;
+  background-color: ${Color.secondary};
 `
 const Count = styled.span`
+  color: #fff;
   font-weight: bold;
   letter-spacing: 0.01rem;
   background-color: #ddd;
   padding: 0.8rem 0.8rem;
   border-radius: 0 4px 4px 0;
-  background-color: #e7e7e7;
+  background-color: ${Color.primary};
 `
 
 export default TagCount

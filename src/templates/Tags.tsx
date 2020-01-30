@@ -6,6 +6,7 @@ import Layout from '../layouts'
 import SubTitle from '../components/SubTitle'
 import PostList from '../components/PostList'
 import Author from '../components/Author'
+import { Size } from '../constants'
 
 interface TagsProps {
   data: TagsQuery
@@ -21,23 +22,30 @@ const Tags: React.FC<TagsProps> = ({
 }) => {
   return (
     <Layout>
-      <section>
-        <SubTitle>
-          {tagname}
-          <Small>に関する記事</Small>
-          {count}
-          <Small>件</Small>
-        </SubTitle>
-        <PostList posts={data.allMarkdownRemark.edges} />
-      </section>
-      <section>
-        <SubTitle>Author</SubTitle>
-        <Author />
-      </section>
+      <Container>
+        <section>
+          <SubTitle>
+            {tagname}
+            <Small>に関する記事</Small>
+            {count}
+            <Small>件</Small>
+          </SubTitle>
+          <PostList posts={data.allMarkdownRemark.edges} />
+        </section>
+        <section>
+          <SubTitle>Author</SubTitle>
+          <Author />
+        </section>
+      </Container>
     </Layout>
   )
 }
 
+const Container = styled.div`
+  @media (max-width: ${Size.breakPoint.mobile}px) {
+    padding: 0 24px;
+  }
+`
 const Small = styled.span`
   font-weight: normal;
   font-size: 0.8em;
@@ -57,6 +65,7 @@ export const templateQuery = graphql`
             title
             tags
             slug
+            thumbnail
           }
         }
       }

@@ -41,7 +41,7 @@ const Name = styled.div`
 const Description = styled.div`
   font-size: ${Size.font.s}rem;
   text-align: center;
-  margin: 1em 0 4em;
+  margin: 1em 0 0;
 `
 const AvatarImage = styled.img`
   height: 100%;

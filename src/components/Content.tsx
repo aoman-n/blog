@@ -398,6 +398,18 @@ export default styled.div`
     padding: 1em;
     overflow: auto;
 
+    margin-left: -2rem;
+    margin-right: -2rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+
+    @media (max-width: ${Size.breakPoint.mobile}px) {
+      margin-left: -1.3rem;
+      margin-right: -1.3rem;
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+
     /* @media screen and (max-width: ${Size.breakPoint.mobile}px) {
       margin-left: calc((100vw - 100%) / -2);
       margin-right: calc((100vw - 100%) / -2);
@@ -429,8 +441,15 @@ export default styled.div`
     font-family: SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono,
       Courier New, monospace;
     font-weight: 600;
-    border-radius: 8px 8px 0 0;
+    border-radius: 2px 2px 0 0;
     display: table;
+
+    position: relative;
+    right: 2rem;
+
+    @media (max-width: ${Size.breakPoint.mobile}px) {
+      right: 1.3rem;
+    }
   }
 
   pre[class*="language-"]::selection,
