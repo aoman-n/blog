@@ -6,6 +6,7 @@ import Layout from '../layouts'
 import SubTitle from '../components/SubTitle'
 import PostList from '../components/PostList'
 import Author from '../components/Author'
+import TagCountList from '../components/TagCountList'
 import { Size } from '../constants'
 
 interface TagsProps {
@@ -20,6 +21,8 @@ const Tags: React.FC<TagsProps> = ({
   data,
   pageContext: { tagname, count },
 }) => {
+  const { filteredPosts, allPosts } = data
+
   return (
     <Layout>
       <Container>
@@ -30,7 +33,11 @@ const Tags: React.FC<TagsProps> = ({
             {count}
             <Small>件</Small>
           </SubTitle>
-          <PostList posts={data.allMarkdownRemark.edges} />
+          <PostList posts={filteredPosts.edges} />
+        </section>
+        <section>
+          <SubTitle>Tags</SubTitle>
+          <TagCountList data={allPosts.edges} />
         </section>
         <section>
           <SubTitle>Author</SubTitle>
@@ -52,9 +59,31 @@ const Small = styled.span`
   padding: 0 0.5em;
 `
 
+/*
+  tagCountsを表示するためにallPostsも取得している
+  tagCountsに必要な項目のみに絞り込んだほうがよいかも(同じindexページの修正も必要になる)
+*/
 export const templateQuery = graphql`
   query Tags($tagname: String!) {
-    allMarkdownRemark(filter: { frontmatter: { tags: { in: [$tagname] } } }) {
+    filteredPosts: allMarkdownRemark(
+      filter: { frontmatter: { tags: { in: [$tagname] } } }
+    ) {
+      edges {
+        node {
+          id
+          excerpt(pruneLength: 60, format: PLAIN)
+          frontmatter {
+            date(formatString: "YYYY.MM.DD")
+            description
+            title
+            tags
+            slug
+            thumbnail
+          }
+        }
+      }
+    }
+    allPosts: allMarkdownRemark {
       edges {
         node {
           id
