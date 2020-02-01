@@ -32,8 +32,6 @@ const Image: React.FC = () => {
   //   }
   // `)
 
-  console.log(data.file.childImageSharp.fluid)
-
   /*
     base64: '',
     aspectRatio: '',

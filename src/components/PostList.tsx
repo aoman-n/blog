@@ -28,10 +28,6 @@ const Component = styled.article<{ postLength: number }>`
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 20px;
 
-  @media (max-width: ${Size.breakPoint.tablet}px) {
-    gap: 10px;
-  }
-
   /*
     記事が3つ未満の時にPC画面ではポストカードが広がりすぎて見にくいため、
     max値を設定している
