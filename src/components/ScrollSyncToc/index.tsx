@@ -66,7 +66,8 @@ const ScrollSyncToc: FC<{ heading: any[] }> = ({ heading }) => {
 }
 
 const Container = styled.div`
-  font-size: ${Size.font.ss}rem;
+  /* font-size: ${Size.font.s}rem; */
+  font-size: 1.3rem;
 `
 
 export default ScrollSyncToc

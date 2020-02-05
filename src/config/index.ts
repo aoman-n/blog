@@ -2,6 +2,7 @@ export default {
   blogTitle: 'Aonohi dot..',
   blogDescription: 'Webプログラミング系の記事をつらつら書いていくブログです',
   blogUrl: 'https://aonohi.com',
+  blogThumbnailPath: 'thumbnails/default.jpg',
   twitterUsername: 'aohiro01',
   twitterUrl: 'https://twitter.com/aohiro01',
   gitHubUrl: 'https://github.com/laster18',

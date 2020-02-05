@@ -6,7 +6,7 @@ tags:
 keywords:
   - 勉強会
 slug: shinjuku-mokumoku-programming
-thumbnail: 2020/iphone.jpg
+thumbnail: thumbnails/default.jpg
 ---
 
 ## なにこれ

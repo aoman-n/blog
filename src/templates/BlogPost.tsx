@@ -4,9 +4,11 @@ import { graphql } from 'gatsby'
 import TagList from '../components/TagList'
 import Content from '../components/Content'
 import ScrollSyncToc from '../components/ScrollSyncToc'
+import Seo from '../components/Seo'
 import { BlogPostTemplateContext } from '../../gatsby-node/createPostPages'
 import { BlogPostQuery } from '../../types/graphqlTypes'
 import Layout from '../layouts'
+import config from '../config'
 import { Size, Color } from '../constants'
 
 type Props = {
@@ -14,16 +16,25 @@ type Props = {
   pageContext: BlogPostTemplateContext
 }
 
-const BlogPost: React.FC<Props> = ({ data }) => {
+const BlogPost: React.FC<Props> = ({ data, pageContext }) => {
   if (!data.markdownRemark || !data.markdownRemark.frontmatter) {
     return null
   }
 
-  const { title, date, tags } = data.markdownRemark.frontmatter
+  const { excerpt } = data.markdownRemark
+  const { title, date, tags, thumbnail } = data.markdownRemark.frontmatter
   const { html, headingsDetail } = data.markdownRemark
+  const { slug } = pageContext
 
   return (
     <Layout>
+      <Seo
+        isRoot={false}
+        title={title}
+        description={excerpt}
+        thumbnailPath={thumbnail}
+        postUrl={`${config.blogUrl}/posts/${slug}`}
+      />
       <Container>
         <Article>
           <Inner>
@@ -92,12 +103,14 @@ export const templateQuery = graphql`
   query BlogPost($slug: String!) {
     markdownRemark(frontmatter: { slug: { eq: $slug } }) {
       id
+      excerpt(pruneLength: 100, format: PLAIN)
       frontmatter {
         date(formatString: "YYYY.MM.DD")
         description
         slug
         tags
         title
+        thumbnail
         featuredImage {
           childImageSharp {
             fluid(maxWidth: 800) {

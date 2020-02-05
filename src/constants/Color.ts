@@ -8,8 +8,8 @@ export default {
   primary: '#B3D0D7',
   secondary: '#82AAAA',
   font: {
-    light: 'rgba(0, 0, 0, 0.54)',
-    base: 'rgba(0, 0, 0, 0.68)',
+    light: 'rgba(0, 0, 0, 0.6)',
+    base: 'rgba(0, 0, 0, 0.74)',
     dark: 'rgba(0, 0, 0, 0.84)',
   },
 }

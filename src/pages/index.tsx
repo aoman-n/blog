@@ -5,6 +5,7 @@ import PostList from '../components/PostList'
 import Author from '../components/Author'
 import SubTitle from '../components/SubTitle'
 import TagCountList from '../components/TagCountList'
+import Seo from '../components/Seo'
 import { IndexPageQuery } from '../../types/graphqlTypes'
 import Layout from '../layouts'
 import { Size } from '../constants'
@@ -15,6 +16,7 @@ type Props = {
 
 const Component: React.FC<Props> = ({ data }) => (
   <Layout>
+    <Seo isRoot={true} />
     <Container>
       <PostsSection>
         <SubTitle>Latest stories</SubTitle>

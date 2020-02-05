@@ -39,15 +39,15 @@ const MarkdownHighLight = createGlobalStyle`
     font-size: 62.5%;
   }
 
-  @media (max-width: ${Size.breakPoint.mobile}px) {
+  @media (max-width: ${Size.breakPoint.tablet}px) {
     html {
-      font-size: 50%;
+      font-size: 57%;
     }
   }
 
-  @media (max-width: ${Size.breakPoint.tablet}px) {
+  @media (max-width: ${Size.breakPoint.mobile}px) {
     html {
-      font-size: 56.25%;
+      font-size: 54%;
     }
   }
 
