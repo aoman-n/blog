@@ -57,6 +57,9 @@ const Seo: React.FC<SeoProps> = ({
 
   return (
     <Helmet>
+      {/* Site Title */}
+      <title>{shareTitle}</title>
+
       {/* General tags */}
       <meta
         name="description"

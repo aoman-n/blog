@@ -19,6 +19,7 @@ const Tag: React.FC<{ tag: string }> = ({ tag }) => {
 }
 
 const Component = styled.div`
+  cursor: pointer;
   padding: 2px 6px;
   background-color: ${Color.secondary};
   font-size: 1rem;
