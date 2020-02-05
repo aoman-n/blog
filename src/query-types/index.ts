@@ -7,8 +7,6 @@ export const postsForCreatePagesQuery = graphql`
         node {
           frontmatter {
             date
-            description
-            keyword
             keywords
             slug
             tags

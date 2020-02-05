@@ -696,44 +696,6 @@ export enum FileFieldsEnum {
   ChildMarkdownRemarkFrontmatterKeywords = 'childMarkdownRemark___frontmatter___keywords',
   ChildMarkdownRemarkFrontmatterSlug = 'childMarkdownRemark___frontmatter___slug',
   ChildMarkdownRemarkFrontmatterThumbnail = 'childMarkdownRemark___frontmatter___thumbnail',
-  ChildMarkdownRemarkFrontmatterFeaturedImageSourceInstanceName = 'childMarkdownRemark___frontmatter___featuredImage___sourceInstanceName',
-  ChildMarkdownRemarkFrontmatterFeaturedImageAbsolutePath = 'childMarkdownRemark___frontmatter___featuredImage___absolutePath',
-  ChildMarkdownRemarkFrontmatterFeaturedImageRelativePath = 'childMarkdownRemark___frontmatter___featuredImage___relativePath',
-  ChildMarkdownRemarkFrontmatterFeaturedImageExtension = 'childMarkdownRemark___frontmatter___featuredImage___extension',
-  ChildMarkdownRemarkFrontmatterFeaturedImageSize = 'childMarkdownRemark___frontmatter___featuredImage___size',
-  ChildMarkdownRemarkFrontmatterFeaturedImagePrettySize = 'childMarkdownRemark___frontmatter___featuredImage___prettySize',
-  ChildMarkdownRemarkFrontmatterFeaturedImageModifiedTime = 'childMarkdownRemark___frontmatter___featuredImage___modifiedTime',
-  ChildMarkdownRemarkFrontmatterFeaturedImageAccessTime = 'childMarkdownRemark___frontmatter___featuredImage___accessTime',
-  ChildMarkdownRemarkFrontmatterFeaturedImageChangeTime = 'childMarkdownRemark___frontmatter___featuredImage___changeTime',
-  ChildMarkdownRemarkFrontmatterFeaturedImageBirthTime = 'childMarkdownRemark___frontmatter___featuredImage___birthTime',
-  ChildMarkdownRemarkFrontmatterFeaturedImageRoot = 'childMarkdownRemark___frontmatter___featuredImage___root',
-  ChildMarkdownRemarkFrontmatterFeaturedImageDir = 'childMarkdownRemark___frontmatter___featuredImage___dir',
-  ChildMarkdownRemarkFrontmatterFeaturedImageBase = 'childMarkdownRemark___frontmatter___featuredImage___base',
-  ChildMarkdownRemarkFrontmatterFeaturedImageExt = 'childMarkdownRemark___frontmatter___featuredImage___ext',
-  ChildMarkdownRemarkFrontmatterFeaturedImageName = 'childMarkdownRemark___frontmatter___featuredImage___name',
-  ChildMarkdownRemarkFrontmatterFeaturedImageRelativeDirectory = 'childMarkdownRemark___frontmatter___featuredImage___relativeDirectory',
-  ChildMarkdownRemarkFrontmatterFeaturedImageDev = 'childMarkdownRemark___frontmatter___featuredImage___dev',
-  ChildMarkdownRemarkFrontmatterFeaturedImageMode = 'childMarkdownRemark___frontmatter___featuredImage___mode',
-  ChildMarkdownRemarkFrontmatterFeaturedImageNlink = 'childMarkdownRemark___frontmatter___featuredImage___nlink',
-  ChildMarkdownRemarkFrontmatterFeaturedImageUid = 'childMarkdownRemark___frontmatter___featuredImage___uid',
-  ChildMarkdownRemarkFrontmatterFeaturedImageGid = 'childMarkdownRemark___frontmatter___featuredImage___gid',
-  ChildMarkdownRemarkFrontmatterFeaturedImageRdev = 'childMarkdownRemark___frontmatter___featuredImage___rdev',
-  ChildMarkdownRemarkFrontmatterFeaturedImageIno = 'childMarkdownRemark___frontmatter___featuredImage___ino',
-  ChildMarkdownRemarkFrontmatterFeaturedImageAtimeMs = 'childMarkdownRemark___frontmatter___featuredImage___atimeMs',
-  ChildMarkdownRemarkFrontmatterFeaturedImageMtimeMs = 'childMarkdownRemark___frontmatter___featuredImage___mtimeMs',
-  ChildMarkdownRemarkFrontmatterFeaturedImageCtimeMs = 'childMarkdownRemark___frontmatter___featuredImage___ctimeMs',
-  ChildMarkdownRemarkFrontmatterFeaturedImageAtime = 'childMarkdownRemark___frontmatter___featuredImage___atime',
-  ChildMarkdownRemarkFrontmatterFeaturedImageMtime = 'childMarkdownRemark___frontmatter___featuredImage___mtime',
-  ChildMarkdownRemarkFrontmatterFeaturedImageCtime = 'childMarkdownRemark___frontmatter___featuredImage___ctime',
-  ChildMarkdownRemarkFrontmatterFeaturedImageBirthtime = 'childMarkdownRemark___frontmatter___featuredImage___birthtime',
-  ChildMarkdownRemarkFrontmatterFeaturedImageBirthtimeMs = 'childMarkdownRemark___frontmatter___featuredImage___birthtimeMs',
-  ChildMarkdownRemarkFrontmatterFeaturedImageBlksize = 'childMarkdownRemark___frontmatter___featuredImage___blksize',
-  ChildMarkdownRemarkFrontmatterFeaturedImageBlocks = 'childMarkdownRemark___frontmatter___featuredImage___blocks',
-  ChildMarkdownRemarkFrontmatterFeaturedImagePublicUrl = 'childMarkdownRemark___frontmatter___featuredImage___publicURL',
-  ChildMarkdownRemarkFrontmatterFeaturedImageId = 'childMarkdownRemark___frontmatter___featuredImage___id',
-  ChildMarkdownRemarkFrontmatterFeaturedImageChildren = 'childMarkdownRemark___frontmatter___featuredImage___children',
-  ChildMarkdownRemarkFrontmatterDescription = 'childMarkdownRemark___frontmatter___description',
-  ChildMarkdownRemarkFrontmatterKeyword = 'childMarkdownRemark___frontmatter___keyword',
   ChildMarkdownRemarkExcerpt = 'childMarkdownRemark___excerpt',
   ChildMarkdownRemarkRawMarkdownBody = 'childMarkdownRemark___rawMarkdownBody',
   ChildMarkdownRemarkFileAbsolutePath = 'childMarkdownRemark___fileAbsolutePath',
@@ -1564,70 +1526,6 @@ export enum MarkdownRemarkFieldsEnum {
   FrontmatterKeywords = 'frontmatter___keywords',
   FrontmatterSlug = 'frontmatter___slug',
   FrontmatterThumbnail = 'frontmatter___thumbnail',
-  FrontmatterFeaturedImageSourceInstanceName = 'frontmatter___featuredImage___sourceInstanceName',
-  FrontmatterFeaturedImageAbsolutePath = 'frontmatter___featuredImage___absolutePath',
-  FrontmatterFeaturedImageRelativePath = 'frontmatter___featuredImage___relativePath',
-  FrontmatterFeaturedImageExtension = 'frontmatter___featuredImage___extension',
-  FrontmatterFeaturedImageSize = 'frontmatter___featuredImage___size',
-  FrontmatterFeaturedImagePrettySize = 'frontmatter___featuredImage___prettySize',
-  FrontmatterFeaturedImageModifiedTime = 'frontmatter___featuredImage___modifiedTime',
-  FrontmatterFeaturedImageAccessTime = 'frontmatter___featuredImage___accessTime',
-  FrontmatterFeaturedImageChangeTime = 'frontmatter___featuredImage___changeTime',
-  FrontmatterFeaturedImageBirthTime = 'frontmatter___featuredImage___birthTime',
-  FrontmatterFeaturedImageRoot = 'frontmatter___featuredImage___root',
-  FrontmatterFeaturedImageDir = 'frontmatter___featuredImage___dir',
-  FrontmatterFeaturedImageBase = 'frontmatter___featuredImage___base',
-  FrontmatterFeaturedImageExt = 'frontmatter___featuredImage___ext',
-  FrontmatterFeaturedImageName = 'frontmatter___featuredImage___name',
-  FrontmatterFeaturedImageRelativeDirectory = 'frontmatter___featuredImage___relativeDirectory',
-  FrontmatterFeaturedImageDev = 'frontmatter___featuredImage___dev',
-  FrontmatterFeaturedImageMode = 'frontmatter___featuredImage___mode',
-  FrontmatterFeaturedImageNlink = 'frontmatter___featuredImage___nlink',
-  FrontmatterFeaturedImageUid = 'frontmatter___featuredImage___uid',
-  FrontmatterFeaturedImageGid = 'frontmatter___featuredImage___gid',
-  FrontmatterFeaturedImageRdev = 'frontmatter___featuredImage___rdev',
-  FrontmatterFeaturedImageIno = 'frontmatter___featuredImage___ino',
-  FrontmatterFeaturedImageAtimeMs = 'frontmatter___featuredImage___atimeMs',
-  FrontmatterFeaturedImageMtimeMs = 'frontmatter___featuredImage___mtimeMs',
-  FrontmatterFeaturedImageCtimeMs = 'frontmatter___featuredImage___ctimeMs',
-  FrontmatterFeaturedImageAtime = 'frontmatter___featuredImage___atime',
-  FrontmatterFeaturedImageMtime = 'frontmatter___featuredImage___mtime',
-  FrontmatterFeaturedImageCtime = 'frontmatter___featuredImage___ctime',
-  FrontmatterFeaturedImageBirthtime = 'frontmatter___featuredImage___birthtime',
-  FrontmatterFeaturedImageBirthtimeMs = 'frontmatter___featuredImage___birthtimeMs',
-  FrontmatterFeaturedImageBlksize = 'frontmatter___featuredImage___blksize',
-  FrontmatterFeaturedImageBlocks = 'frontmatter___featuredImage___blocks',
-  FrontmatterFeaturedImagePublicUrl = 'frontmatter___featuredImage___publicURL',
-  FrontmatterFeaturedImageChildImageSharpId = 'frontmatter___featuredImage___childImageSharp___id',
-  FrontmatterFeaturedImageChildImageSharpChildren = 'frontmatter___featuredImage___childImageSharp___children',
-  FrontmatterFeaturedImageId = 'frontmatter___featuredImage___id',
-  FrontmatterFeaturedImageParentId = 'frontmatter___featuredImage___parent___id',
-  FrontmatterFeaturedImageParentChildren = 'frontmatter___featuredImage___parent___children',
-  FrontmatterFeaturedImageChildren = 'frontmatter___featuredImage___children',
-  FrontmatterFeaturedImageChildrenId = 'frontmatter___featuredImage___children___id',
-  FrontmatterFeaturedImageChildrenChildren = 'frontmatter___featuredImage___children___children',
-  FrontmatterFeaturedImageInternalContent = 'frontmatter___featuredImage___internal___content',
-  FrontmatterFeaturedImageInternalContentDigest = 'frontmatter___featuredImage___internal___contentDigest',
-  FrontmatterFeaturedImageInternalDescription = 'frontmatter___featuredImage___internal___description',
-  FrontmatterFeaturedImageInternalFieldOwners = 'frontmatter___featuredImage___internal___fieldOwners',
-  FrontmatterFeaturedImageInternalIgnoreType = 'frontmatter___featuredImage___internal___ignoreType',
-  FrontmatterFeaturedImageInternalMediaType = 'frontmatter___featuredImage___internal___mediaType',
-  FrontmatterFeaturedImageInternalOwner = 'frontmatter___featuredImage___internal___owner',
-  FrontmatterFeaturedImageInternalType = 'frontmatter___featuredImage___internal___type',
-  FrontmatterFeaturedImageChildMarkdownRemarkId = 'frontmatter___featuredImage___childMarkdownRemark___id',
-  FrontmatterFeaturedImageChildMarkdownRemarkExcerpt = 'frontmatter___featuredImage___childMarkdownRemark___excerpt',
-  FrontmatterFeaturedImageChildMarkdownRemarkRawMarkdownBody = 'frontmatter___featuredImage___childMarkdownRemark___rawMarkdownBody',
-  FrontmatterFeaturedImageChildMarkdownRemarkFileAbsolutePath = 'frontmatter___featuredImage___childMarkdownRemark___fileAbsolutePath',
-  FrontmatterFeaturedImageChildMarkdownRemarkHtml = 'frontmatter___featuredImage___childMarkdownRemark___html',
-  FrontmatterFeaturedImageChildMarkdownRemarkHtmlAst = 'frontmatter___featuredImage___childMarkdownRemark___htmlAst',
-  FrontmatterFeaturedImageChildMarkdownRemarkExcerptAst = 'frontmatter___featuredImage___childMarkdownRemark___excerptAst',
-  FrontmatterFeaturedImageChildMarkdownRemarkHeadings = 'frontmatter___featuredImage___childMarkdownRemark___headings',
-  FrontmatterFeaturedImageChildMarkdownRemarkTimeToRead = 'frontmatter___featuredImage___childMarkdownRemark___timeToRead',
-  FrontmatterFeaturedImageChildMarkdownRemarkTableOfContents = 'frontmatter___featuredImage___childMarkdownRemark___tableOfContents',
-  FrontmatterFeaturedImageChildMarkdownRemarkHeadingsDetail = 'frontmatter___featuredImage___childMarkdownRemark___headingsDetail',
-  FrontmatterFeaturedImageChildMarkdownRemarkChildren = 'frontmatter___featuredImage___childMarkdownRemark___children',
-  FrontmatterDescription = 'frontmatter___description',
-  FrontmatterKeyword = 'frontmatter___keyword',
   Excerpt = 'excerpt',
   RawMarkdownBody = 'rawMarkdownBody',
   FileAbsolutePath = 'fileAbsolutePath',
@@ -1764,9 +1662,6 @@ export type MarkdownRemarkFrontmatter = {
   keywords?: Maybe<Array<Maybe<Scalars['String']>>>,
   slug?: Maybe<Scalars['String']>,
   thumbnail?: Maybe<Scalars['String']>,
-  featuredImage?: Maybe<File>,
-  description?: Maybe<Scalars['String']>,
-  keyword?: Maybe<Array<Maybe<Scalars['String']>>>,
 };
 
 
@@ -1784,9 +1679,6 @@ export type MarkdownRemarkFrontmatterFilterInput = {
   keywords?: Maybe<StringQueryOperatorInput>,
   slug?: Maybe<StringQueryOperatorInput>,
   thumbnail?: Maybe<StringQueryOperatorInput>,
-  featuredImage?: Maybe<FileFilterInput>,
-  description?: Maybe<StringQueryOperatorInput>,
-  keyword?: Maybe<StringQueryOperatorInput>,
 };
 
 export type MarkdownRemarkGroupConnection = {
@@ -2323,74 +2215,14 @@ export type SitePageConnectionGroupArgs = {
 export type SitePageContext = {
    __typename?: 'SitePageContext',
   slug?: Maybe<Scalars['String']>,
-  previous?: Maybe<SitePageContextPrevious>,
-  next?: Maybe<SitePageContextNext>,
   tagname?: Maybe<Scalars['String']>,
   count?: Maybe<Scalars['Int']>,
 };
 
 export type SitePageContextFilterInput = {
   slug?: Maybe<StringQueryOperatorInput>,
-  previous?: Maybe<SitePageContextPreviousFilterInput>,
-  next?: Maybe<SitePageContextNextFilterInput>,
   tagname?: Maybe<StringQueryOperatorInput>,
   count?: Maybe<IntQueryOperatorInput>,
-};
-
-export type SitePageContextNext = {
-   __typename?: 'SitePageContextNext',
-  frontmatter?: Maybe<SitePageContextNextFrontmatter>,
-};
-
-export type SitePageContextNextFilterInput = {
-  frontmatter?: Maybe<SitePageContextNextFrontmatterFilterInput>,
-};
-
-export type SitePageContextNextFrontmatter = {
-   __typename?: 'SitePageContextNextFrontmatter',
-  date?: Maybe<Scalars['Date']>,
-  description?: Maybe<Scalars['String']>,
-  keywords?: Maybe<Array<Maybe<Scalars['String']>>>,
-  slug?: Maybe<Scalars['String']>,
-  tags?: Maybe<Array<Maybe<Scalars['String']>>>,
-  title?: Maybe<Scalars['String']>,
-};
-
-export type SitePageContextNextFrontmatterFilterInput = {
-  date?: Maybe<DateQueryOperatorInput>,
-  description?: Maybe<StringQueryOperatorInput>,
-  keywords?: Maybe<StringQueryOperatorInput>,
-  slug?: Maybe<StringQueryOperatorInput>,
-  tags?: Maybe<StringQueryOperatorInput>,
-  title?: Maybe<StringQueryOperatorInput>,
-};
-
-export type SitePageContextPrevious = {
-   __typename?: 'SitePageContextPrevious',
-  frontmatter?: Maybe<SitePageContextPreviousFrontmatter>,
-};
-
-export type SitePageContextPreviousFilterInput = {
-  frontmatter?: Maybe<SitePageContextPreviousFrontmatterFilterInput>,
-};
-
-export type SitePageContextPreviousFrontmatter = {
-   __typename?: 'SitePageContextPreviousFrontmatter',
-  date?: Maybe<Scalars['Date']>,
-  description?: Maybe<Scalars['String']>,
-  keywords?: Maybe<Array<Maybe<Scalars['String']>>>,
-  slug?: Maybe<Scalars['String']>,
-  tags?: Maybe<Array<Maybe<Scalars['String']>>>,
-  title?: Maybe<Scalars['String']>,
-};
-
-export type SitePageContextPreviousFrontmatterFilterInput = {
-  date?: Maybe<DateQueryOperatorInput>,
-  description?: Maybe<StringQueryOperatorInput>,
-  keywords?: Maybe<StringQueryOperatorInput>,
-  slug?: Maybe<StringQueryOperatorInput>,
-  tags?: Maybe<StringQueryOperatorInput>,
-  title?: Maybe<StringQueryOperatorInput>,
 };
 
 export type SitePageEdge = {
@@ -2494,18 +2326,6 @@ export enum SitePageFieldsEnum {
   InternalType = 'internal___type',
   IsCreatedByStatefulCreatePages = 'isCreatedByStatefulCreatePages',
   ContextSlug = 'context___slug',
-  ContextPreviousFrontmatterDate = 'context___previous___frontmatter___date',
-  ContextPreviousFrontmatterDescription = 'context___previous___frontmatter___description',
-  ContextPreviousFrontmatterKeywords = 'context___previous___frontmatter___keywords',
-  ContextPreviousFrontmatterSlug = 'context___previous___frontmatter___slug',
-  ContextPreviousFrontmatterTags = 'context___previous___frontmatter___tags',
-  ContextPreviousFrontmatterTitle = 'context___previous___frontmatter___title',
-  ContextNextFrontmatterDate = 'context___next___frontmatter___date',
-  ContextNextFrontmatterDescription = 'context___next___frontmatter___description',
-  ContextNextFrontmatterKeywords = 'context___next___frontmatter___keywords',
-  ContextNextFrontmatterSlug = 'context___next___frontmatter___slug',
-  ContextNextFrontmatterTags = 'context___next___frontmatter___tags',
-  ContextNextFrontmatterTitle = 'context___next___frontmatter___title',
   ContextTagname = 'context___tagname',
   ContextCount = 'context___count',
   PluginCreatorId = 'pluginCreator___id',
@@ -3193,7 +3013,7 @@ export type IndexPageQuery = (
         & Pick<MarkdownRemark, 'id' | 'excerpt'>
         & { frontmatter: Maybe<(
           { __typename?: 'MarkdownRemarkFrontmatter' }
-          & Pick<MarkdownRemarkFrontmatter, 'date' | 'description' | 'title' | 'tags' | 'slug' | 'thumbnail'>
+          & Pick<MarkdownRemarkFrontmatter, 'date' | 'title' | 'tags' | 'slug' | 'thumbnail'>
         )> }
       ) }
     )> }
@@ -3213,7 +3033,7 @@ export type PostsForCreatePagesQuery = (
         { __typename?: 'MarkdownRemark' }
         & { frontmatter: Maybe<(
           { __typename?: 'MarkdownRemarkFrontmatter' }
-          & Pick<MarkdownRemarkFrontmatter, 'date' | 'description' | 'keyword' | 'keywords' | 'slug' | 'tags' | 'title'>
+          & Pick<MarkdownRemarkFrontmatter, 'date' | 'keywords' | 'slug' | 'tags' | 'title'>
         )> }
       ) }
     )> }
@@ -3252,17 +3072,7 @@ export type BlogPostQuery = (
     & Pick<MarkdownRemark, 'id' | 'excerpt' | 'html'>
     & { frontmatter: Maybe<(
       { __typename?: 'MarkdownRemarkFrontmatter' }
-      & Pick<MarkdownRemarkFrontmatter, 'date' | 'description' | 'slug' | 'tags' | 'title' | 'thumbnail'>
-      & { featuredImage: Maybe<(
-        { __typename?: 'File' }
-        & { childImageSharp: Maybe<(
-          { __typename?: 'ImageSharp' }
-          & { fluid: Maybe<(
-            { __typename?: 'ImageSharpFluid' }
-            & Pick<ImageSharpFluid, 'aspectRatio' | 'base64' | 'sizes' | 'src' | 'srcSet'>
-          )> }
-        )> }
-      )> }
+      & Pick<MarkdownRemarkFrontmatter, 'date' | 'slug' | 'tags' | 'title' | 'thumbnail'>
     )>, headingsDetail: Maybe<Array<Maybe<(
       { __typename?: 'MarkdownHeadingDetail' }
       & Pick<MarkdownHeadingDetail, 'id' | 'value' | 'depth'>
@@ -3290,7 +3100,7 @@ export type TagsQuery = (
         & Pick<MarkdownRemark, 'id' | 'excerpt'>
         & { frontmatter: Maybe<(
           { __typename?: 'MarkdownRemarkFrontmatter' }
-          & Pick<MarkdownRemarkFrontmatter, 'date' | 'description' | 'title' | 'tags' | 'slug' | 'thumbnail'>
+          & Pick<MarkdownRemarkFrontmatter, 'date' | 'title' | 'tags' | 'slug' | 'thumbnail'>
         )> }
       ) }
     )> }
@@ -3303,7 +3113,7 @@ export type TagsQuery = (
         & Pick<MarkdownRemark, 'id' | 'excerpt'>
         & { frontmatter: Maybe<(
           { __typename?: 'MarkdownRemarkFrontmatter' }
-          & Pick<MarkdownRemarkFrontmatter, 'date' | 'description' | 'title' | 'tags' | 'slug' | 'thumbnail'>
+          & Pick<MarkdownRemarkFrontmatter, 'date' | 'title' | 'tags' | 'slug' | 'thumbnail'>
         )> }
       ) }
     )> }

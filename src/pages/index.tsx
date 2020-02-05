@@ -79,7 +79,6 @@ export const pageQuery = graphql`
           excerpt(pruneLength: 60, format: PLAIN)
           frontmatter {
             date(formatString: "YYYY.MM.DD")
-            description
             title
             tags
             slug

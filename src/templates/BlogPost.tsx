@@ -106,22 +106,10 @@ export const templateQuery = graphql`
       excerpt(pruneLength: 100, format: PLAIN)
       frontmatter {
         date(formatString: "YYYY.MM.DD")
-        description
         slug
         tags
         title
         thumbnail
-        featuredImage {
-          childImageSharp {
-            fluid(maxWidth: 800) {
-              aspectRatio
-              base64
-              sizes
-              src
-              srcSet
-            }
-          }
-        }
       }
       html
       headingsDetail {

@@ -20,8 +20,6 @@ const query = `
         node {
           frontmatter {
             date
-            description
-            keyword
             keywords
             slug
             tags
