@@ -1,11 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Typescript Starter`,
-    authors: [
-      { name: 'hoge', slug: 'miso' },
-      { name: 'sakana', slug: 'kun' },
-      { name: 'nanachi', slug: 'nnhaa' },
-    ],
+    title: `Aonohi dot..`,
+    description: `Webエンジニアのブログ。`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -60,15 +56,15 @@ module.exports = {
           },
           `gatsby-remark-autolink-headers`,
           `gatsby-remark-copy-linked-files`,
-          {
-            resolve: 'gatsby-plugin-react-svg',
-            options: {
-              rule: {
-                include: `${__dirname}/src/components/Icon/svg`,
-              },
-            },
-          },
         ],
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-react-svg',
+      options: {
+        rule: {
+          include: `${__dirname}/src/components/Icon/svg`,
+        },
       },
     },
     `gatsby-remark-headings-detail`,
@@ -90,6 +86,12 @@ module.exports = {
         display: `minimal-ui`,
         icon: `src/images/aonohi-icon.png`,
       },
+    },
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: `UA-157929213-1`
+      }
     },
   ],
 }
