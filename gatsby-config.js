@@ -79,5 +79,17 @@ module.exports = {
         siteUrl: `https://aonohi.com`,
       },
     },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `Aonohi dot..`,
+        short_name: `Aonohi`,
+        start_url: `/`,
+        background_color: `#ffffff`,
+        theme_color: `#B3D0D7`,
+        display: `minimal-ui`,
+        icon: `src/images/aonohi-icon.png`,
+      },
+    },
   ],
 }
