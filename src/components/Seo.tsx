@@ -88,7 +88,8 @@ const Seo: React.FC<SeoProps> = ({
       />
       <meta name="twitter:site" content={`@${config.twitterUsername}`} />
 
-      <link rel="canonical" href={postUrl || config.blogUrl} />
+      {/* プラグインで追加 */}
+      {/* <link rel="canonical" href={postUrl || config.blogUrl} /> */}
     </Helmet>
   )
 }

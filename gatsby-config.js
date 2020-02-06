@@ -73,5 +73,11 @@ module.exports = {
     },
     `gatsby-remark-headings-detail`,
     `gatsby-plugin-styled-components`,
+    {
+      resolve: `gatsby-plugin-canonical-urls`,
+      options: {
+        siteUrl: `https://aonohi.com`,
+      },
+    },
   ],
 }
