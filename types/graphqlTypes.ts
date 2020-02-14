@@ -2139,9 +2139,7 @@ export enum SiteFieldsEnum {
   InternalOwner = 'internal___owner',
   InternalType = 'internal___type',
   SiteMetadataTitle = 'siteMetadata___title',
-  SiteMetadataAuthors = 'siteMetadata___authors',
-  SiteMetadataAuthorsName = 'siteMetadata___authors___name',
-  SiteMetadataAuthorsSlug = 'siteMetadata___authors___slug',
+  SiteMetadataDescription = 'siteMetadata___description',
   Port = 'port',
   Host = 'host',
   Polyfill = 'polyfill',
@@ -2374,7 +2372,6 @@ export enum SitePageFieldsEnum {
   PluginCreatorPluginOptionsPluginsId = 'pluginCreator___pluginOptions___plugins___id',
   PluginCreatorPluginOptionsPluginsName = 'pluginCreator___pluginOptions___plugins___name',
   PluginCreatorPluginOptionsPluginsVersion = 'pluginCreator___pluginOptions___plugins___version',
-  PluginCreatorPluginOptionsPluginsNodeApIs = 'pluginCreator___pluginOptions___plugins___nodeAPIs',
   PluginCreatorPluginOptionsPluginsBrowserApIs = 'pluginCreator___pluginOptions___plugins___browserAPIs',
   PluginCreatorPluginOptionsPluginsSsrApIs = 'pluginCreator___pluginOptions___plugins___ssrAPIs',
   PluginCreatorPluginOptionsPluginsPluginFilepath = 'pluginCreator___pluginOptions___plugins___pluginFilepath',
@@ -2397,6 +2394,14 @@ export enum SitePageFieldsEnum {
   PluginCreatorPluginOptionsNoInlineHighlight = 'pluginCreator___pluginOptions___noInlineHighlight',
   PluginCreatorPluginOptionsIgnoreFileExtensions = 'pluginCreator___pluginOptions___ignoreFileExtensions',
   PluginCreatorPluginOptionsRuleInclude = 'pluginCreator___pluginOptions___rule___include',
+  PluginCreatorPluginOptionsSiteUrl = 'pluginCreator___pluginOptions___siteUrl',
+  PluginCreatorPluginOptionsShortName = 'pluginCreator___pluginOptions___short_name',
+  PluginCreatorPluginOptionsStartUrl = 'pluginCreator___pluginOptions___start_url',
+  PluginCreatorPluginOptionsBackgroundColor = 'pluginCreator___pluginOptions___background_color',
+  PluginCreatorPluginOptionsThemeColor = 'pluginCreator___pluginOptions___theme_color',
+  PluginCreatorPluginOptionsDisplay = 'pluginCreator___pluginOptions___display',
+  PluginCreatorPluginOptionsIcon = 'pluginCreator___pluginOptions___icon',
+  PluginCreatorPluginOptionsTrackingId = 'pluginCreator___pluginOptions___trackingId',
   PluginCreatorPluginOptionsPathCheck = 'pluginCreator___pluginOptions___pathCheck',
   PluginCreatorNodeApIs = 'pluginCreator___nodeAPIs',
   PluginCreatorBrowserApIs = 'pluginCreator___browserAPIs',
@@ -2611,7 +2616,6 @@ export enum SitePluginFieldsEnum {
   PluginOptionsPluginsPluginOptionsShowLineNumbers = 'pluginOptions___plugins___pluginOptions___showLineNumbers',
   PluginOptionsPluginsPluginOptionsNoInlineHighlight = 'pluginOptions___plugins___pluginOptions___noInlineHighlight',
   PluginOptionsPluginsPluginOptionsIgnoreFileExtensions = 'pluginOptions___plugins___pluginOptions___ignoreFileExtensions',
-  PluginOptionsPluginsNodeApIs = 'pluginOptions___plugins___nodeAPIs',
   PluginOptionsPluginsBrowserApIs = 'pluginOptions___plugins___browserAPIs',
   PluginOptionsPluginsSsrApIs = 'pluginOptions___plugins___ssrAPIs',
   PluginOptionsPluginsPluginFilepath = 'pluginOptions___plugins___pluginFilepath',
@@ -2634,6 +2638,14 @@ export enum SitePluginFieldsEnum {
   PluginOptionsNoInlineHighlight = 'pluginOptions___noInlineHighlight',
   PluginOptionsIgnoreFileExtensions = 'pluginOptions___ignoreFileExtensions',
   PluginOptionsRuleInclude = 'pluginOptions___rule___include',
+  PluginOptionsSiteUrl = 'pluginOptions___siteUrl',
+  PluginOptionsShortName = 'pluginOptions___short_name',
+  PluginOptionsStartUrl = 'pluginOptions___start_url',
+  PluginOptionsBackgroundColor = 'pluginOptions___background_color',
+  PluginOptionsThemeColor = 'pluginOptions___theme_color',
+  PluginOptionsDisplay = 'pluginOptions___display',
+  PluginOptionsIcon = 'pluginOptions___icon',
+  PluginOptionsTrackingId = 'pluginOptions___trackingId',
   PluginOptionsPathCheck = 'pluginOptions___pathCheck',
   NodeApIs = 'nodeAPIs',
   BrowserApIs = 'browserAPIs',
@@ -2777,6 +2789,14 @@ export type SitePluginPluginOptions = {
   noInlineHighlight?: Maybe<Scalars['Boolean']>,
   ignoreFileExtensions?: Maybe<Array<Maybe<Scalars['String']>>>,
   rule?: Maybe<SitePluginPluginOptionsRule>,
+  siteUrl?: Maybe<Scalars['String']>,
+  short_name?: Maybe<Scalars['String']>,
+  start_url?: Maybe<Scalars['String']>,
+  background_color?: Maybe<Scalars['String']>,
+  theme_color?: Maybe<Scalars['String']>,
+  display?: Maybe<Scalars['String']>,
+  icon?: Maybe<Scalars['String']>,
+  trackingId?: Maybe<Scalars['String']>,
   pathCheck?: Maybe<Scalars['Boolean']>,
 };
 
@@ -2801,6 +2821,14 @@ export type SitePluginPluginOptionsFilterInput = {
   noInlineHighlight?: Maybe<BooleanQueryOperatorInput>,
   ignoreFileExtensions?: Maybe<StringQueryOperatorInput>,
   rule?: Maybe<SitePluginPluginOptionsRuleFilterInput>,
+  siteUrl?: Maybe<StringQueryOperatorInput>,
+  short_name?: Maybe<StringQueryOperatorInput>,
+  start_url?: Maybe<StringQueryOperatorInput>,
+  background_color?: Maybe<StringQueryOperatorInput>,
+  theme_color?: Maybe<StringQueryOperatorInput>,
+  display?: Maybe<StringQueryOperatorInput>,
+  icon?: Maybe<StringQueryOperatorInput>,
+  trackingId?: Maybe<StringQueryOperatorInput>,
   pathCheck?: Maybe<BooleanQueryOperatorInput>,
 };
 
@@ -2811,7 +2839,6 @@ export type SitePluginPluginOptionsPlugins = {
   name?: Maybe<Scalars['String']>,
   version?: Maybe<Scalars['String']>,
   pluginOptions?: Maybe<SitePluginPluginOptionsPluginsPluginOptions>,
-  nodeAPIs?: Maybe<Array<Maybe<Scalars['String']>>>,
   browserAPIs?: Maybe<Array<Maybe<Scalars['String']>>>,
   ssrAPIs?: Maybe<Array<Maybe<Scalars['String']>>>,
   pluginFilepath?: Maybe<Scalars['String']>,
@@ -2823,7 +2850,6 @@ export type SitePluginPluginOptionsPluginsFilterInput = {
   name?: Maybe<StringQueryOperatorInput>,
   version?: Maybe<StringQueryOperatorInput>,
   pluginOptions?: Maybe<SitePluginPluginOptionsPluginsPluginOptionsFilterInput>,
-  nodeAPIs?: Maybe<StringQueryOperatorInput>,
   browserAPIs?: Maybe<StringQueryOperatorInput>,
   ssrAPIs?: Maybe<StringQueryOperatorInput>,
   pluginFilepath?: Maybe<StringQueryOperatorInput>,
@@ -2851,7 +2877,6 @@ export type SitePluginPluginOptionsPluginsPluginOptions = {
   showLineNumbers?: Maybe<Scalars['Boolean']>,
   noInlineHighlight?: Maybe<Scalars['Boolean']>,
   ignoreFileExtensions?: Maybe<Array<Maybe<Scalars['String']>>>,
-  rule?: Maybe<SitePluginPluginOptionsPluginsPluginOptionsRule>,
 };
 
 export type SitePluginPluginOptionsPluginsPluginOptionsFilterInput = {
@@ -2871,16 +2896,6 @@ export type SitePluginPluginOptionsPluginsPluginOptionsFilterInput = {
   showLineNumbers?: Maybe<BooleanQueryOperatorInput>,
   noInlineHighlight?: Maybe<BooleanQueryOperatorInput>,
   ignoreFileExtensions?: Maybe<StringQueryOperatorInput>,
-  rule?: Maybe<SitePluginPluginOptionsPluginsPluginOptionsRuleFilterInput>,
-};
-
-export type SitePluginPluginOptionsPluginsPluginOptionsRule = {
-   __typename?: 'SitePluginPluginOptionsPluginsPluginOptionsRule',
-  include?: Maybe<Scalars['String']>,
-};
-
-export type SitePluginPluginOptionsPluginsPluginOptionsRuleFilterInput = {
-  include?: Maybe<StringQueryOperatorInput>,
 };
 
 export type SitePluginPluginOptionsRule = {
@@ -2900,27 +2915,12 @@ export type SitePluginSortInput = {
 export type SiteSiteMetadata = {
    __typename?: 'SiteSiteMetadata',
   title?: Maybe<Scalars['String']>,
-  authors?: Maybe<Array<Maybe<SiteSiteMetadataAuthors>>>,
-};
-
-export type SiteSiteMetadataAuthors = {
-   __typename?: 'SiteSiteMetadataAuthors',
-  name?: Maybe<Scalars['String']>,
-  slug?: Maybe<Scalars['String']>,
-};
-
-export type SiteSiteMetadataAuthorsFilterInput = {
-  name?: Maybe<StringQueryOperatorInput>,
-  slug?: Maybe<StringQueryOperatorInput>,
-};
-
-export type SiteSiteMetadataAuthorsFilterListInput = {
-  elemMatch?: Maybe<SiteSiteMetadataAuthorsFilterInput>,
+  description?: Maybe<Scalars['String']>,
 };
 
 export type SiteSiteMetadataFilterInput = {
   title?: Maybe<StringQueryOperatorInput>,
-  authors?: Maybe<SiteSiteMetadataAuthorsFilterListInput>,
+  description?: Maybe<StringQueryOperatorInput>,
 };
 
 export type SiteSortInput = {
@@ -2941,6 +2941,46 @@ export type StringQueryOperatorInput = {
   regex?: Maybe<Scalars['String']>,
   glob?: Maybe<Scalars['String']>,
 };
+
+export type PostsForCreatePagesQueryVariables = {};
+
+
+export type PostsForCreatePagesQuery = (
+  { __typename?: 'Query' }
+  & { allMarkdownRemark: (
+    { __typename?: 'MarkdownRemarkConnection' }
+    & { edges: Array<(
+      { __typename?: 'MarkdownRemarkEdge' }
+      & { node: (
+        { __typename?: 'MarkdownRemark' }
+        & { frontmatter: Maybe<(
+          { __typename?: 'MarkdownRemarkFrontmatter' }
+          & Pick<MarkdownRemarkFrontmatter, 'date' | 'keywords' | 'slug' | 'tags' | 'title'>
+        )> }
+      ) }
+    )> }
+  ) }
+);
+
+export type TagsForCreatePagesQueryVariables = {};
+
+
+export type TagsForCreatePagesQuery = (
+  { __typename?: 'Query' }
+  & { allMarkdownRemark: (
+    { __typename?: 'MarkdownRemarkConnection' }
+    & { edges: Array<(
+      { __typename?: 'MarkdownRemarkEdge' }
+      & { node: (
+        { __typename?: 'MarkdownRemark' }
+        & { frontmatter: Maybe<(
+          { __typename?: 'MarkdownRemarkFrontmatter' }
+          & Pick<MarkdownRemarkFrontmatter, 'tags'>
+        )> }
+      ) }
+    )> }
+  ) }
+);
 
 export type FetchAllImageQueryVariables = {};
 
@@ -3014,46 +3054,6 @@ export type IndexPageQuery = (
         & { frontmatter: Maybe<(
           { __typename?: 'MarkdownRemarkFrontmatter' }
           & Pick<MarkdownRemarkFrontmatter, 'date' | 'title' | 'tags' | 'slug' | 'thumbnail'>
-        )> }
-      ) }
-    )> }
-  ) }
-);
-
-export type PostsForCreatePagesQueryVariables = {};
-
-
-export type PostsForCreatePagesQuery = (
-  { __typename?: 'Query' }
-  & { allMarkdownRemark: (
-    { __typename?: 'MarkdownRemarkConnection' }
-    & { edges: Array<(
-      { __typename?: 'MarkdownRemarkEdge' }
-      & { node: (
-        { __typename?: 'MarkdownRemark' }
-        & { frontmatter: Maybe<(
-          { __typename?: 'MarkdownRemarkFrontmatter' }
-          & Pick<MarkdownRemarkFrontmatter, 'date' | 'keywords' | 'slug' | 'tags' | 'title'>
-        )> }
-      ) }
-    )> }
-  ) }
-);
-
-export type TagsForCreatePagesQueryVariables = {};
-
-
-export type TagsForCreatePagesQuery = (
-  { __typename?: 'Query' }
-  & { allMarkdownRemark: (
-    { __typename?: 'MarkdownRemarkConnection' }
-    & { edges: Array<(
-      { __typename?: 'MarkdownRemarkEdge' }
-      & { node: (
-        { __typename?: 'MarkdownRemark' }
-        & { frontmatter: Maybe<(
-          { __typename?: 'MarkdownRemarkFrontmatter' }
-          & Pick<MarkdownRemarkFrontmatter, 'tags'>
         )> }
       ) }
     )> }

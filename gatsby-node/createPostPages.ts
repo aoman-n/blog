@@ -1,35 +1,13 @@
 import path from 'path'
-import { Actions, CreatePagesArgs } from 'gatsby'
+/* graphqlはgraphql-codegen/cliで型を自動生成する時に検知させるためにインポートしている */
+import { Actions, CreatePagesArgs, graphql } from 'gatsby'
 import { PostsForCreatePagesQuery } from '../types/graphqlTypes'
-
-interface Tag {
-  name: string
-  count: number
-}
 
 export type BlogPostTemplateContext = {
   slug: string
   previous: PostsForCreatePagesQuery | null
   next: PostsForCreatePagesQuery | null
 }
-
-const query = `
-  {
-    allMarkdownRemark {
-      edges {
-        node {
-          frontmatter {
-            date
-            keywords
-            slug
-            tags
-            title
-          }
-        }
-      }
-    }
-  }
-`
 
 export const createPostsPages = async ({
   graphql,
@@ -38,7 +16,24 @@ export const createPostsPages = async ({
   graphql: CreatePagesArgs['graphql']
   createPage: Actions['createPage']
 }) => {
-  const result = await graphql<PostsForCreatePagesQuery>(query)
+  const result = await graphql<PostsForCreatePagesQuery>(`
+    query PostsForCreatePages {
+      allMarkdownRemark {
+        edges {
+          node {
+            frontmatter {
+              date
+              keywords
+              slug
+              tags
+              title
+            }
+          }
+        }
+      }
+    }
+  `)
+
   if (result.errors || !result.data) {
     throw result.errors
   }

@@ -2,22 +2,9 @@ import path from 'path'
 import flatMap from 'lodash/flatMap'
 import map from 'lodash/map'
 import countBy from 'lodash/countBy'
-import { Actions, CreatePagesArgs } from 'gatsby'
+/* graphqlはgraphql-codegen/cliで型を自動生成する時に検知させるためにインポートしている */
+import { Actions, CreatePagesArgs, graphql } from 'gatsby'
 import { TagsForCreatePagesQuery } from '../types/graphqlTypes'
-
-const query = `
-  {
-    allMarkdownRemark {
-      edges {
-        node {
-          frontmatter {
-            tags
-          }
-        }
-      }
-    }
-  }
-`
 
 export const createTagPages = async ({
   graphql,
@@ -26,7 +13,20 @@ export const createTagPages = async ({
   graphql: CreatePagesArgs['graphql']
   createPage: Actions['createPage']
 }) => {
-  const result = await graphql<TagsForCreatePagesQuery>(query)
+  const result = await graphql<TagsForCreatePagesQuery>(`
+    query TagsForCreatePages {
+      allMarkdownRemark {
+        edges {
+          node {
+            frontmatter {
+              tags
+            }
+          }
+        }
+      }
+    }
+  `)
+
   if (result.errors || !result.data) {
     throw result.errors
   }
