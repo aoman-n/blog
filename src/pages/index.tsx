@@ -86,7 +86,7 @@ export const pageQuery = graphql`
             tags
             thumbnail {
               childImageSharp {
-                sizes(maxWidth: 800) {
+                fluid(maxWidth: 800) {
                   aspectRatio
                   base64
                   sizes

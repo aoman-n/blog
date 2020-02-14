@@ -107,7 +107,7 @@ export const templateQuery = graphql`
         title
         thumbnail {
           childImageSharp {
-            sizes(maxWidth: 800) {
+            fluid(maxWidth: 800) {
               aspectRatio
               base64
               sizes

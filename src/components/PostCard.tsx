@@ -40,7 +40,7 @@ const PostCard: React.FC<ArticleCardProps> = ({
     <Card shadow>
       <StyledLink onClick={handleNavgate}>
         <ImageFrame>
-          <Img sizes={thumbnail.childImageSharp.sizes} />
+          <Img fluid={thumbnail.childImageSharp.fluid} />
         </ImageFrame>
         <Info>
           <TagList tags={tags} />

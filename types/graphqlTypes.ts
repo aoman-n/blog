@@ -3127,9 +3127,9 @@ export type FetchDefaultThumbnailForSeoQuery = (
     { __typename?: 'File' }
     & { childImageSharp: Maybe<(
       { __typename?: 'ImageSharp' }
-      & { sizes: Maybe<(
-        { __typename?: 'ImageSharpSizes' }
-        & Pick<ImageSharpSizes, 'aspectRatio' | 'base64' | 'sizes' | 'src' | 'srcSet'>
+      & { fluid: Maybe<(
+        { __typename?: 'ImageSharpFluid' }
+        & Pick<ImageSharpFluid, 'aspectRatio' | 'base64' | 'sizes' | 'src' | 'srcSet'>
       )> }
     )> }
   )> }
@@ -3163,9 +3163,9 @@ export type IndexPageQuery = (
             { __typename?: 'File' }
             & { childImageSharp: Maybe<(
               { __typename?: 'ImageSharp' }
-              & { sizes: Maybe<(
-                { __typename?: 'ImageSharpSizes' }
-                & Pick<ImageSharpSizes, 'aspectRatio' | 'base64' | 'sizes' | 'src' | 'srcSet'>
+              & { fluid: Maybe<(
+                { __typename?: 'ImageSharpFluid' }
+                & Pick<ImageSharpFluid, 'aspectRatio' | 'base64' | 'sizes' | 'src' | 'srcSet'>
               )> }
             )> }
           )> }
@@ -3195,9 +3195,9 @@ export type BlogPostQuery = (
         { __typename?: 'File' }
         & { childImageSharp: Maybe<(
           { __typename?: 'ImageSharp' }
-          & { sizes: Maybe<(
-            { __typename?: 'ImageSharpSizes' }
-            & Pick<ImageSharpSizes, 'aspectRatio' | 'base64' | 'sizes' | 'src' | 'srcSet'>
+          & { fluid: Maybe<(
+            { __typename?: 'ImageSharpFluid' }
+            & Pick<ImageSharpFluid, 'aspectRatio' | 'base64' | 'sizes' | 'src' | 'srcSet'>
           )> }
         )> }
       )> }
@@ -3236,9 +3236,9 @@ export type TagsQuery = (
             { __typename?: 'File' }
             & { childImageSharp: Maybe<(
               { __typename?: 'ImageSharp' }
-              & { sizes: Maybe<(
-                { __typename?: 'ImageSharpSizes' }
-                & Pick<ImageSharpSizes, 'aspectRatio' | 'base64' | 'sizes' | 'src' | 'srcSet'>
+              & { fluid: Maybe<(
+                { __typename?: 'ImageSharpFluid' }
+                & Pick<ImageSharpFluid, 'aspectRatio' | 'base64' | 'sizes' | 'src' | 'srcSet'>
               )> }
             )> }
           )> }
@@ -3262,9 +3262,9 @@ export type TagsQuery = (
             { __typename?: 'File' }
             & { childImageSharp: Maybe<(
               { __typename?: 'ImageSharp' }
-              & { sizes: Maybe<(
-                { __typename?: 'ImageSharpSizes' }
-                & Pick<ImageSharpSizes, 'aspectRatio' | 'base64' | 'sizes' | 'src' | 'srcSet'>
+              & { fluid: Maybe<(
+                { __typename?: 'ImageSharpFluid' }
+                & Pick<ImageSharpFluid, 'aspectRatio' | 'base64' | 'sizes' | 'src' | 'srcSet'>
               )> }
             )> }
           )> }

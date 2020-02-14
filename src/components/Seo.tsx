@@ -19,7 +19,7 @@ const Seo: React.FC<SeoProps> = ({ isRoot, title, description, thumbnail }) => {
     query FetchDefaultThumbnailForSeo {
       file(relativePath: { eq: "thumbnails/default.jpg" }) {
         childImageSharp {
-          sizes(maxWidth: 800) {
+          fluid(maxWidth: 800) {
             aspectRatio
             base64
             sizes
@@ -33,9 +33,9 @@ const Seo: React.FC<SeoProps> = ({ isRoot, title, description, thumbnail }) => {
 
   let image: string
   if (thumbnail) {
-    image = config.blogUrl + thumbnail.childImageSharp?.sizes?.src
+    image = config.blogUrl + thumbnail.childImageSharp?.fluid?.src
   } else {
-    image = config.blogUrl + data.file?.childImageSharp?.sizes?.src
+    image = config.blogUrl + data.file?.childImageSharp?.fluid?.src
   }
 
   const type = isRoot ? 'website' : 'article'
