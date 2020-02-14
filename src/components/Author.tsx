@@ -47,7 +47,6 @@ const Description = styled.div`
 const AvatarImage = styled.img`
   height: 100%;
   border-radius: 50%;
-  border: 1px solid ${Colors.font.light};
 `
 
 export default Author

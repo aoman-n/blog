@@ -43,8 +43,6 @@ const Image: React.FC<{ filename: string }> = ({ filename }) => {
   const imageSizes = image.node.childImageSharp.sizes
 
   return <Img sizes={imageSizes} />
-
-  // return <Img fluid={image.node.childImageSharp.fluid} />
 }
 
 export default Image
