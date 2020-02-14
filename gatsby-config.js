@@ -6,28 +6,10 @@ module.exports = {
   plugins: [
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-typescript`,
-    /*
-      サムネイル画像は記事マークダウンファイルと同一ディレクトリに置いている。
-      下記のように別ディレクトリにして、サムネイル画像と他画像を共通管理したほうがよいかもしれない。
-    */
-    // {
-    //   resolve: `gatsby-source-filesystem`,
-    //   options: {
-    //     name: `thumbnails`,
-    //     path: `${__dirname}/contents/thumbnails`,
-    //   },
-    // },
-    // {
-    //   resolve: `gatsby-source-filesystem`,
-    //   options: {
-    //     name: `images`,
-    //     path: `${__dirname}/src/images`,
-    //   },
-    // },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `posts`,
+        name: `data`,
         path: `${__dirname}/contents`,
       },
     },

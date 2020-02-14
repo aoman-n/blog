@@ -1,7 +1,7 @@
 import React from 'react'
+import Img from 'gatsby-image'
 import { navigate } from 'gatsby'
 import styled from 'styled-components'
-import Image from '../components/Image'
 import Card from './atoms/Card'
 import TagList from './TagList'
 import Date from './atoms/Date'
@@ -13,10 +13,8 @@ interface ArticleCardProps {
   tags: (string | null | undefined)[]
   title: string
   expert: string
-  thumbnail: string
+  thumbnail: any
 }
-
-const imageUrl = 'https://cdn.stocksnap.io/img-thumbs/960w/YVC8CSWY29.jpg'
 
 const PostCard: React.FC<ArticleCardProps> = ({
   date,
@@ -40,11 +38,7 @@ const PostCard: React.FC<ArticleCardProps> = ({
     <Card shadow>
       <StyledLink onClick={handleNavgate}>
         <ImageFrame>
-          {thumbnail ? (
-            <Image filename={thumbnail} />
-          ) : (
-            <StyledImage src={imageUrl} alt="thumbnailUrl" />
-          )}
+          <Img sizes={thumbnail.childImageSharp.sizes} />
         </ImageFrame>
         <Info>
           <TagList tags={tags} />
@@ -73,13 +67,6 @@ const ImageFrame = styled.div`
     rgb(177, 177, 177) 75%,
     rgb(73, 73, 73) 100%
   ); */
-`
-const StyledImage = styled.img`
-  max-width: 100%;
-  height: auto;
-  object-position: 50% 50%;
-  opacity: 0.8;
-  border-radius: 2px 2px 0 0;
 `
 const Info = styled.div`
   padding: 1.3rem;

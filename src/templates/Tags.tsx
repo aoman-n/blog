@@ -77,7 +77,17 @@ export const templateQuery = graphql`
             title
             tags
             slug
-            thumbnail
+            thumbnail {
+              childImageSharp {
+                sizes(maxWidth: 800) {
+                  aspectRatio
+                  base64
+                  sizes
+                  src
+                  srcSet
+                }
+              }
+            }
           }
         }
       }
@@ -92,7 +102,17 @@ export const templateQuery = graphql`
             title
             tags
             slug
-            thumbnail
+            thumbnail {
+              childImageSharp {
+                sizes(maxWidth: 800) {
+                  aspectRatio
+                  base64
+                  sizes
+                  src
+                  srcSet
+                }
+              }
+            }
           }
         }
       }

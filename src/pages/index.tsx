@@ -1,7 +1,7 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import styled from 'styled-components'
-import PostList from '../components/PostCardList'
+import PostCardList from '../components/PostCardList'
 import Author from '../components/Author'
 import SubTitle from '../components/SubTitle'
 import TagCountList from '../components/TagCountList'
@@ -20,7 +20,7 @@ const Component: React.FC<Props> = ({ data }) => (
     <Container>
       <PostsSection>
         <SubTitle>Latest stories</SubTitle>
-        <PostList posts={data.allMarkdownRemark.edges} />
+        <PostCardList posts={data.allMarkdownRemark.edges} />
       </PostsSection>
       <TagsSection>
         <SubTitle>Tags</SubTitle>
@@ -82,7 +82,17 @@ export const pageQuery = graphql`
             title
             tags
             slug
-            thumbnail
+            thumbnail {
+              childImageSharp {
+                sizes(maxWidth: 800) {
+                  aspectRatio
+                  base64
+                  sizes
+                  src
+                  srcSet
+                }
+              }
+            }
           }
         }
       }

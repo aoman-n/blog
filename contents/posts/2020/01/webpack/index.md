@@ -8,10 +8,12 @@ keywords:
   - webpack
   - React
 slug: webpack
-thumbnail: 2020/01/webpack/thumbnail.jpg
+thumbnail: ./thumbnail.jpg
 ---
 
 ## はじめに
+
+![](./thumbnail.jpg)
 
 Reactの開発環境を構築する際 `create-react-app` に頼りきりで、会社のprojectの`webpack.config.js`に何が書いてあるのかわからなかったため、webpackの基本的な使い方を勉強しました。
 今後、フロントエンド開発を行っていく上で、避けては通れないwebpackの超超基本的な設定方法について見ていきたいと思います。

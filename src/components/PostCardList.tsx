@@ -15,7 +15,7 @@ const PostList: React.FC<{ posts: Posts }> = ({ posts }) => (
         slug={post.node.frontmatter?.slug || ''}
         tags={post.node.frontmatter?.tags || []}
         expert={post.node.excerpt || ''}
-        thumbnail={post.node.frontmatter?.thumbnail || ''}
+        thumbnail={post.node.frontmatter?.thumbnail}
       />
     ))}
   </Component>

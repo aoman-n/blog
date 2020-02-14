@@ -2,6 +2,13 @@ import React from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
 import Img from 'gatsby-image'
 
+/*
+  パスを渡せば画像表示してくれるコンポーネント
+  参考: https://takumon.com/simple-gatsby-image-wrapper
+  今は使ってない
+    なぜ -> 記事のmarkdownファイルと同ディレクトリにサムネイル画像を置き、
+  相対パスでインポートすることでgraphqlからchildImageSharpを取得しているため
+*/
 const Image: React.FC<{ filename: string }> = ({ filename }) => {
   const data = useStaticQuery(graphql`
     query FetchAllImage {

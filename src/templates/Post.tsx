@@ -109,7 +109,18 @@ export const templateQuery = graphql`
         slug
         tags
         title
-        thumbnail
+        thumbnail {
+          id
+          childImageSharp {
+            fluid {
+              aspectRatio
+              base64
+              sizes
+              src
+              srcSet
+            }
+          }
+        }
       }
       html
       headingsDetail {
