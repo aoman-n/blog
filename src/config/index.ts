@@ -1,7 +1,8 @@
 export default {
   blogTitle: 'Aonohi dot..',
+  blogSubTitle: 'Webプログラミング系の記事をつらつら書いていくブログです。',
   blogDescription:
-    'React、Typescript、Golang、Railsの記事を中心に、Webプログラミング系の記事をつらつら書いていくブログです。エンジニア2年生！',
+    'React、Typescript、Golang、Railsを中心に、Webプログラミング系の記事をつらつら書いていく技術ブログです。このブログはGatsby.jsで作られています。',
   blogUrl: 'https://aonohi.com',
   blogThumbnailPath: 'thumbnails/default.jpg',
   twitterUsername: 'aohiro01',

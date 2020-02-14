@@ -10,7 +10,7 @@ const HeaderComponent: React.FC = () => (
       <StyledLink to="/">
         <Title>{config.blogTitle}</Title>
       </StyledLink>
-      <Info>{config.blogDescription}</Info>
+      <Info>{config.blogSubTitle}</Info>
     </LogoArea>
   </Container>
 )
