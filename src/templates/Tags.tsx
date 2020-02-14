@@ -7,6 +7,7 @@ import SubTitle from '../components/SubTitle'
 import PostList from '../components/PostCardList'
 import Author from '../components/Author'
 import TagCountList from '../components/TagCountList'
+import Seo from '../components/Seo'
 import { Sizes } from '../constants'
 
 interface TagsProps {
@@ -25,6 +26,7 @@ const Tags: React.FC<TagsProps> = ({
 
   return (
     <Layout>
+      <Seo isRoot={false} title={`${tagname}に関する記事 ${count}件`} />
       <Container>
         <section>
           <SubTitle>

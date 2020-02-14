@@ -15,7 +15,6 @@ export default styled.div`
     display: block;
     padding: 10.5px;
     margin: 0 0 11px;
-    font-size: ${Sizes.font.ss}rem;
     line-height: 1.6;
     word-break: break-all;
     word-wrap: break-word;
