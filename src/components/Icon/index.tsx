@@ -3,7 +3,7 @@ import Github from './svg/github.svg'
 import Twitter from './svg/twitter.svg'
 import Tag from './svg/tag.svg'
 import Clock from './svg/clock.svg'
-import { Color } from '../../constants'
+import { Colors } from '../../constants'
 
 export const icons = {
   github: Github,
@@ -20,7 +20,11 @@ export interface IconProps {
   fill?: string
 }
 
-const Icon: React.FC<IconProps> = ({ icon, width, fill = Color.font.base }) => {
+const Icon: React.FC<IconProps> = ({
+  icon,
+  width,
+  fill = Colors.font.base,
+}) => {
   return React.createElement(icons[icon], { width, fill })
 }
 

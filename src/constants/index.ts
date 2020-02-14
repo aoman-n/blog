@@ -1,3 +1,3 @@
-export { default as Size } from './Size'
-export { default as Color } from './Color'
-export { default as Style } from './Style'
+export { default as Sizes } from './Sizes'
+export { default as Colors } from './Colors'
+export { default as Styles } from './Styles'

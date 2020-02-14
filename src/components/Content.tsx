@@ -1,12 +1,12 @@
 import styled from 'styled-components'
-import { Size, Color } from '../constants'
+import { Sizes, Colors } from '../constants'
 
 export default styled.div`
   margin-top: 24px;
   line-height: 1.8;
-  font-size: ${Size.font.s}rem;
+  font-size: ${Sizes.font.s}rem;
   word-break: break-all;
-  color: ${Color.darkGray};
+  color: ${Colors.darkGray};
 
   .hidden {
     display: none;
@@ -16,7 +16,7 @@ export default styled.div`
     display: block;
     padding: 10.5px;
     margin: 0 0 11px;
-    font-size: ${Size.font.ss}rem;
+    font-size: ${Sizes.font.ss}rem;
     line-height: 1.6;
     word-break: break-all;
     word-wrap: break-word;
@@ -69,7 +69,7 @@ export default styled.div`
       width: 100px;
       bottom: -2px;
       height: 2px;
-      background-color: ${Color.primary};
+      background-color: ${Colors.primary};
     }
   }
 
@@ -142,7 +142,7 @@ export default styled.div`
   }
 
   blockquote {
-    font-size: ${Size.font.s}rem;
+    font-size: ${Sizes.font.s}rem;
     /* color: rgba(60, 74, 96, 0.7); */
     border-left: 5px solid rgba(0, 0, 0, 0.1);
     margin-bottom: 30px;
@@ -182,7 +182,7 @@ export default styled.div`
     background-color: white;
     border: 1px solid rgba(0, 0, 0, 0.1);
     padding: 2px 7px;
-    font-size: ${Size.font.s};
+    font-size: ${Sizes.font.s};
     font-family: 'Lato', Emoji, Arial, 'ヒラギノ角ゴPro W3',
       'Hiragino Kaku Gothic Pro', 'メイリオ', Meiryo, 'ＭＳ Ｐゴシック',
       sans-serif;
@@ -403,14 +403,14 @@ export default styled.div`
     padding-left: 2rem;
     padding-right: 2rem;
 
-    @media (max-width: ${Size.breakPoint.mobile}px) {
+    @media (max-width: ${Sizes.breakPoint.mobile}px) {
       margin-left: -1.3rem;
       margin-right: -1.3rem;
       padding-left: 1rem;
       padding-right: 1rem;
     }
 
-    /* @media screen and (max-width: ${Size.breakPoint.mobile}px) {
+    /* @media screen and (max-width: ${Sizes.breakPoint.mobile}px) {
       margin-left: calc((100vw - 100%) / -2);
       margin-right: calc((100vw - 100%) / -2);
       padding-left: calc((100vw - 100%) / -2);
@@ -447,7 +447,7 @@ export default styled.div`
     position: relative;
     right: 2rem;
 
-    @media (max-width: ${Size.breakPoint.mobile}px) {
+    @media (max-width: ${Sizes.breakPoint.mobile}px) {
       right: 1.3rem;
     }
   }

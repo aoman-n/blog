@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Link } from 'gatsby'
-import { Size, Color } from '../constants'
+import { Sizes, Colors } from '../constants'
 
 const FooterComponent: React.FC = () => (
   <Footer>
@@ -11,14 +11,14 @@ const FooterComponent: React.FC = () => (
 )
 
 const Footer = styled.footer`
-  height: ${Size.footer.height}px;
-  border-top: solid 1px ${Color.lightGray};
+  height: ${Sizes.footer.height}px;
+  border-top: solid 1px ${Colors.lightGray};
   background-color: #ffffff;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background-color: ${Color.primary};
+  background-color: ${Colors.primary};
 `
 const SiteTitle = styled(Link)`
   font-weight: bold;
@@ -27,7 +27,7 @@ const SiteTitle = styled(Link)`
   font-size: 1.1em;
   letter-spacing: 0.1em;
   text-decoration: underline;
-  font-size: ${Size.font.s}rem;
+  font-size: ${Sizes.font.s}rem;
   text-shadow: 0 1px 3px rgba(120, 180, 180, 0.5);
 
   &:hover {
@@ -36,7 +36,7 @@ const SiteTitle = styled(Link)`
 `
 const Copyrigth = styled.div`
   color: #fff;
-  font-size: ${Size.font.ss}rem;
+  font-size: ${Sizes.font.ss}rem;
   text-shadow: 0 1px 3px rgba(120, 180, 180, 0.5);
 `
 

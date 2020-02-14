@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Size, Color } from '../constants'
+import { Sizes } from '../constants'
 
 const SubTitle: React.FC = ({ children }) => {
   return (
@@ -16,7 +16,7 @@ const Component = styled.div`
   margin-bottom: 3rem;
 `
 const Title = styled.h2`
-  font-size: ${Size.font.m}rem;
+  font-size: ${Sizes.font.m}rem;
   padding-bottom: 1rem;
 `
 

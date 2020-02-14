@@ -17,8 +17,6 @@ const Seo: React.FC<SeoProps> = ({
   isRoot,
   title,
   description,
-  postUrl,
-  // postDate,
   thumbnailPath,
 }) => {
   const data = useStaticQuery<FetchAllImageForSeoQuery>(graphql`

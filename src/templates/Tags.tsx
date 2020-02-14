@@ -2,12 +2,12 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import styled from 'styled-components'
 import { TagsQuery } from '../../types/graphqlTypes'
-import Layout from '../layouts'
+import Layout from '../components/Layout'
 import SubTitle from '../components/SubTitle'
-import PostList from '../components/PostList'
+import PostList from '../components/PostCardList'
 import Author from '../components/Author'
 import TagCountList from '../components/TagCountList'
-import { Size } from '../constants'
+import { Sizes } from '../constants'
 
 interface TagsProps {
   data: TagsQuery
@@ -49,7 +49,7 @@ const Tags: React.FC<TagsProps> = ({
 }
 
 const Container = styled.div`
-  @media (max-width: ${Size.breakPoint.mobile}px) {
+  @media (max-width: ${Sizes.breakPoint.mobile}px) {
     padding: 0 24px;
   }
 `

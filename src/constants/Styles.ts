@@ -1,22 +1,21 @@
 import { css } from 'styled-components'
-import { Size } from '.'
+import { Sizes } from '.'
 
 /*
   PC, Tablet, Mobileそれぞれでコンテンツの幅を指定するためのスタイル
   ヘッダーとボディ部で共通使用するために切り出している
 */
 export const layoutWidthStyle = css`
-  max-width: ${Size.width.index}px;
+  max-width: ${Sizes.width.index}px;
   width: 70%;
-  min-width: calc(${Size.breakPoint.tablet} - 30) px;
+  min-width: calc(${Sizes.breakPoint.tablet} - 30) px;
 
-  @media (max-width: ${Size.breakPoint.tablet}px) {
-    /* padding: 0 40px; */
+  @media (max-width: ${Sizes.breakPoint.tablet}px) {
     width: 80%;
-    min-width: calc(${Size.breakPoint.mobile} - 30) px;
+    min-width: calc(${Sizes.breakPoint.mobile} - 30) px;
   }
 
-  @media (max-width: ${Size.breakPoint.mobile}px) {
+  @media (max-width: ${Sizes.breakPoint.mobile}px) {
     padding: 0;
     width: initial;
     max-width: initial;

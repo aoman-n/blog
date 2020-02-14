@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Link } from 'gatsby'
-import { Size, Color, Style } from '../constants'
+import { Sizes, Colors, Styles } from '../constants'
 import config from '../config'
 
 const HeaderComponent: React.FC = () => (
@@ -16,8 +16,8 @@ const HeaderComponent: React.FC = () => (
 )
 
 const Container = styled.div`
-  height: ${Size.header.height}px;
-  background-color: ${Color.primary};
+  height: ${Sizes.header.height}px;
+  background-color: ${Colors.primary};
   box-shadow: 0 1px 8px rgba(0, 0, 0, 0.5);
 `
 const LogoArea = styled.div`
@@ -28,9 +28,9 @@ const LogoArea = styled.div`
   height: 100%;
   margin: 0 auto;
 
-  ${Style.layoutWidthStyle}
+  ${Styles.layoutWidthStyle}
 
-  @media (max-width: ${Size.breakPoint.mobile}px) {
+  @media (max-width: ${Sizes.breakPoint.mobile}px) {
     align-items: center;
   }
 `
@@ -42,13 +42,13 @@ const StyledLink = styled(Link)`
   }
 `
 const Title = styled.h1`
-  font-size: ${Size.font.ll}rem;
+  font-size: ${Sizes.font.ll}rem;
   color: #fff;
   letter-spacing: 2.66px;
   text-shadow: 0 1px 3px rgba(130, 200, 200, 0.5);
 `
 const Info = styled.p`
-  font-size: ${Size.font.ss}rem;
+  font-size: ${Sizes.font.ss}rem;
   color: #fff;
 `
 

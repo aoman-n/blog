@@ -5,11 +5,10 @@ import Image from '../components/Image'
 import Card from './atoms/Card'
 import TagList from './TagList'
 import Date from './atoms/Date'
-import { Size, Color } from '../constants'
+import { Sizes, Colors } from '../constants'
 
 interface ArticleCardProps {
   date: string
-  description: string
   slug: string
   tags: (string | null | undefined)[]
   title: string
@@ -21,7 +20,6 @@ const imageUrl = 'https://cdn.stocksnap.io/img-thumbs/960w/YVC8CSWY29.jpg'
 
 const PostCard: React.FC<ArticleCardProps> = ({
   date,
-  description,
   slug,
   title,
   tags = [],
@@ -87,14 +85,14 @@ const Info = styled.div`
   padding: 1.3rem;
 `
 const Title = styled.p`
-  font-size: ${Size.font.s}rem;
+  font-size: ${Sizes.font.s}rem;
   font-weight: bold;
-  color: ${Color.font.base};
+  color: ${Colors.font.base};
   margin: 0.8rem 0 1rem 0;
 `
 const Desc = styled.p`
-  font-size: ${Size.font.ss}rem;
-  color: ${Color.font.light};
+  font-size: ${Sizes.font.ss}rem;
+  color: ${Colors.font.light};
   line-height: 1.3;
   margin-bottom: 3rem;
 `

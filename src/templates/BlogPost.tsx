@@ -7,9 +7,9 @@ import ScrollSyncToc from '../components/ScrollSyncToc'
 import Seo from '../components/Seo'
 import { BlogPostTemplateContext } from '../../gatsby-node/createPostPages'
 import { BlogPostQuery } from '../../types/graphqlTypes'
-import Layout from '../layouts'
+import Layout from '../components/Layout'
 import config from '../config'
-import { Size, Color } from '../constants'
+import { Sizes, Colors } from '../constants'
 
 type Props = {
   data: BlogPostQuery
@@ -64,20 +64,20 @@ const Title = styled.h2`
 `
 const Date = styled.p`
   margin-bottom: 0.1rem;
-  color: ${Color.gray};
+  color: ${Colors.gray};
 `
 const Article = styled.article`
   background-color: #ffffff;
   width: 72%;
 
-  @media (max-width: ${Size.breakPoint.tablet}px) {
+  @media (max-width: ${Sizes.breakPoint.tablet}px) {
     width: 100%;
   }
 `
 const Inner = styled.div`
   padding: 2rem;
 
-  @media (max-width: ${Size.breakPoint.mobile}px) {
+  @media (max-width: ${Sizes.breakPoint.mobile}px) {
     padding: 1.3rem;
   }
 
@@ -94,7 +94,7 @@ const ScrollNav = styled.aside`
   width: 28%;
   overflow: auto;
 
-  @media screen and (max-width: ${Size.breakPoint.tablet}px) {
+  @media screen and (max-width: ${Sizes.breakPoint.tablet}px) {
     display: none;
   }
 `

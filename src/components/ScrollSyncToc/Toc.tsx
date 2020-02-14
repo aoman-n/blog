@@ -2,7 +2,7 @@ import { Location } from '@reach/router'
 import { Link } from 'gatsby'
 import React, { FC } from 'react'
 import styled, { css } from 'styled-components'
-import { Color } from '../../constants'
+import { Colors } from '../../constants'
 
 export interface OffsetItem {
   id: string
@@ -41,7 +41,7 @@ interface LinkProps {
 
 const ActiveStyle = css`
   background-color: #e6e5e0;
-  color: ${Color.black};
+  color: ${Colors.black};
 `
 
 const List = styled.ul`

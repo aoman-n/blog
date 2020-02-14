@@ -2,7 +2,6 @@ import { throttle } from 'lodash'
 import React, { FC, useEffect, useState } from 'react'
 import styled from 'styled-components'
 import Toc, { OffsetItem } from './Toc'
-import { Size } from '../../constants'
 
 type Item = Omit<OffsetItem, 'value' | 'depth'>
 
@@ -66,7 +65,6 @@ const ScrollSyncToc: FC<{ heading: any[] }> = ({ heading }) => {
 }
 
 const Container = styled.div`
-  /* font-size: ${Size.font.s}rem; */
   font-size: 1.3rem;
 `
 

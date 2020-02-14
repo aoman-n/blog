@@ -1,7 +1,7 @@
 import React from 'react'
 import styled, { css } from 'styled-components'
 import Icon from './Icon'
-import { Color } from '../constants'
+import { Colors } from '../constants'
 import config from '../config'
 
 const Contacts: React.FC = () => {
@@ -49,7 +49,7 @@ const TwitterLink = styled.a`
   &:hover {
     svg {
       transition: 0.1s;
-      fill: ${Color.twitter};
+      fill: ${Colors.twitter};
     }
   }
 `
@@ -59,7 +59,7 @@ const GithubLink = styled.a`
   &:hover {
     > svg {
       transition: 0.1s;
-      fill: ${Color.black};
+      fill: ${Colors.black};
     }
   }
 `

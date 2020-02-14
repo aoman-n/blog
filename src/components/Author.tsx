@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import Contacts from '../components/Contacts'
-import { Color, Size } from '../constants'
+import { Colors, Sizes } from '../constants'
 import config from '../config'
 
 const Author: React.FC = () => {
@@ -35,19 +35,19 @@ const Avatar = styled.div`
   width: 80px;
 `
 const Name = styled.div`
-  font-size: ${Size.font.m}rem;
+  font-size: ${Sizes.font.m}rem;
   margin: 16px 0 12px;
   font-weight: 700;
 `
 const Description = styled.div`
-  font-size: ${Size.font.s}rem;
+  font-size: ${Sizes.font.s}rem;
   text-align: center;
   margin: 1em 0 0;
 `
 const AvatarImage = styled.img`
   height: 100%;
   border-radius: 50%;
-  border: 1px solid ${Color.font.light};
+  border: 1px solid ${Colors.font.light};
 `
 
 export default Author
