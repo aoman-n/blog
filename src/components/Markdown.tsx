@@ -6,7 +6,6 @@ export default styled.div`
   line-height: 1.8;
   font-size: ${Sizes.font.s}rem;
   word-break: break-all;
-  color: ${Colors.darkGray};
 
   .hidden {
     display: none;
@@ -110,7 +109,7 @@ export default styled.div`
 
   ul,
   ol {
-    padding-left: 40px;
+    padding-left: 18px;
   }
 
   li {
@@ -247,12 +246,10 @@ export default styled.div`
   .anchor {
     transition-duration: 0;
     display: none;
-    margin-left: -20px;
-    width: 20px;
-    height: 20px;
-    font-size: 1.2em;
-    text-align: right;
-    padding-top: 8px;
+  }
+
+  .anchor svg {
+    fill: #08837d;
   }
 
   .anchor i:hover {
@@ -278,7 +275,6 @@ export default styled.div`
   }
 
   h2 .anchor {
-    padding-top: 5px;
     font-size: 1.1em;
   }
 

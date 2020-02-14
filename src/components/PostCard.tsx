@@ -34,6 +34,8 @@ const PostCard: React.FC<ArticleCardProps> = ({
     navigate(`${slug}`)
   }
 
+  const desc = expert.slice(0, 64) + '...'
+
   return (
     <Card shadow>
       <StyledLink onClick={handleNavgate}>
@@ -43,7 +45,7 @@ const PostCard: React.FC<ArticleCardProps> = ({
         <Info>
           <TagList tags={tags} />
           <Title>{title}</Title>
-          <Desc>{expert}</Desc>
+          <Desc>{desc}</Desc>
           <Day>
             <Date date={date} />
           </Day>
@@ -72,7 +74,7 @@ const Info = styled.div`
   padding: 1.3rem;
 `
 const Title = styled.p`
-  font-size: ${Sizes.font.s}rem;
+  font-size: ${Sizes.font.m}rem;
   font-weight: bold;
   color: ${Colors.font.base};
   margin: 0.8rem 0 1rem 0;

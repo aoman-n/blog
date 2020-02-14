@@ -2,7 +2,7 @@ import React from 'react'
 import { navigate } from 'gatsby'
 import styled from 'styled-components'
 import Icon from '../Icon'
-import { Colors } from '../../constants'
+import { Colors, Sizes } from '../../constants'
 
 const Tag: React.FC<{ tag: string }> = ({ tag }) => {
   const handleNavgate = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
@@ -22,7 +22,7 @@ const Component = styled.div`
   cursor: pointer;
   padding: 2px 6px;
   background-color: ${Colors.secondary};
-  font-size: 1rem;
+  font-size: 1.1rem;
   border-radius: 2px;
   color: #fff;
   text-decoration: none;

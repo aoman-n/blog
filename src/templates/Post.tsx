@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { graphql } from 'gatsby'
 import TagList from '../components/TagList'
-import Content from '../components/Content'
+import Markdown from '../components/Markdown'
 import ScrollSyncToc from '../components/ScrollSyncToc'
 import Seo from '../components/Seo'
 import { BlogPostTemplateContext } from '../../gatsby-node/createPostPages'
@@ -41,9 +41,7 @@ const BlogPost: React.FC<Props> = ({ data, pageContext }) => {
             <Date>{date}</Date>
             <Title>{title}</Title>
             <TagList tags={tags || []} />
-            <div>
-              <Content dangerouslySetInnerHTML={{ __html: html || '' }} />
-            </div>
+            <Markdown dangerouslySetInnerHTML={{ __html: html || '' }} />
           </Inner>
         </Article>
         <ScrollNav>
@@ -76,10 +74,6 @@ const Article = styled.article`
 `
 const Inner = styled.div`
   padding: 2rem;
-
-  @media (max-width: ${Sizes.breakPoint.mobile}px) {
-    padding: 1.3rem;
-  }
 
   .gatsby-highlight:not {
     padding: 0;
