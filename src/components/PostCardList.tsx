@@ -12,7 +12,7 @@ const PostList: React.FC<{ posts: Posts }> = ({ posts }) => (
         key={post.node.id}
         title={post.node.frontmatter?.title || ''}
         date={post.node.frontmatter?.date || ''}
-        slug={post.node.frontmatter?.slug || ''}
+        slug={post.node.fields?.slug || ''}
         tags={post.node.frontmatter?.tags || []}
         expert={post.node.excerpt || ''}
         thumbnail={post.node.frontmatter?.thumbnail}

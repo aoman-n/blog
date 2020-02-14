@@ -1,7 +1,7 @@
 import React from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
 import Helmet from 'react-helmet'
-import { FetchAllImageForSeoQuery } from '../../types/graphqlTypes'
+import { FetchDefaultThumbnailForSeoQuery } from '../../types/graphqlTypes'
 import config from '../config'
 
 interface SeoProps {
@@ -10,44 +10,36 @@ interface SeoProps {
   description?: string | null
   postUrl?: string | null
   postDate?: string | null
-  thumbnailPath?: string | null
+  thumbnail?: any
 }
 
-const Seo: React.FC<SeoProps> = ({
-  isRoot,
-  title,
-  description,
-  thumbnailPath,
-}) => {
-  const data = useStaticQuery<FetchAllImageForSeoQuery>(graphql`
-    query FetchAllImageForSeo {
-      images: allFile {
-        edges {
-          node {
-            relativePath
-            name
-            childImageSharp {
-              sizes(maxWidth: 800) {
-                aspectRatio
-                base64
-                sizes
-                src
-                srcSet
-              }
-            }
+const Seo: React.FC<SeoProps> = ({ isRoot, title, description, thumbnail }) => {
+  // thumbnailが渡されない時用に、defaultのthumbnailを取得しておく
+  const data = useStaticQuery<FetchDefaultThumbnailForSeoQuery>(graphql`
+    query FetchDefaultThumbnailForSeo {
+      file(relativePath: { eq: "thumbnails/default.jpg" }) {
+        childImageSharp {
+          sizes(maxWidth: 800) {
+            aspectRatio
+            base64
+            sizes
+            src
+            srcSet
           }
         }
       }
     }
   `)
 
-  const imageNode = data.images.edges.find(n => {
-    return n.node.relativePath.includes(
-      thumbnailPath || config.blogThumbnailPath,
-    )
-  })
+  let image: string
+  if (thumbnail) {
+    image = config.blogUrl + thumbnail.childImageSharp?.sizes?.src
+  } else {
+    image = config.blogUrl + data.file?.childImageSharp?.sizes?.src
+  }
+  console.log('thumbnail; ', thumbnail)
+  console.log('image: ', image)
 
-  const image = config.blogUrl + imageNode?.node.childImageSharp?.sizes?.src
   const type = isRoot ? 'website' : 'article'
   const twitterCard = 'summary'
   const shareTitle =

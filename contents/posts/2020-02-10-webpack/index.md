@@ -4,11 +4,8 @@ date: '2020-01-20T09:00:00.000-07:00'
 tags:
   - webpack
   - React
-keywords:
-  - webpack
-  - React
-slug: webpack
 thumbnail: ./thumbnail.jpg
+slug: hoge
 ---
 
 ## はじめに

@@ -32,8 +32,8 @@ const BlogPost: React.FC<Props> = ({ data, pageContext }) => {
         isRoot={false}
         title={title}
         description={excerpt}
-        thumbnailPath={thumbnail}
-        postUrl={`${config.blogUrl}/posts/${slug}`}
+        thumbnail={thumbnail}
+        postUrl={`${config.blogUrl}${slug}`}
       />
       <Container>
         <Article>
@@ -101,18 +101,19 @@ const ScrollNav = styled.aside`
 
 export const templateQuery = graphql`
   query BlogPost($slug: String!) {
-    markdownRemark(frontmatter: { slug: { eq: $slug } }) {
+    markdownRemark(fields: { slug: { eq: $slug } }) {
       id
       excerpt(pruneLength: 100, format: PLAIN)
+      fields {
+        slug
+      }
       frontmatter {
         date(formatString: "YYYY.MM.DD")
-        slug
         tags
         title
         thumbnail {
-          id
           childImageSharp {
-            fluid {
+            sizes(maxWidth: 800) {
               aspectRatio
               base64
               sizes

@@ -21,10 +21,11 @@ export const createPostsPages = async ({
       allMarkdownRemark {
         edges {
           node {
+            fields {
+              slug
+            }
             frontmatter {
               date
-              keywords
-              slug
               tags
               title
             }
@@ -41,18 +42,18 @@ export const createPostsPages = async ({
   const blogPost = path.resolve('src/templates/Post.tsx')
 
   posts.forEach((post, i) => {
-    if (!post.node.frontmatter || !post.node.frontmatter.slug) {
-      throw new Error(`undefined slug. frontmatter: ${post.node.frontmatter}`)
+    if (!post.node.fields || !post.node.fields.slug) {
+      throw new Error(`undefined slug.`)
     }
 
     const previous = i === posts.length - 1 ? null : posts[i + 1].node
     const next = i === 0 ? null : posts[i - 1].node
-    console.log('作成したページのパス: ', `posts/${post.node.frontmatter.slug}`)
+    console.log('作成したページのパス: ', `posts/${post.node.fields.slug}`)
     createPage({
-      path: `posts/${post.node.frontmatter.slug}`,
+      path: post.node.fields.slug,
       component: blogPost,
       context: {
-        slug: post.node.frontmatter.slug,
+        slug: post.node.fields.slug,
         previous,
         next,
       },

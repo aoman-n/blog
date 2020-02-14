@@ -77,11 +77,13 @@ export const pageQuery = graphql`
         node {
           id
           excerpt(pruneLength: 60, format: PLAIN)
+          fields {
+            slug
+          }
           frontmatter {
             date(formatString: "YYYY.MM.DD")
             title
             tags
-            slug
             thumbnail {
               childImageSharp {
                 sizes(maxWidth: 800) {

@@ -31,7 +31,7 @@ const PostCard: React.FC<ArticleCardProps> = ({
   */
   const handleNavgate = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
     e.stopPropagation()
-    navigate(`/posts/${slug}`)
+    navigate(`${slug}`)
   }
 
   return (
