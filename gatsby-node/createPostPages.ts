@@ -48,7 +48,6 @@ export const createPostsPages = async ({
 
     const previous = i === posts.length - 1 ? null : posts[i + 1].node
     const next = i === 0 ? null : posts[i - 1].node
-    console.log('作成したページのパス: ', `posts/${post.node.fields.slug}`)
     createPage({
       path: post.node.fields.slug,
       component: blogPost,

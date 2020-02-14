@@ -41,7 +41,6 @@ export const createTagPages = async ({
   const tagCounts = map(countBy(flatedTags), (count, name) => ({ name, count }))
 
   tagCounts.forEach(tag => {
-    console.log('tag: ', tag)
     createPage({
       path: `/tags/${tag.name}`,
       component: tagsTemplate,

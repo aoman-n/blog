@@ -37,8 +37,6 @@ const Seo: React.FC<SeoProps> = ({ isRoot, title, description, thumbnail }) => {
   } else {
     image = config.blogUrl + data.file?.childImageSharp?.sizes?.src
   }
-  console.log('thumbnail; ', thumbnail)
-  console.log('image: ', image)
 
   const type = isRoot ? 'website' : 'article'
   const twitterCard = 'summary'
