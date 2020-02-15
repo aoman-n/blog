@@ -30,7 +30,6 @@ const Container = styled.article<{ shadow: boolean }>`
     transition: 0.2s;
     transform: translateY(-3px);
     box-shadow: 1px 2px 4px 0 rgba(133, 131, 131, 0.6);
-    /* transform: scale(1.01); */
   }
 `
 

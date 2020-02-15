@@ -9,7 +9,7 @@ import 'ress'
 const Component: React.FC = props => (
   <>
     <Header />
-    <MarkdownHighLight />
+    <GlobalStyles />
     <Body>
       <Inner>{props.children}</Inner>
     </Body>
@@ -26,7 +26,7 @@ const Inner = styled.div`
 
   ${Styles.layoutWidthStyle}
 `
-const MarkdownHighLight = createGlobalStyle`
+const GlobalStyles = createGlobalStyle`
   html {
     font-size: 62.5%;
   }

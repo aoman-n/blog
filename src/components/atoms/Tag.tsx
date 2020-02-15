@@ -2,7 +2,7 @@ import React from 'react'
 import { navigate } from 'gatsby'
 import styled from 'styled-components'
 import Icon from '../Icon'
-import { Colors, Sizes } from '../../constants'
+import { Colors } from '../../constants'
 
 const Tag: React.FC<{ tag: string }> = ({ tag }) => {
   const handleNavgate = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
