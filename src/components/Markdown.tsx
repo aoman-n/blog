@@ -12,6 +12,7 @@ export default styled.div`
   }
 
   pre {
+    font-size: 1.3rem;
     display: block;
     padding: 10.5px;
     margin: 0 0 11px;
